@@ -1,0 +1,414 @@
+#!/usr/bin/env node
+
+/**
+ * Enhanced SF Dashboard Scraping Service
+ * 
+ * This service integrates with your existing real scrapers to provide
+ * actual event data instead of sample data.
+ */
+
+import express from 'express';
+import cors from 'cors';
+import { fileURLToPath } from 'url';
+import { dirname, join } from 'path';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+
+const app = express();
+const PORT = 3002;
+
+// Middleware
+app.use(cors());
+app.use(express.json());
+
+// Import your existing scraper infrastructure
+import SimplePunchlineScraper from './simple-punchline-scraper.js';
+import SimpleRoxieScraper from './simple-roxie-scraper.js';
+import IndependentHTMLParser from './independent-html-parser.js';
+
+let EventDatabase, ScraperManager;
+let db, scraperManager;
+
+async function initializeRealScrapers() {
+  try {
+    console.log('🔍 Initializing real scrapers...');
+    
+    // Dynamic import to avoid module resolution issues
+    const backendPath = '/Users/bem/Library/CloudStorage/GoogleDrive-ben@sidekickvideo.com/My Drive/Vibecoding/dashboard-vite/backend';
+    
+    // Import your existing modules
+    const databaseModule = await import(`${backendPath}/database.js`);
+                    const scraperManagerModule = await import(`${backendPath}/scraper-manager.js`);
+    
+    EventDatabase = databaseModule.default;
+    ScraperManager = scraperManagerModule.default;
+    
+    // Initialize database and scraper manager
+    db = new EventDatabase();
+    await db.init();
+    
+    scraperManager = new ScraperManager();
+    
+    console.log('✅ Real scrapers initialized successfully');
+    console.log(`🔍 Available scrapers: ${scraperManager.scrapers.size}`);
+    
+    return true;
+    
+  } catch (error) {
+    console.error('❌ Failed to initialize real scrapers:', error.message);
+    console.log('⚠️ Falling back to sample data mode');
+    return false;
+  }
+}
+
+// Sample data as fallback
+const sampleEvents = [
+  {
+    title: "Comedy Night at Punchline",
+    description: "Featured comedians from the Bay Area",
+    date_start: new Date().toISOString(),
+    location: "Punchline Comedy Club, San Francisco",
+    source: "punchline",
+    source_url: "https://www.punchlinecomedyclub.com/events",
+    category: "Comedy",
+    price: "$25"
+  },
+  {
+    title: "Library Book Club",
+    description: "Monthly book discussion group",
+    date_start: new Date(Date.now() + 86400000).toISOString(),
+    location: "San Francisco Public Library",
+    source: "sfpl",
+    source_url: "https://sfpl.org/events",
+    category: "Education",
+    price: "Free"
+  },
+  {
+    title: "Live Music at GAMH",
+    description: "Alternative rock night with local bands",
+    date_start: new Date(Date.now() + 172800000).toISOString(),
+    location: "Great American Music Hall",
+    source: "gamh",
+    source_url: "https://www.gamh.com/events",
+    category: "Music",
+    price: "$35"
+  }
+];
+
+// Add working scrapers to the service
+const workingScrapers = {
+  punchline: new SimplePunchlineScraper(),
+  roxie: new SimpleRoxieScraper(),
+  independent: new IndependentHTMLParser() // Added
+};
+
+// Health check
+app.get('/health', (req, res) => {
+  res.json({ 
+    status: 'ok', 
+    service: 'sf-dashboard-enhanced-scraping',
+    timestamp: new Date().toISOString(),
+    uptime: process.uptime(),
+    realScrapers: !!scraperManager,
+    scraperCount: scraperManager ? scraperManager.scrapers.size : 0,
+    message: scraperManager ? 'Real scrapers are running!' : 'Using sample data mode'
+  });
+});
+
+// Get all events
+app.get('/api/events', async (req, res) => {
+  try {
+    // Try to get events from working scrapers first
+    if (Object.keys(workingScrapers).length > 0) {
+      console.log('🚀 Fetching events from working scrapers...');
+      const allEvents = [];
+      
+      for (const [name, scraper] of Object.entries(workingScrapers)) {
+        try {
+          console.log(`🔍 Running ${name} scraper...`);
+          const result = await scraper.scrape();
+          if (result.success && result.events) {
+            allEvents.push(...result.events);
+            console.log(`✅ ${name} returned ${result.events.length} events`);
+          }
+        } catch (error) {
+          console.warn(`⚠️ ${name} scraper failed:`, error.message);
+        }
+      }
+      
+      if (allEvents.length > 0) {
+        console.log(`📊 Returning ${allEvents.length} events from working scrapers`);
+        res.json(allEvents);
+        return;
+      }
+    }
+    
+    // Fall back to real scrapers if available
+    if (db && scraperManager) {
+      console.log('🔄 Fetching events from real scrapers...');
+      const events = await db.getEvents({});
+      res.json(events);
+    } else {
+      // Fall back to sample data
+      console.log('📊 Returning sample events (no scrapers available)');
+      res.json(sampleEvents);
+    }
+  } catch (error) {
+    console.error('❌ Error fetching events:', error);
+    res.status(500).json({ error: 'Failed to fetch events' });
+  }
+});
+
+// Get events by source
+app.get('/api/events/:source', async (req, res) => {
+  try {
+    const { source } = req.params;
+    
+    if (db && scraperManager) {
+      // Use real scrapers
+      const events = await db.getEventsBySource(source, 50);
+      res.json(events);
+    } else {
+      // Fallback to sample data
+      const events = sampleEvents.filter(event => event.source === source);
+      res.json(events);
+    }
+  } catch (error) {
+    console.error(`Error fetching events for ${req.params.source}:`, error);
+    res.status(500).json({ error: error.message });
+  }
+});
+
+// Get all scrapers
+app.get('/api/scrapers', async (req, res) => {
+  try {
+    if (db && scraperManager) {
+      // Use real scrapers
+      const scrapers = await db.getScrapers();
+      res.json(scrapers);
+    } else {
+      // Fallback to sample scrapers
+      const sampleScrapers = [
+        { name: 'punchline', enabled: true, lastRun: new Date().toISOString() },
+        { name: 'sfpl', enabled: true, lastRun: new Date().toISOString() },
+        { name: 'gamh', enabled: true, lastRun: new Date().toISOString() }
+      ];
+      res.json(sampleScrapers);
+    }
+  } catch (error) {
+    console.error('Error fetching scrapers:', error);
+    res.status(500).json({ error: error.message });
+  }
+});
+
+// Get scraper status
+app.get('/api/scrapers/status', async (req, res) => {
+  try {
+    if (scraperManager) {
+      // Use real scrapers
+      const status = await scraperManager.getScraperStatus();
+      res.json(status);
+    } else {
+      // Fallback to sample status
+      const status = {
+        total: 3,
+        enabled: 3,
+        disabled: 0,
+        lastRun: new Date().toISOString(),
+        nextRun: new Date(Date.now() + 6 * 60 * 60 * 1000).toISOString(),
+        mode: 'sample-data'
+      };
+      res.json(status);
+    }
+  } catch (error) {
+    console.error('Error fetching scraper status:', error);
+    res.status(500).json({ error: error.message });
+  }
+});
+
+// Run all scrapers
+app.post('/api/scrapers/run-all', async (req, res) => {
+  try {
+    if (scraperManager) {
+      // Use real scrapers
+      console.log('🚀 Manual scraper run requested (real scrapers)');
+      const results = await scraperManager.runAllScrapers();
+      
+      res.json({ 
+        success: true, 
+        message: 'All real scrapers completed',
+        results,
+        timestamp: new Date().toISOString(),
+        mode: 'real-scrapers'
+      });
+      
+    } else {
+      // Simulate running scrapers
+      console.log('🚀 Manual scraper run requested (simulated)');
+      
+      setTimeout(() => {
+        console.log('✅ Simulated scraper run completed');
+      }, 1000);
+      
+      res.json({ 
+        success: true, 
+        message: 'All scrapers completed (simulated mode)',
+        results: sampleEvents.map(event => ({
+          name: event.source,
+          success: true,
+          events: [event],
+          count: 1,
+          duration: 100
+        })),
+        timestamp: new Date().toISOString(),
+        mode: 'simulated'
+      });
+    }
+    
+  } catch (error) {
+    console.error('Error running scrapers:', error);
+    res.status(500).json({ 
+      success: false, 
+      error: error.message,
+      timestamp: new Date().toISOString()
+    });
+  }
+});
+
+// Run single scraper
+app.post('/api/scrapers/:name/run', async (req, res) => {
+  try {
+    const { name } = req.params;
+    
+    // Check if we have a working scraper for this venue
+    if (workingScrapers[name]) {
+      console.log(`🚀 Running working scraper: ${name}`);
+      const result = await workingScrapers[name].scrape();
+      res.json({
+        success: true,
+        message: `${name} working scraper completed`,
+        result,
+        timestamp: new Date().toISOString(),
+        mode: 'working-scraper'
+      });
+    } else if (scraperManager) {
+      // Fall back to real scrapers if available
+      console.log(`🔄 Running real scraper: ${name}`);
+      const result = await scraperManager.runSingleScraper(name);
+      res.json({
+        success: true,
+        message: `${name} real scraper completed`,
+        result,
+        timestamp: new Date().toISOString(),
+        mode: 'real-scraper'
+      });
+    } else {
+      // Fall back to simulation
+      console.log(`🎭 Simulating scraper: ${name}`);
+      const result = {
+        name,
+        success: true,
+        events: [
+          {
+            title: `Sample Event at ${name}`,
+            description: `This is a simulated event for ${name}`,
+            date_start: new Date(Date.now() + 86400000).toISOString(), // Tomorrow
+            location: `${name}, San Francisco`,
+            source: name,
+            source_url: '#',
+            category: 'Other',
+            price: 'TBD',
+            image_url: ''
+          }
+        ],
+        count: 1,
+        duration: 100
+      };
+      
+      res.json({
+        success: true,
+        message: `${name} simulated scraper completed`,
+        result,
+        timestamp: new Date().toISOString(),
+        mode: 'simulated'
+      });
+    }
+  } catch (error) {
+    console.error(`❌ Error running scraper ${req.params.name}:`, error);
+    res.status(500).json({
+      success: false,
+      message: `Failed to run scraper: ${error.message}`,
+      timestamp: new Date().toISOString()
+    });
+  }
+});
+
+// Error handling middleware
+app.use((error, req, res, next) => {
+  console.error('Enhanced scraping service error:', error);
+  res.status(500).json({ 
+    error: 'Internal enhanced scraping service error',
+    message: error.message,
+    timestamp: new Date().toISOString()
+  });
+});
+
+// Graceful shutdown
+process.on('SIGINT', async () => {
+  console.log('\n🛑 Shutting down enhanced scraping service gracefully...');
+  if (scraperManager) scraperManager.close();
+  if (db) db.close();
+  process.exit(0);
+});
+
+process.on('SIGTERM', async () => {
+  console.log('\n🛑 Shutting down enhanced scraping service gracefully...');
+  if (scraperManager) scraperManager.close();
+  if (db) db.close();
+  process.exit(0);
+});
+
+// Start service
+async function startService() {
+  console.log('🚀 Starting SF Dashboard Enhanced Scraping Service...');
+  
+  // Try to initialize real scrapers
+  const realScrapersAvailable = await initializeRealScrapers();
+  
+  app.listen(PORT, () => {
+    console.log(`🚀 SF Dashboard Enhanced Scraping Service running on port ${PORT}`);
+    console.log(`🌐 API available at: http://localhost:${PORT}`);
+    console.log(`💚 Health check: http://localhost:${PORT}/health`);
+    
+    if (realScrapersAvailable) {
+      console.log(`🔍 Real scrapers active: ${scraperManager.scrapers.size} available`);
+      console.log(`📊 Database: Connected to real event database`);
+      console.log(`🎯 Mode: REAL SCRAPING (your actual scrapers)`);
+    } else {
+      console.log(`⚠️ Real scrapers unavailable, using sample data`);
+      console.log(`🎯 Mode: SAMPLE DATA (enhance with real scrapers)`);
+    }
+    
+    console.log(`📊 Sample events: http://localhost:${PORT}/api/events`);
+  });
+
+  // Auto-run scrapers every 6 hours (only if real scrapers are available)
+  if (realScrapersAvailable) {
+    setInterval(async () => {
+      console.log('⏰ Auto-running real scrapers...');
+      try {
+        await scraperManager.runAllScrapers();
+      } catch (error) {
+        console.error('Auto-scraper run failed:', error);
+      }
+    }, 6 * 60 * 60 * 1000); // 6 hours
+  }
+}
+
+startService().catch(error => {
+  console.error('Failed to start enhanced scraping service:', error);
+  process.exit(1);
+});
+
+export default app;

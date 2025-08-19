@@ -1,0 +1,139 @@
+/* Basic App Styling */
+.App {
+  min-height: 100vh;
+  padding: 2rem;
+  background: #ffffff;
+  transition: background-color 0.3s ease;
+  font-family: 'JetBrains Mono', 'Consolas', 'Monaco', 'monospace';
+}
+
+.App.dark {
+  background: #1a202c;
+  color: #f7fafc;
+}
+
+/* Dashboard Header */
+.dashboard-header {
+  margin-bottom: 2rem;
+}
+
+.dashboard-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #212529;
+  font-family: 'JetBrains Mono', 'Consolas', 'Monaco', 'monospace';
+  letter-spacing: -0.5px;
+}
+
+.App.dark .dashboard-title {
+  color: #f7fafc;
+}
+
+/* Controls */
+.controls {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+
+.control-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  font-size: 0.875rem;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  border: none;
+  font-family: 'JetBrains Mono', 'Consolas', 'Monaco', 'monospace';
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.control-button:not(.secondary) {
+  background: #3b82f6;
+  color: white;
+}
+
+.control-button:not(.secondary):hover {
+  background: #2563eb;
+  transform: translateY(-1px);
+}
+
+.control-button.secondary {
+  background: #f3f4f6;
+  color: #374151;
+  border: 1px solid #d1d5db;
+}
+
+.control-button.secondary:hover {
+  background: #e5e7eb;
+  transform: translateY(-1px);
+}
+
+.App.dark .control-button.secondary {
+  background: #374151;
+  color: #d1d5db;
+  border-color: #4b5563;
+}
+
+.App.dark .control-button.secondary:hover {
+  background: #4b5563;
+}
+
+.control-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Status Messages */
+.status-message {
+  text-align: center;
+  padding: 3rem 2rem;
+  font-family: 'JetBrains Mono', 'Consolas', 'Monaco', 'monospace';
+}
+
+.status-title {
+  font-size: 1.875rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #374151;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.App.dark .status-title {
+  color: #d1d5db;
+}
+
+.status-description {
+  font-size: 1.125rem;
+  color: #6b7280;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.App.dark .status-description {
+  color: #9ca3af;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .App {
+    padding: 1rem;
+  }
+  
+  .dashboard-title {
+    font-size: 2rem;
+  }
+  
+  .controls {
+    flex-direction: column;
+  }
+}
