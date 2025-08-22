@@ -69,16 +69,24 @@ export class RoxieScraper extends BaseScraper {
               return;
             }
             
-            // Try to extract time information from description
+            // Try to extract time information from description - FIXED
             let timeText = 'Check website for showtimes';
+            
+            // Look for specific time patterns first
             const timeMatch = description.match(/(\d{1,2}:\d{2}\s*(?:AM|PM|am|pm))/i);
             if (timeMatch) {
               timeText = timeMatch[1];
             } else {
-              // Look for other time patterns
-              const eveningMatch = description.match(/(evening|night|afternoon|morning)/i);
-              if (eveningMatch) {
-                timeText = `Various times (${eveningMatch[1]})`;
+              // Look for "Show: X:XX pm" format
+              const showTimeMatch = description.match(/Show:\s*(\d{1,2}:\d{2}\s*(?:AM|PM|am|pm))/i);
+              if (showTimeMatch) {
+                timeText = showTimeMatch[1];
+              } else {
+                // Look for other time patterns
+                const eveningMatch = description.match(/(evening|night|afternoon|morning)/i);
+                if (eveningMatch) {
+                  timeText = `Various times (${eveningMatch[1]})`;
+                }
               }
             }
             

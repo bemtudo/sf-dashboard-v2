@@ -70,9 +70,24 @@ export class GrizzlyPeakScraper extends BaseScraper {
           const leaderMatch = leaderText.match(/Leader:\s*([^&\n]+)/);
           const leader = leaderMatch ? leaderMatch[1].trim() : 'Grizzly Peak Cyclists';
           
-          // Extract meet time
+          // Extract meet time - FIXED: Better time extraction
+          let meetTime = '';
           const timeMatch = leaderText.match(/Meet at\s+(\d{1,2}:\d{2}\s*[ap]m)/i);
-          const meetTime = timeMatch ? timeMatch[1] : '';
+          if (timeMatch) {
+            meetTime = timeMatch[1];
+          } else {
+            // Look for other time patterns
+            const otherTimeMatch = leaderText.match(/(\d{1,2}:\d{2}\s*[ap]m)/i);
+            if (otherTimeMatch) {
+              meetTime = otherTimeMatch[1];
+            } else {
+              // Look for time in the date text (e.g., "9:00 am")
+              const dateTimeMatch = dateText.match(/(\d{1,2}:\d{2}\s*[ap]m)/i);
+              if (dateTimeMatch) {
+                meetTime = dateTimeMatch[1];
+              }
+            }
+          }
           
           // Extract start location
           const locationMatch = leaderText.match(/Start Location:\s*([^\n]+)/);

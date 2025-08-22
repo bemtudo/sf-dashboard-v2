@@ -116,8 +116,8 @@ export class GAMHScraper extends BaseScraper {
             // Extract event URL
             const eventUrl = titleElement?.href || '';
             
-            // Extract image URL
-            const imageElement = container.querySelector('.seetickets-list-view-event-image');
+            // Extract image URL - FIXED: Use correct selector for images
+            const imageElement = container.querySelector('.seetickets-list-view-event-image img, .event-image img, img[src*="seetickets"]');
             const imageUrl = imageElement?.src || '';
             
             // Extract event header/subtitle
@@ -152,7 +152,7 @@ export class GAMHScraper extends BaseScraper {
         console.log(`Total events created: ${eventElements.length}`);
         return eventElements;
         
-        // Helper function to parse GAMH dates
+        // Helper function to parse GAMH dates - FIXED: Handle year properly
         function parseGAMHDate(dateText) {
           try {
             // Format: "Fri Aug 22" (without year)
@@ -169,17 +169,17 @@ export class GAMHScraper extends BaseScraper {
             const monthIndex = monthMap[month.toLowerCase()];
             if (monthIndex === undefined) return null;
             
-            // Assume current year for now
+            // Get current year and create date
             const currentYear = new Date().getFullYear();
-            const eventDate = new Date(currentYear, monthIndex, parseInt(day));
+            let eventDate = new Date(currentYear, monthIndex, parseInt(day));
             
             // If the date is in the past, it might be next year
-            if (eventDate < new Date()) {
+            const now = new Date();
+            if (eventDate < now) {
               eventDate.setFullYear(currentYear + 1);
             }
             
             // Only include future events
-            const now = new Date();
             if (eventDate < now) return null;
             
             return eventDate;

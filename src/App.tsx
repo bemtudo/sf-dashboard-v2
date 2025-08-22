@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { RefreshCw, Database, Bug, Sun, Moon } from 'lucide-react';
+import { RefreshCw, Database, Bug, Sun, Moon, Plus } from 'lucide-react';
 import { Event, Venue } from './types/Event';
 import EventStorage from './utils/EventStorage';
 import EventScraper from './utils/EventScraper';
@@ -12,7 +12,12 @@ function App() {
   const [venues, setVenues] = useState<Venue[]>([]);
   const [loading, setLoading] = useState(false);
   const [initialLoadComplete, setInitialLoadComplete] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(false);
   const [lastRefresh, setLastRefresh] = useState<Date | null>(null);
+  const [isAddingVenue, setIsAddingVenue] = useState(false);
+  const [newVenueUrl, setNewVenueUrl] = useState('');
+  const [newVenueName, setNewVenueName] = useState('');
+  const [newVenueCategory, setNewVenueCategory] = useState('Other');
   const [theme, setTheme] = useState<'light' | 'dark'>('light');
 
   useEffect(() => {
@@ -21,6 +26,12 @@ function App() {
     const savedTheme = localStorage.getItem('theme') as 'light' | 'dark';
     if (savedTheme) {
       setTheme(savedTheme);
+    }
+    
+    // Load custom venues from localStorage
+    const customVenues = JSON.parse(localStorage.getItem('customVenues') || '[]');
+    if (customVenues.length > 0) {
+      setVenues(prevVenues => [...prevVenues, ...customVenues]);
     }
     
     // Load existing events
@@ -198,15 +209,16 @@ function App() {
 
   const groupVenuesByCategory = (venues: Venue[]) => {
     const categories = {
-      'Film': venues.filter(v => v.category === 'Film'),
-      'Comedy': venues.filter(v => v.category === 'Comedy'),
       'Music': venues.filter(v => v.category === 'Music'),
+      'Film': venues.filter(v => v.category === 'Film'),
+      'Cycling': venues.filter(v => v.category === 'Cycling'),
+      'Meetups': venues.filter(v => v.category === 'Meetups'),
+      'Comedy': venues.filter(v => v.category === 'Comedy'),
+      'Sports': venues.filter(v => v.category === 'Sports'),
       'Books': venues.filter(v => v.category === 'Books'),
       'Food': venues.filter(v => v.category === 'Food'),
       'Tech': venues.filter(v => v.category === 'Tech'),
-      'Cycling': venues.filter(v => v.category === 'Cycling'),
-      'Sports': venues.filter(v => v.category === 'Sports'),
-      'Other': venues.filter(v => !['Film', 'Comedy', 'Music', 'Books', 'Food', 'Tech', 'Cycling', 'Sports'].includes(v.category))
+      'Other': venues.filter(v => !['Music', 'Film', 'Cycling', 'Meetups', 'Comedy', 'Sports', 'Books', 'Food', 'Tech'].includes(v.category))
     };
 
     return categories;
@@ -296,6 +308,72 @@ function App() {
     console.log('Last Refresh:', lastRefresh);
   };
 
+  const handleAddVenue = async () => {
+    if (!newVenueName.trim() || !newVenueUrl.trim()) {
+      alert('Venue name and URL are required.');
+      return;
+    }
+
+    try {
+      const newVenue: Venue = {
+        id: newVenueName.toLowerCase().replace(/\s+/g, '-'), // Simple ID generation
+        name: newVenueName,
+        category: newVenueCategory,
+        url: newVenueUrl,
+        events: []
+      };
+
+      // TODO: Backend Integration
+      // 1. Send venue URL to backend for analysis
+      // 2. Backend determines best scraping approach
+      // 3. Backend creates scraper template
+      // 4. Frontend shows "Scraper in Development" status
+      // 5. Admin can test and refine scraper
+      
+      // Analyze venue with backend
+      try {
+        const response = await fetch('http://localhost:3002/api/analyze-venue', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            name: newVenueName,
+            url: newVenueUrl
+          })
+        });
+        
+        if (response.ok) {
+          const analysis = await response.json();
+          console.log('🔍 Venue analysis:', analysis);
+          
+          // Add analysis results to venue
+          newVenue.analysis = analysis;
+          newVenue.status = 'analysis-complete';
+        }
+      } catch (backendError) {
+        console.log('⚠️ Backend analysis failed, continuing with local storage:', backendError);
+        newVenue.status = 'pending-analysis';
+      }
+      
+      // Store in localStorage for now (we'll integrate with backend later)
+      const existingVenues = JSON.parse(localStorage.getItem('customVenues') || '[]');
+      const updatedVenues = [...existingVenues, newVenue];
+      localStorage.setItem('customVenues', JSON.stringify(updatedVenues));
+      
+      // Add to current state
+      setVenues(prevVenues => [...prevVenues, newVenue]);
+      setIsAddingVenue(false);
+      setNewVenueName('');
+      setNewVenueUrl('');
+      setNewVenueCategory('Other');
+      console.log(`✅ Venue "${newVenue.name}" added successfully.`);
+    } catch (error) {
+      console.error('Error adding venue:', error);
+      alert('Failed to add venue. Please try again.');
+    }
+  };
+
   const categorizedVenues = groupVenuesByCategory(venues);
   const hasEvents = venues.some(venue => venue.events.length > 0);
 
@@ -339,6 +417,135 @@ function App() {
           </div>
         )}
       </div>
+
+      {/* Floating Add Venue Button */}
+      <button
+        onClick={() => setIsAddingVenue(true)}
+        className={`fixed top-24 right-6 z-50 w-14 h-14 rounded-full shadow-lg transition-all duration-200 flex items-center justify-center floating-add-button ${
+          theme === 'dark'
+            ? 'bg-blue-600 hover:bg-blue-700 text-white shadow-blue-500/25'
+            : 'bg-blue-500 hover:bg-blue-600 text-white shadow-blue-500/25'
+        }`}
+        title="Add New Venue"
+      >
+        <Plus size={24} />
+      </button>
+
+      {/* Add Venue Modal */}
+      {isAddingVenue && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4">
+          <div className={`w-full max-w-md rounded-lg shadow-xl ${
+            theme === 'dark' ? 'bg-slate-800 border border-slate-700' : 'bg-white border border-gray-200'
+          }`}>
+            <div className="p-6">
+              <h2 className={`text-xl font-bold mb-4 ${
+                theme === 'dark' ? 'text-white' : 'text-gray-900'
+              }`}>
+                Add New Venue
+              </h2>
+              
+              <div className="space-y-4">
+                <div>
+                  <label className={`block text-sm font-medium mb-2 ${
+                    theme === 'dark' ? 'text-slate-300' : 'text-gray-700'
+                  }`}>
+                    Venue Name
+                  </label>
+                  <input
+                    type="text"
+                    value={newVenueName}
+                    onChange={(e) => setNewVenueName(e.target.value)}
+                    placeholder="e.g., The Fillmore"
+                    className={`w-full px-3 py-2 border rounded-md ${
+                      theme === 'dark'
+                        ? 'bg-slate-700 border-slate-600 text-white placeholder-slate-400'
+                        : 'bg-white border-gray-300 text-gray-900 placeholder-gray-500'
+                    }`}
+                  />
+                </div>
+                
+                <div>
+                  <label className={`block text-sm font-medium mb-2 ${
+                    theme === 'dark' ? 'text-slate-300' : 'text-gray-700'
+                  }`}>
+                    Website URL
+                  </label>
+                  <input
+                    type="url"
+                    value={newVenueUrl}
+                    onChange={(e) => setNewVenueUrl(e.target.value)}
+                    placeholder="https://example.com/events"
+                    className={`w-full px-3 py-2 border rounded-md ${
+                      theme === 'dark'
+                        ? 'bg-slate-700 border-slate-600 text-white placeholder-slate-400'
+                        : 'bg-white border-gray-300 text-gray-900 placeholder-gray-500'
+                    }`}
+                  />
+                </div>
+                
+                <div>
+                  <label className={`block text-sm font-medium mb-2 ${
+                    theme === 'dark' ? 'text-slate-300' : 'text-gray-700'
+                  }`}>
+                    Category
+                  </label>
+                  <select
+                    value={newVenueCategory}
+                    onChange={(e) => setNewVenueCategory(e.target.value)}
+                    className={`w-full px-3 py-2 border rounded-md ${
+                      theme === 'dark'
+                        ? 'bg-slate-700 border-slate-600 text-white'
+                        : 'bg-white border-gray-300 text-gray-900'
+                    }`}
+                  >
+                    <option value="Music">Music</option>
+                    <option value="Film">Film</option>
+                    <option value="Cycling">Cycling</option>
+                    <option value="Meetups">Meetups</option>
+                    <option value="Comedy">Comedy</option>
+                    <option value="Sports">Sports</option>
+                    <option value="Books">Books</option>
+                    <option value="Food">Food</option>
+                    <option value="Tech">Tech</option>
+                    <option value="Other">Other</option>
+                  </select>
+                </div>
+              </div>
+              
+              <div className="flex gap-3 mt-6">
+                <button
+                  onClick={() => {
+                    setIsAddingVenue(false);
+                    setNewVenueName('');
+                    setNewVenueUrl('');
+                    setNewVenueCategory('Other');
+                  }}
+                  className={`flex-1 px-4 py-2 rounded-md border ${
+                    theme === 'dark'
+                      ? 'border-slate-600 text-slate-300 hover:bg-slate-700'
+                      : 'border-gray-300 text-gray-700 hover:bg-gray-50'
+                  }`}
+                >
+                  Cancel
+                </button>
+                <button
+                  onClick={handleAddVenue}
+                  disabled={!newVenueName.trim() || !newVenueUrl.trim()}
+                  className={`flex-1 px-4 py-2 rounded-md text-white ${
+                    !newVenueName.trim() || !newVenueUrl.trim()
+                      ? 'bg-gray-400 cursor-not-allowed'
+                      : theme === 'dark'
+                        ? 'bg-blue-600 hover:bg-blue-700'
+                        : 'bg-blue-500 hover:bg-blue-600'
+                  }`}
+                >
+                  Add Venue
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
 
       {!initialLoadComplete ? (
         <div className="status-message">

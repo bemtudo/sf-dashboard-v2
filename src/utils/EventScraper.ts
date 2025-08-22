@@ -85,6 +85,7 @@ class EventScraper {
               title: backendEvent.title,
               date: eventDate,
               time: backendEvent.time,
+              time_text: backendEvent.time_text, // Map the time_text field
               location: backendEvent.location || 'Unknown Location',
               cost: backendEvent.price || backendEvent.cost,
               url: backendEvent.source_url || backendEvent.url,
@@ -92,24 +93,25 @@ class EventScraper {
               venue: venueName, // Use extracted venue name, not full location
               scrapedAt: new Date().toISOString(),
               description: backendEvent.description,
-              category: backendEvent.category
+              category: backendEvent.category,
+              image_url: backendEvent.image_url // Map the image_url field
             };
           });
           return convertedEvents;
         } else {
           console.log('📭 Backend returned 0 events - this means successful filtering, not failure');
-    return [];
+          return [];
         }
       } else {
         console.log('⚠️ Backend service unavailable, falling back to browser scraping...');
         // Fall back to browser scraping only if backend is genuinely unavailable
-        return await EventScraper.scrapeWebsite('https://example.com');
+        return await EventScraper.scrapeWebsite('https://example.com', 'Example Venue', 'other');
       }
     } catch (error) {
       console.error('❌ Error fetching from backend service:', error);
       console.log('🔄 Falling back to browser scraping...');
       // Only fall back to browser scraping if there's a network error
-      return await EventScraper.scrapeWebsite('https://example.com');
+      return await EventScraper.scrapeWebsite('https://example.com', 'Example Venue', 'other');
     }
   }
 
@@ -186,7 +188,7 @@ class EventScraper {
   }
 
   // Browser-compatible web scraping implementation
-  private static async scrapeWebsite(url: string, venue: string, category: string): Promise<Omit<Event, 'id' | 'scrapedAt'>[]> {
+  private static async scrapeWebsite(url: string, venue: string, category: string): Promise<Event[]> {
     try {
       // Use the Fetch API to get the webpage content
       const response = await fetch(url, {
@@ -201,13 +203,25 @@ class EventScraper {
       }
 
       const html = await response.text();
-      return EventScraper.parseEventDetails(html, venue, category);
+      const events = EventScraper.parseEventDetails(html, venue, category);
+      
+      // Add id and scrapedAt to make them full Event objects
+      return events.map(event => ({
+        ...event,
+        id: `${venue}-${Date.now()}-${Math.random()}`,
+        scrapedAt: new Date().toISOString()
+      }));
       
     } catch (error) {
       console.error(`Error scraping ${url}:`, error);
       
       // Return fallback events when scraping fails
-      return EventScraper.getFallbackEvents(venue, category);
+      const fallbackEvents = EventScraper.getFallbackEvents(venue, category);
+      return fallbackEvents.map(event => ({
+        ...event,
+        id: `${venue}-${Date.now()}-${Math.random()}`,
+        scrapedAt: new Date().toISOString()
+      }));
     }
   }
 
@@ -235,11 +249,11 @@ class EventScraper {
         if (title && title.length > 3) {
           events.push({
             title: title.trim(),
-            date: EventScraper.normalizeDate(date),
+            date: date ? EventScraper.normalizeDate(date) : new Date().toISOString().split('T')[0],
             time: time?.trim(),
             location: location?.trim() || venue,
             cost: cost?.trim() || 'TBD',
-            url: eventUrl,
+            url: eventUrl || undefined,
             source: venue,
             venue: venue,
             category: category,
@@ -297,18 +311,22 @@ class EventScraper {
   }
 
   // Convert your existing scraper output format to our Event format
-  static convertScrapedEvents(scrapedEvents: ScrapedEvent[]): Omit<Event, 'id' | 'scrapedAt'>[] {
+  static convertScrapedEvents(scrapedEvents: ScrapedEvent[]): Event[] {
     return scrapedEvents.map(scraped => ({
+      id: `${scraped.source}-${Date.now()}-${Math.random()}`,
       title: scraped.title,
       date: scraped.date_start ? EventScraper.normalizeDate(scraped.date_start) : new Date().toISOString().split('T')[0],
       time: undefined, // Extract from date_start if needed
+      time_text: (scraped as any).time_text, // Map the time_text field from backend
       location: scraped.location || scraped.source,
       cost: scraped.price || 'TBD',
       url: scraped.source_url || '#',
       source: scraped.source,
       venue: scraped.source,
       category: EventScraper.mapCategory(scraped.category),
-      description: scraped.description
+      description: scraped.description,
+      image_url: scraped.image_url, // Also map the image_url field
+      scrapedAt: new Date().toISOString()
     }));
   }
 

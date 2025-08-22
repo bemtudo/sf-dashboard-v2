@@ -89,107 +89,113 @@ const VenueNode: React.FC<VenueNodeProps> = ({ venue, isDarkMode }) => {
     const hours = date.getUTCHours();
     const minutes = date.getUTCMinutes();
     
-    // Check if it's midnight in Pacific timezone
-    // If stored as T00:00:00-07:00, it means no valid showtime was found
-    if (dateString.includes('T00:00:00-07:00')) {
-      return true;
-    }
-    
-    return false;
+    // Check if it's midnight UTC (which means no valid showtime was found)
+    return hours === 0 && minutes === 0;
   };
 
-  const renderEvent = (event: Event) => (
-    <div
-      key={event.id}
-      className={`p-3 rounded border mb-2 ${
-        isDarkMode 
-          ? 'border-slate-600 bg-slate-900' 
-          : 'border-gray-200 bg-gray-50'
-      }`}
-    >
-      <div className="flex gap-3">
-        {/* Left column: Event details */}
-        <div className="flex-1 min-w-0">
-          <h4 className="font-semibold text-sm mb-2">{event.title}</h4>
-          
-          <div className={`flex items-center gap-2 mb-1 text-xs ${
-            isDarkMode ? 'text-slate-400' : 'text-gray-600'
-          }`}>
-            <Calendar size={12} />
-            <span>
-              {formatDate(event.date)}
-              {!isTimeAtMidnight(event.date) && ` at ${formatTime(event.date)}`}
-            </span>
+  const renderEvent = (event: Event) => {
+    const handleEventClick = () => {
+      if (event.url && event.url !== '#') {
+        window.open(event.url, '_blank', 'noopener,noreferrer');
+      }
+    };
+
+    return (
+      <div
+        key={event.id}
+        className={`p-3 rounded border mb-2 cursor-pointer transition-all duration-200 event-card ${
+          isDarkMode 
+            ? 'border-slate-600 bg-slate-900 hover:border-slate-500 hover:bg-slate-800' 
+            : 'border-gray-200 bg-gray-50 hover:border-gray-300 hover:bg-gray-100'
+        }`}
+        onClick={handleEventClick}
+      >
+        <div className="flex gap-3">
+          {/* Left column: Event details */}
+          <div className="flex-1 min-w-0">
+            <h4 className="font-semibold text-sm mb-2">{event.title}</h4>
+            
+            <div className={`flex items-center gap-2 mb-1 text-xs ${
+              isDarkMode ? 'text-slate-400' : 'text-gray-600'
+            }`}>
+              <Calendar size={12} />
+              <span>
+                {formatDate(event.date)}
+                {event.time_text && event.time_text !== '' && event.time_text !== 'TBD' && (
+                  ` at ${event.time_text}`
+                )}
+              </span>
+            </div>
+            
+            {event.location && (
+              <div className={`flex items-center gap-2 mb-1 text-xs ${
+                isDarkMode ? 'text-slate-400' : 'text-gray-600'
+              }`}>
+                <MapPin size={12} />
+                <span>{event.location}</span>
+              </div>
+            )}
+            
+            {event.screen && (
+              <div className={`flex items-center gap-2 mb-1 text-xs ${
+                isDarkMode ? 'text-slate-400' : 'text-gray-600'
+              }`}>
+                <span className="font-mono">🎬</span>
+                <span>{event.screen}</span>
+              </div>
+            )}
+            
+            {event.cost && (
+              <div className={`flex items-center gap-2 mb-2 text-xs ${
+                isDarkMode ? 'text-slate-400' : 'text-gray-600'
+              }`}>
+                <DollarSign size={12} />
+                <span>{event.cost}</span>
+              </div>
+            )}
+            
+            {event.description && (
+              <p className={`text-xs mb-2 ${
+                isDarkMode ? 'text-slate-300' : 'text-gray-700'
+              }`}>
+                {event.description}
+              </p>
+            )}
+            
+            {event.url && (
+              <a
+                href={event.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`inline-flex items-center gap-1 text-xs transition-colors ${
+                  isDarkMode
+                    ? 'text-blue-400 hover:text-blue-300'
+                    : 'text-blue-600 hover:text-blue-500'
+                }`}
+              >
+                <ExternalLink size={12} />
+                View Details
+              </a>
+            )}
           </div>
           
-          {event.location && (
-            <div className={`flex items-center gap-2 mb-1 text-xs ${
-              isDarkMode ? 'text-slate-400' : 'text-gray-600'
-            }`}>
-              <MapPin size={12} />
-              <span>{event.location}</span>
+          {/* Right column: Event image */}
+          {event.image_url && (
+            <div className="flex-shrink-0 w-24 h-24">
+              <img 
+                src={event.image_url} 
+                alt={`Poster for ${event.title}`}
+                className="w-full h-full object-cover rounded border"
+                onError={(e) => {
+                  e.currentTarget.style.display = 'none';
+                }}
+              />
             </div>
-          )}
-          
-          {event.screen && (
-            <div className={`flex items-center gap-2 mb-1 text-xs ${
-              isDarkMode ? 'text-slate-400' : 'text-gray-600'
-            }`}>
-              <span className="font-mono">🎬</span>
-              <span>{event.screen}</span>
-            </div>
-          )}
-          
-          {event.cost && (
-            <div className={`flex items-center gap-2 mb-2 text-xs ${
-              isDarkMode ? 'text-slate-400' : 'text-gray-600'
-            }`}>
-              <DollarSign size={12} />
-              <span>{event.cost}</span>
-            </div>
-          )}
-          
-          {event.description && (
-            <p className={`text-xs mb-2 ${
-              isDarkMode ? 'text-slate-300' : 'text-gray-700'
-            }`}>
-              {event.description}
-            </p>
-          )}
-          
-          {event.url && (
-            <a
-              href={event.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className={`inline-flex items-center gap-1 text-xs transition-colors ${
-                isDarkMode
-                  ? 'text-blue-400 hover:text-blue-300'
-                  : 'text-blue-600 hover:text-blue-500'
-              }`}
-            >
-              <ExternalLink size={12} />
-              View Details
-            </a>
           )}
         </div>
-        
-        {/* Right column: Event image */}
-        {event.image_url && (
-          <div className="flex-shrink-0 w-24 h-24">
-            <img 
-              src={event.image_url} 
-              alt={`Poster for ${event.title}`}
-              className="w-full h-full object-cover rounded border"
-              onError={(e) => {
-                e.currentTarget.style.display = 'none';
-              }}
-            />
-          </div>
-        )}
       </div>
-    </div>
-  );
+    );
+  };
 
   const renderEventSection = (title: string, events: Event[]) => {
     if (events.length === 0) return null;

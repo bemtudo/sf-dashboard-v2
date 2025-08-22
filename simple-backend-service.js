@@ -201,14 +201,124 @@ async function runAllScrapers() {
 
 // Health check endpoint
 app.get('/health', (req, res) => {
+  res.json({ 
+    status: 'healthy', 
+    timestamp: new Date().toISOString(),
+    scrapersLoaded: scrapers.size,
+    isInitialized
+  });
+});
+
+// Analyze new venue URL and suggest scraper approach
+app.post('/api/analyze-venue', async (req, res) => {
+  try {
+    const { url, name } = req.body;
+    
+    if (!url) {
+      return res.status(400).json({ error: 'URL is required' });
+    }
+    
+    console.log(`🔍 Analyzing venue: ${name} at ${url}`);
+    
+    // Basic URL analysis
+    const urlObj = new URL(url);
+    const domain = urlObj.hostname;
+    
+    // Check if it's a known platform
+    let platform = 'unknown';
+    let suggestedApproach = 'manual';
+    
+    if (domain.includes('eventbrite.com')) {
+      platform = 'eventbrite';
+      suggestedApproach = 'eventbrite-api';
+    } else if (domain.includes('ticketmaster.com')) {
+      platform = 'ticketmaster';
+      suggestedApproach = 'ticketmaster-api';
+    } else if (domain.includes('seetickets.com')) {
+      platform = 'seetickets';
+      suggestedApproach = 'puppeteer';
+    } else if (domain.includes('ticketfly.com')) {
+      platform = 'ticketfly';
+      suggestedApproach = 'puppeteer';
+    } else if (domain.includes('brownpapertickets.com')) {
+      platform = 'brownpapertickets';
+      suggestedApproach = 'puppeteer';
+    } else if (domain.includes('wordpress.com') || domain.includes('wp-content')) {
+      platform = 'wordpress';
+      suggestedApproach = 'cheerio';
+    } else if (domain.includes('squarespace.com')) {
+      platform = 'squarespace';
+      suggestedApproach = 'cheerio';
+    } else if (domain.includes('wix.com')) {
+      platform = 'wix';
+      suggestedApproach = 'puppeteer';
+    }
+    
+    // Try to fetch the page to analyze structure
+    let pageAnalysis = null;
+    try {
+      const browser = await puppeteer.launch({ 
+        headless: true,
+        args: ['--no-sandbox', '--disable-setuid-sandbox']
+      });
+      const page = await browser.newPage();
+      await page.goto(url, { waitUntil: 'networkidle2', timeout: 10000 });
+      
+      // Check for common event indicators
+      const eventIndicators = await page.evaluate(() => {
+        const indicators = {
+          hasCalendar: !!document.querySelector('input[type="date"], .calendar, .date-picker'),
+          hasEventList: !!document.querySelector('.event, .events, .event-list, .events-list'),
+          hasRSS: !!document.querySelector('link[type="application/rss+xml"]'),
+          hasJSONLD: !!document.querySelector('script[type="application/ld+json"]'),
+          hasEventSchema: !!document.querySelector('[itemtype*="Event"]'),
+          hasUpcomingEvents: !!document.querySelector('*:contains("Upcoming Events"), *:contains("Events")'),
+          hasTickets: !!document.querySelector('*:contains("Buy Tickets"), *:contains("Get Tickets")'),
+          pageTitle: document.title,
+          metaDescription: document.querySelector('meta[name="description"]')?.content || ''
+        };
+        return indicators;
+      });
+      
+      pageAnalysis = eventIndicators;
+      await browser.close();
+      
+    } catch (error) {
+      console.log(`⚠️ Could not analyze page structure: ${error.message}`);
+    }
+    
+    const analysis = {
+      venue: { name, url, domain },
+      platform,
+      suggestedApproach,
+      pageAnalysis,
+      recommendations: [
+        `Use ${suggestedApproach} approach for this platform`,
+        platform === 'unknown' ? 'Manual analysis required - check for RSS feeds, event APIs, or custom event listings' : '',
+        pageAnalysis?.hasRSS ? 'RSS feed detected - consider RSS scraping approach' : '',
+        pageAnalysis?.hasJSONLD ? 'Structured data detected - JSON-LD parsing recommended' : '',
+        pageAnalysis?.hasEventSchema ? 'Schema.org events detected - structured parsing recommended' : ''
+      ].filter(Boolean)
+    };
+    
+    console.log(`✅ Venue analysis complete:`, analysis);
+    res.json(analysis);
+    
+  } catch (error) {
+    console.error('❌ Error analyzing venue:', error);
+    res.status(500).json({ error: 'Failed to analyze venue', details: error.message });
+  }
+});
+
+// Status endpoint to check if events are available
+app.get('/api/status', (req, res) => {
+  const hasEvents = global.cachedEvents && global.cachedEvents.length > 0;
   res.json({
     status: 'ok',
-    service: 'sf-dashboard-simple-scraping',
-    timestamp: new Date().toISOString(),
-    uptime: process.uptime(),
-    scrapersLoaded: scrapers.size,
-    isInitialized: isInitialized,
-    message: 'Simple scraper service running'
+    hasEvents: hasEvents,
+    eventCount: hasEvents ? global.cachedEvents.length : 0,
+    message: hasEvents ? 'Events available' : 'No events cached. Run scrapers via /api/run-scrapers',
+    timestamp: new Date().toISOString()
   });
 });
 
@@ -216,6 +326,29 @@ app.get('/health', (req, res) => {
 app.get('/api/events', async (req, res) => {
   try {
     console.log('📡 /api/events requested');
+    
+    // Check if we have cached events or if scrapers need to be run
+    if (!global.cachedEvents || global.cachedEvents.length === 0) {
+      return res.json({
+        message: 'No events available. Run scrapers first via /api/run-scrapers',
+        events: [],
+        count: 0
+      });
+    }
+    
+    console.log(`📊 Returning ${global.cachedEvents.length} cached events`);
+    res.json(global.cachedEvents);
+    
+  } catch (error) {
+    console.error('❌ Error in /api/events:', error);
+    res.status(500).json({ error: 'Failed to fetch events', details: error.message });
+  }
+});
+
+// New endpoint to manually run scrapers
+app.post('/api/run-scrapers', async (req, res) => {
+  try {
+    console.log('🚀 /api/run-scrapers requested - starting all scrapers...');
     const events = await runAllScrapers();
     
     // Filter out events with null dates
@@ -225,12 +358,20 @@ app.get('/api/events', async (req, res) => {
       event.date_start !== 'null'
     );
     
-    console.log(`📊 Returning ${validEvents.length} valid events out of ${events.length} total`);
-    res.json(validEvents);
+    // Cache the results
+    global.cachedEvents = validEvents;
+    
+    console.log(`📊 Scrapers completed: ${validEvents.length} valid events out of ${events.length} total`);
+    res.json({
+      message: 'Scrapers completed successfully',
+      events: validEvents,
+      count: validEvents.length,
+      success: true
+    });
     
   } catch (error) {
-    console.error('❌ Error in /api/events:', error);
-    res.status(500).json({ error: 'Failed to fetch events', details: error.message });
+    console.error('❌ Error running scrapers:', error);
+    res.status(500).json({ error: 'Failed to run scrapers', details: error.message });
   }
 });
 

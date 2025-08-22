@@ -90,19 +90,42 @@ export class RickshawStopScraper {
             // Only include events within our 30-day window
             if (eventDate < today || eventDate > thirtyDaysFromNow) return;
             
-            // Get time information
+            // Get time information - FIXED: Proper selector for doortime-showtime
             const timeElement = container.querySelector('.doortime-showtime');
-            let eventTime = '8:00 PM'; // Default time
+            let eventTime = 'Check website for times'; // Default time
+            
             if (timeElement) {
-              const timeText = timeElement.textContent;
-              const timeMatch = timeText.match(/Show at\s+(\d{1,2}):(\d{2})(AM|PM)/i);
+              const timeText = timeElement.textContent.trim();
+              console.log(`🔍 Found time element: "${timeText}"`);
+              
+              // Look for "Doors at X:XX PM / Show at Y:YY PM" format
+              const timeMatch = timeText.match(/Doors at\s+(\d{1,2}:\d{2}\s*(?:AM|PM|am|pm)).*?Show at\s+(\d{1,2}:\d{2}\s*(?:AM|PM|am|pm))/i);
               if (timeMatch) {
-                const hour = parseInt(timeMatch[1]);
-                const minute = parseInt(timeMatch[2]);
-                const ampm = timeMatch[3].toUpperCase();
-                eventTime = `${hour}:${minute.toString().padStart(2, '0')} ${ampm}`;
+                const doorTime = timeMatch[1];
+                const showTime = timeMatch[2];
+                eventTime = `Doors: ${doorTime} / Show: ${showTime}`;
+              } else {
+                // Look for just "Show at X:XX PM" format
+                const showTimeMatch = timeText.match(/Show at\s+(\d{1,2}:\d{2}\s*(?:AM|PM|am|pm))/i);
+                if (showTimeMatch) {
+                  eventTime = `Show: ${showTimeMatch[1]}`;
+                } else {
+                  // Look for just "Doors at X:XX PM" format
+                  const doorTimeMatch = timeText.match(/Doors at\s+(\d{1,2}:\d{2}\s*(?:AM|PM|am|pm))/i);
+                  if (doorTimeMatch) {
+                    eventTime = `Doors: ${doorTimeMatch[1]}`;
+                  } else {
+                    // Look for any time pattern
+                    const anyTimeMatch = timeText.match(/(\d{1,2}:\d{2}\s*(?:AM|PM|am|pm))/i);
+                    if (anyTimeMatch) {
+                      eventTime = anyTimeMatch[1];
+                    }
+                  }
+                }
               }
             }
+            
+            console.log(`⏰ Extracted time: "${eventTime}"`);
 
             // Set the time on the event date
             const timeMatch = eventTime.match(/(\d{1,2}):(\d{2})\s*(AM|PM)/i);
@@ -149,7 +172,8 @@ export class RickshawStopScraper {
               source_url: 'https://rickshawstop.com/calendar/',
               category: 'Music',
               price: eventPrice,
-              image_url: ''
+              image_url: '',
+              time_text: eventTime // Add the time_text field for frontend display
             });
 
           } catch (error) {

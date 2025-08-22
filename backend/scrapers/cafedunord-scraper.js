@@ -111,7 +111,7 @@ export class CafeDuNordScraper extends BaseScraper {
     }
   }
 
-  // Parse Cafe Du Nord specific date format: "8.21" + "Thu"
+  // Parse Cafe Du Nord specific date format: "8.21" + "Thu" - FIXED
   parseCafeDuNordDate(dateText, dayText) {
     if (!dateText || !dayText) return null;
     
@@ -127,7 +127,7 @@ export class CafeDuNordScraper extends BaseScraper {
       const currentYear = new Date().getFullYear();
       
       // Create date object
-      const eventDate = new Date(currentYear, month, day);
+      let eventDate = new Date(currentYear, month, day);
       
       // Validate the date
       if (isNaN(eventDate.getTime())) return null;
@@ -137,6 +137,9 @@ export class CafeDuNordScraper extends BaseScraper {
       if (eventDate < now) {
         eventDate.setFullYear(currentYear + 1);
       }
+      
+      // Double-check it's still in the future
+      if (eventDate < now) return null;
       
       return eventDate.toISOString();
       
