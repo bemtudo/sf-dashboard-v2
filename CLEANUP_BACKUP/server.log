@@ -1,0 +1,1964 @@
+🚀 Starting SF Dashboard Enhanced Scraping Service...
+🚫 Fallback scrapers disabled - only real scrapers allowed
+🔍 Attempting to initialize real scrapers...
+ScraperManager: Found 21 scrapers in database
+🔍 Looking for class 'APEScraper' in module for ape
+🔍 Available exports: [ 'APEScraper' ]
+✅ Found class 'APEScraper' for ape
+✅ Loaded scraper: ape
+🔍 Looking for class 'BalboaScraper' in module for balboa
+🔍 Available exports: [ 'BalboaScraper' ]
+✅ Found class 'BalboaScraper' for balboa
+✅ Loaded scraper: balboa
+🔍 Looking for class 'BooksmithScraper' in module for booksmith
+🔍 Available exports: [ 'BooksmithScraper' ]
+✅ Found class 'BooksmithScraper' for booksmith
+📚 Booksmith scraper using correct Booksmith URL: https://www.booksmith.com/events
+✅ Loaded scraper: booksmith
+🔍 Looking for class 'CafeDuNordScraper' in module for cafedunord
+🔍 Available exports: [ 'CafeDuNordScraper' ]
+✅ Found class 'CafeDuNordScraper' for cafedunord
+✅ Loaded scraper: cafedunord
+🔍 Looking for class 'ChapelScraper' in module for chapel
+🔍 Available exports: [ 'ChapelScraper' ]
+✅ Found class 'ChapelScraper' for chapel
+🎵 Chapel scraper using correct Chapel URL: https://thechapelsf.com/calendar/
+✅ Loaded scraper: chapel
+🔍 Looking for class 'CobbsScraper' in module for cobbs
+🔍 Available exports: [ 'CobbsScraper' ]
+✅ Found class 'CobbsScraper' for cobbs
+✅ Loaded scraper: cobbs
+🔍 Looking for class 'CommonwealthScraper' in module for commonwealth
+🔍 Available exports: [ 'CommonwealthScraper' ]
+✅ Found class 'CommonwealthScraper' for commonwealth
+✅ Loaded scraper: commonwealth
+🔍 Looking for class 'CreativeMorningsScraper' in module for creativemornings
+🔍 Available exports: [ 'CreativeMorningsScraper' ]
+✅ Found class 'CreativeMorningsScraper' for creativemornings
+🎨 CreativeMornings scraper forced to use FieldTrips URL: https://creativemornings.com/fieldtrips/browse
+✅ Loaded scraper: creativemornings
+🔍 Looking for class 'GAMHScraper' in module for gamh
+🔍 Available exports: [ 'GAMHScraper' ]
+✅ Found class 'GAMHScraper' for gamh
+🎵 GAMH scraper using correct GAMH URL: https://gamh.com/calendar/
+✅ Loaded scraper: gamh
+🔍 Looking for class 'GiantsScraper' in module for giants
+🔍 Available exports: [ 'GiantsScraper' ]
+✅ Found class 'GiantsScraper' for giants
+✅ Loaded scraper: giants
+🔍 Looking for class 'GrizzlyPeakScraper' in module for grizzlypeak
+🔍 Available exports: [ 'GrizzlyPeakScraper' ]
+✅ Found class 'GrizzlyPeakScraper' for grizzlypeak
+✅ Loaded scraper: grizzlypeak
+🔍 Looking for class 'KnockoutScraper' in module for knockout
+🔍 Available exports: [ 'KnockoutScraper' ]
+✅ Found class 'KnockoutScraper' for knockout
+✅ Loaded scraper: knockout
+🔍 Looking for class 'OaklandrootsScraper' in module for oaklandroots
+🔍 Available exports: [ 'OaklandrootsScraper' ]
+✅ Found class 'OaklandrootsScraper' for oaklandroots
+✅ Loaded scraper: oaklandroots
+🔍 Looking for class 'PunchlineScraper' in module for punchline
+🔍 Available exports: [ 'PunchlineScraper' ]
+✅ Found class 'PunchlineScraper' for punchline
+✅ Loaded scraper: punchline
+🔍 Looking for class 'RoxieScraper' in module for roxie
+🔍 Available exports: [ 'RoxieScraper' ]
+✅ Found class 'RoxieScraper' for roxie
+✅ Loaded scraper: roxie
+🔍 Looking for class 'SfcityfcScraper' in module for sfcityfc
+🔍 Available exports: [ 'SfcityfcScraper' ]
+✅ Found class 'SfcityfcScraper' for sfcityfc
+✅ Loaded scraper: sfcityfc
+🔍 Looking for class 'SFPLScraper' in module for sfpl
+🔍 Available exports: [ 'SFPLScraper' ]
+✅ Found class 'SFPLScraper' for sfpl
+✅ Loaded scraper: sfpl
+🔍 Looking for class 'SFRandoScraper' in module for sfrando
+🔍 Available exports: [ 'SFRandoScraper' ]
+✅ Found class 'SFRandoScraper' for sfrando
+✅ Loaded scraper: sfrando
+🔍 Looking for class 'StravaScraper' in module for strava
+🔍 Available exports: [ 'StravaScraper' ]
+✅ Found class 'StravaScraper' for strava
+✅ Loaded scraper: strava
+🔍 Looking for class 'ValkyriesScraper' in module for valkyries
+🔍 Available exports: [ 'ValkyriesScraper' ]
+✅ Found class 'ValkyriesScraper' for valkyries
+✅ Loaded scraper: valkyries
+🔍 Looking for class 'WarriorsScraper' in module for warriors
+🔍 Available exports: [ 'WarriorsScraper' ]
+✅ Found class 'WarriorsScraper' for warriors
+✅ Loaded scraper: warriors
+ScraperManager: Initialized 21 scrapers
+✅ Real scrapers initialized successfully
+🔍 Available scrapers: 21
+🚀 SF Dashboard Enhanced Scraping Service running on port 3002
+🌐 API available at: http://localhost:3002
+💚 Health check: http://localhost:3002/health
+🔍 Real scrapers active: 21 available
+📊 Database: Connected to real event database
+🎯 Mode: REAL SCRAPING (your actual scrapers)
+📊 Sample events: http://localhost:3002/api/events
+🔄 Running real scraper: grizzlypeak
+🔄 Running single scraper: grizzlypeak
+🔄 Starting Grizzly Peak Cyclists scraper...
+🚴‍♂️ Scraping Grizzly Peak Cyclists events...
+📅 Looking for rides from Wed Aug 20 2025 to Wed Aug 27 2025
+🔍 Found 63 ride listings
+🔍 Processing: WED AUG 20 - Wed Ride - Deb's Diversion: Marin Headlands from Mill Valley (4/T/24)
+🎯 Found Grizzly Peak ride: Wed Ride - Deb's Diversion: Marin Headlands from Mill Valley on Wed Aug 20 2025 at 10:30 AM in Mill Valley - Public Safety Buildings
+🔍 Processing: WED AUG 20 - Wednesday BARTable Mixed Terrain (4!/T/18)
+🎯 Found Grizzly Peak ride: Wednesday BARTable Mixed Terrain on Wed Aug 20 2025 at 5:25 PM in El Cerrito Plaza BART
+🔍 Processing: THU AUG 21 - Duros West - Nicasio to Lighthouse (3/TM,M/62)
+🎯 Found Grizzly Peak ride: Duros West - Nicasio to Lighthouse on Thu Aug 21 2025 at 9:30 AM in Nicasio
+🔍 Processing: THU AUG 21 - Spruce to Space (4/TM/26.5)
+🎯 Found Grizzly Peak ride: Spruce to Space on Thu Aug 21 2025 at 5:20 PM in North Berkeley BART
+🔍 Processing: THU AUG 21 - Thursday Evening T Pace Ride (4!/T/22)
+🎯 Found Grizzly Peak ride: Thursday Evening T Pace Ride on Thu Aug 21 2025 at 5:25 PM in North Berkeley BART
+🔍 Processing: THU AUG 21 - Thirsty Thursday Mixty (5/0/17)
+🎯 Found Grizzly Peak ride: Thirsty Thursday Mixty on Thu Aug 21 2025 at 5:30 PM in Canyon Club Brewery
+🔍 Processing: SAT AUG 23 - Nicasio Lasso CCW from Albany (2/T/59)
+🎯 Found Grizzly Peak ride: Nicasio Lasso CCW from Albany on Sat Aug 23 2025 at 8:20 AM in San Francisco Bay Area
+🔍 Processing: SAT AUG 23 - Cotati to the Coast (3!/TM/75)
+🎯 Found Grizzly Peak ride: Cotati to the Coast on Sat Aug 23 2025 at 9:15 AM in Cotati - Gravenstein Hwy Park-&amp;-Ride (Westside)
+🔍 Processing: SUN AUG 24 - Novice Series Ride #4 - Lamorinda (3/LT/28)
+🎯 Found Grizzly Peak ride: Novice Series Ride #4 - Lamorinda on Sun Aug 24 2025 at 10:00 AM in Orinda BART NW corner of parking lot
+🔍 Processing: MON AUG 25 - Monday TI Lap (3!/T/16)
+🎯 Found Grizzly Peak ride: Monday TI Lap on Mon Aug 25 2025 at 5:25 PM in Emeryville - Opposite IKEA
+🔍 Processing: TUE AUG 26 - GPC Tuesday Night Ride - Brisk Group (5/B/32)
+🎯 Found Grizzly Peak ride: GPC Tuesday Night Ride - Brisk Group on Tue Aug 26 2025 at 5:25 PM in Berkeley - Spruce &amp; Grizzly Peak Blvd - Plaza
+🔍 Processing: TUE AUG 26 - GPC Tuesday Evening Ride (5/M/24)
+🎯 Found Grizzly Peak ride: GPC Tuesday Evening Ride on Tue Aug 26 2025 at 5:30 PM in Berkeley - Spruce &amp; Grizzly Peak Blvd - Plaza
+🔍 Processing: WED AUG 27 - Wednesday BARTable Mixed Terrain (4!/T/18)
+🎯 Found Grizzly Peak ride: Wednesday BARTable Mixed Terrain on Wed Aug 27 2025 at 5:25 PM in El Cerrito Plaza BART
+🔍 Processing: THU AUG 28 - Duros West (3/TM,M/60)
+🔍 Processing: THU AUG 28 - Spruce to Space (4/TM/26.5)
+🔍 Processing: THU AUG 28 - Thursday Evening T Pace Ride (4!/T/22)
+🔍 Processing: THU AUG 28 - Thirsty Thursday Mixty (5/0/17)
+🔍 Processing: SUN AUG 31 - Novice Series Ride #5 - Franklin Canyon and Carquinez Shoreline (3/LT,T/34)
+🔍 Processing: MON SEP 1 - Monday TI Lap (3!/T/16)
+🔍 Processing: TUE SEP 2 - GPC Tuesday Night Ride - Brisk Group (5/B/32)
+🔍 Processing: TUE SEP 2 - GPC Tuesday Evening Ride (5/M/24)
+🔍 Processing: WED SEP 3 - Wednesday BARTable Mixed Terrain (4!/T/18)
+🔍 Processing: THU SEP 4 - Duros West (3/TM,M/60)
+🔍 Processing: THU SEP 4 - Spruce to Space (4/TM/26.5)
+🔍 Processing: THU SEP 4 - Thirsty Thursday Mixty (5/0/17)
+🔍 Processing: FRI SEP 5 - Bay Trail / E-ville / Point Richmond (1/T/34)
+🔍 Processing: SAT SEP 6 - Croissant and Hot Cocoa: Rustic Bakery (2/LT/35)
+🔍 Processing: SUN SEP 7 - Novice Series Ride #6 - Central Marin Redwoods - Long Version (3/T/42)
+🔍 Processing: MON SEP 8 - Monday TI Lap (3!/T/16)
+🔍 Processing: TUE SEP 9 - GPC Tuesday Night Ride - Brisk Group (5/B/32)
+🔍 Processing: TUE SEP 9 - GPC Tuesday Evening Ride (5/M/24)
+🔍 Processing: WED SEP 10 - Wednesday BARTable Mixed Terrain (4!/T/18)
+🔍 Processing: THU SEP 11 - Duros West (3/TM,M/60)
+🔍 Processing: THU SEP 11 - Spruce to Space (4/TM/26.5)
+🔍 Processing: THU SEP 11 - Thirsty Thursday Mixty (5/0/17)
+🔍 Processing: MON SEP 15 - Monday TI Lap (3!/T/16)
+🔍 Processing: TUE SEP 16 - GPC Tuesday Night Ride - Brisk Group (5/B/32)
+🔍 Processing: TUE SEP 16 - GPC Tuesday Evening Ride (5/M/24)
+🔍 Processing: WED SEP 17 - Wednesday BARTable Mixed Terrain (4!/T/18)
+🔍 Processing: THU SEP 18 - Duros West (3/TM,M/60)
+🔍 Processing: THU SEP 18 - Spruce to Space (4/TM/26.5)
+🔍 Processing: THU SEP 18 - Thirsty Thursday Mixty (5/0/17)
+🔍 Processing: SAT SEP 20 - Individual Time Trial/GPC Pace Ride (5/0/19)
+🔍 Processing: MON SEP 22 - Monday TI Lap (3!/T/16)
+🔍 Processing: TUE SEP 23 - GPC Tuesday Night Ride - Brisk Group (5/B/32)
+🔍 Processing: TUE SEP 23 - GPC Tuesday Evening Ride (5/M/24)
+🔍 Processing: WED SEP 24 - Wednesday BARTable Mixed Terrain (4!/T/18)
+🔍 Processing: THU SEP 25 - Duros West (3/TM,M/60)
+🔍 Processing: THU SEP 25 - Spruce to Space (4/TM/26.5)
+🔍 Processing: THU SEP 25 - Thirsty Thursday Mixty (5/0/17)
+🔍 Processing: MON SEP 29 - Monday TI Lap (3!/T/16)
+🔍 Processing: TUE SEP 30 - GPC Tuesday Night Ride - Brisk Group (5/B/32)
+🔍 Processing: TUE SEP 30 - GPC Tuesday Evening Ride (5/M/24)
+🔍 Processing: WED OCT 1 - Wednesday BARTable Mixed Terrain (4!/T/18)
+🎯 Total events created: 13
+✅ Grizzly Peak Cyclists scraper completed: 13 events found in 493ms
+💾 Processing scraper results...
+✅ grizzlypeak: 13/13 events inserted
+🔄 Fetching events from real scrapers...
+🔄 Fetching events from real scrapers...
+📊 Returning 83 events from real scrapers
+📊 Returning 83 events from real scrapers
+🔄 Fetching events from real scrapers...
+📊 Returning 83 events from real scrapers
+🔄 Fetching events from real scrapers...
+📊 Returning 83 events from real scrapers
+🗑️ Clearing all events from database...
+🔄 Running real scraper: grizzlypeak
+🔄 Running single scraper: grizzlypeak
+🔄 Starting Grizzly Peak Cyclists scraper...
+🚴‍♂️ Scraping Grizzly Peak Cyclists events...
+📅 Looking for rides from Wed Aug 20 2025 to Wed Aug 27 2025
+🔍 Found 63 ride listings
+🔍 Processing: WED AUG 20 - Wed Ride - Deb's Diversion: Marin Headlands from Mill Valley (4/T/24)
+🎯 Found Grizzly Peak ride: Wed Ride - Deb's Diversion: Marin Headlands from Mill Valley on Wed Aug 20 2025 at 10:30 AM in Mill Valley - Public Safety Buildings
+🔍 Processing: WED AUG 20 - Wednesday BARTable Mixed Terrain (4!/T/18)
+🎯 Found Grizzly Peak ride: Wednesday BARTable Mixed Terrain on Wed Aug 20 2025 at 5:25 PM in El Cerrito Plaza BART
+🔍 Processing: THU AUG 21 - Duros West - Nicasio to Lighthouse (3/TM,M/62)
+🎯 Found Grizzly Peak ride: Duros West - Nicasio to Lighthouse on Thu Aug 21 2025 at 9:30 AM in Nicasio
+🔍 Processing: THU AUG 21 - Spruce to Space (4/TM/26.5)
+🎯 Found Grizzly Peak ride: Spruce to Space on Thu Aug 21 2025 at 5:20 PM in North Berkeley BART
+🔍 Processing: THU AUG 21 - Thursday Evening T Pace Ride (4!/T/22)
+🎯 Found Grizzly Peak ride: Thursday Evening T Pace Ride on Thu Aug 21 2025 at 5:25 PM in North Berkeley BART
+🔍 Processing: THU AUG 21 - Thirsty Thursday Mixty (5/0/17)
+🎯 Found Grizzly Peak ride: Thirsty Thursday Mixty on Thu Aug 21 2025 at 5:30 PM in Canyon Club Brewery
+🔍 Processing: SAT AUG 23 - Nicasio Lasso CCW from Albany (2/T/59)
+🎯 Found Grizzly Peak ride: Nicasio Lasso CCW from Albany on Sat Aug 23 2025 at 8:20 AM in San Francisco Bay Area
+🔍 Processing: SAT AUG 23 - Cotati to the Coast (3!/TM/75)
+🎯 Found Grizzly Peak ride: Cotati to the Coast on Sat Aug 23 2025 at 9:15 AM in Cotati - Gravenstein Hwy Park-&amp;-Ride (Westside)
+🔍 Processing: SUN AUG 24 - Novice Series Ride #4 - Lamorinda (3/LT/28)
+🎯 Found Grizzly Peak ride: Novice Series Ride #4 - Lamorinda on Sun Aug 24 2025 at 10:00 AM in Orinda BART NW corner of parking lot
+🔍 Processing: MON AUG 25 - Monday TI Lap (3!/T/16)
+🎯 Found Grizzly Peak ride: Monday TI Lap on Mon Aug 25 2025 at 5:25 PM in Emeryville - Opposite IKEA
+🔍 Processing: TUE AUG 26 - GPC Tuesday Night Ride - Brisk Group (5/B/32)
+🎯 Found Grizzly Peak ride: GPC Tuesday Night Ride - Brisk Group on Tue Aug 26 2025 at 5:25 PM in Berkeley - Spruce &amp; Grizzly Peak Blvd - Plaza
+🔍 Processing: TUE AUG 26 - GPC Tuesday Evening Ride (5/M/24)
+🎯 Found Grizzly Peak ride: GPC Tuesday Evening Ride on Tue Aug 26 2025 at 5:30 PM in Berkeley - Spruce &amp; Grizzly Peak Blvd - Plaza
+🔍 Processing: WED AUG 27 - Wednesday BARTable Mixed Terrain (4!/T/18)
+🎯 Found Grizzly Peak ride: Wednesday BARTable Mixed Terrain on Wed Aug 27 2025 at 5:25 PM in El Cerrito Plaza BART
+🔍 Processing: THU AUG 28 - Duros West (3/TM,M/60)
+🔍 Processing: THU AUG 28 - Spruce to Space (4/TM/26.5)
+🔍 Processing: THU AUG 28 - Thursday Evening T Pace Ride (4!/T/22)
+🔍 Processing: THU AUG 28 - Thirsty Thursday Mixty (5/0/17)
+🔍 Processing: SUN AUG 31 - Novice Series Ride #5 - Franklin Canyon and Carquinez Shoreline (3/LT,T/34)
+🔍 Processing: MON SEP 1 - Monday TI Lap (3!/T/16)
+🔍 Processing: TUE SEP 2 - GPC Tuesday Night Ride - Brisk Group (5/B/32)
+🔍 Processing: TUE SEP 2 - GPC Tuesday Evening Ride (5/M/24)
+🔍 Processing: WED SEP 3 - Wednesday BARTable Mixed Terrain (4!/T/18)
+🔍 Processing: THU SEP 4 - Duros West (3/TM,M/60)
+🔍 Processing: THU SEP 4 - Spruce to Space (4/TM/26.5)
+🔍 Processing: THU SEP 4 - Thirsty Thursday Mixty (5/0/17)
+🔍 Processing: FRI SEP 5 - Bay Trail / E-ville / Point Richmond (1/T/34)
+🔍 Processing: SAT SEP 6 - Croissant and Hot Cocoa: Rustic Bakery (2/LT/35)
+🔍 Processing: SUN SEP 7 - Novice Series Ride #6 - Central Marin Redwoods - Long Version (3/T/42)
+🔍 Processing: MON SEP 8 - Monday TI Lap (3!/T/16)
+🔍 Processing: TUE SEP 9 - GPC Tuesday Night Ride - Brisk Group (5/B/32)
+🔍 Processing: TUE SEP 9 - GPC Tuesday Evening Ride (5/M/24)
+🔍 Processing: WED SEP 10 - Wednesday BARTable Mixed Terrain (4!/T/18)
+🔍 Processing: THU SEP 11 - Duros West (3/TM,M/60)
+🔍 Processing: THU SEP 11 - Spruce to Space (4/TM/26.5)
+🔍 Processing: THU SEP 11 - Thirsty Thursday Mixty (5/0/17)
+🔍 Processing: MON SEP 15 - Monday TI Lap (3!/T/16)
+🔍 Processing: TUE SEP 16 - GPC Tuesday Night Ride - Brisk Group (5/B/32)
+🔍 Processing: TUE SEP 16 - GPC Tuesday Evening Ride (5/M/24)
+🔍 Processing: WED SEP 17 - Wednesday BARTable Mixed Terrain (4!/T/18)
+🔍 Processing: THU SEP 18 - Duros West (3/TM,M/60)
+🔍 Processing: THU SEP 18 - Spruce to Space (4/TM/26.5)
+🔍 Processing: THU SEP 18 - Thirsty Thursday Mixty (5/0/17)
+🔍 Processing: SAT SEP 20 - Individual Time Trial/GPC Pace Ride (5/0/19)
+🔍 Processing: MON SEP 22 - Monday TI Lap (3!/T/16)
+🔍 Processing: TUE SEP 23 - GPC Tuesday Night Ride - Brisk Group (5/B/32)
+🔍 Processing: TUE SEP 23 - GPC Tuesday Evening Ride (5/M/24)
+🔍 Processing: WED SEP 24 - Wednesday BARTable Mixed Terrain (4!/T/18)
+🔍 Processing: THU SEP 25 - Duros West (3/TM,M/60)
+🔍 Processing: THU SEP 25 - Spruce to Space (4/TM/26.5)
+🔍 Processing: THU SEP 25 - Thirsty Thursday Mixty (5/0/17)
+🔍 Processing: MON SEP 29 - Monday TI Lap (3!/T/16)
+🔍 Processing: TUE SEP 30 - GPC Tuesday Night Ride - Brisk Group (5/B/32)
+🔍 Processing: TUE SEP 30 - GPC Tuesday Evening Ride (5/M/24)
+🔍 Processing: WED OCT 1 - Wednesday BARTable Mixed Terrain (4!/T/18)
+🎯 Total events created: 13
+✅ Grizzly Peak Cyclists scraper completed: 13 events found in 387ms
+💾 Processing scraper results...
+✅ grizzlypeak: 13/13 events inserted
+🔄 Fetching events from real scrapers...
+📊 Returning 13 events from real scrapers
+🔄 Fetching events from real scrapers...
+📊 Returning 13 events from real scrapers
+🔄 Running real scraper: roxie
+🔄 Running single scraper: roxie
+🔄 Starting Roxie Theater scraper...
+🎬 Starting Roxie scraper (HTTP version)...
+🔧 Scraper config: {
+  "name": "Roxie Theater",
+  "url": "https://roxie.com/calendar/",
+  "description": "Independent film theater in San Francisco (HTTP version)"
+}
+🌐 Fetching https://roxie.com/calendar/...
+🌐 Using URL: https://roxie.com/calendar/
+📄 Page loaded: 332756 characters
+📅 Today's date: Wed Aug 20 2025
+🔍 Found 92 calendar days, processing events within next 7 days
+📅 Processing August 20, 2025 (Wed Aug 20 2025)
+🎬 Found film "Architecton" with 1 showtimes: 6:50 pm
+✅ Created event: "Architecton" at 6:50 pm on Wed Aug 20 2025
+🎬 Found film "Drugs in the Tenderloin" with 1 showtimes: 7:00 pm
+✅ Created event: "Drugs in the Tenderloin" at 7:00 pm on Wed Aug 20 2025
+🎬 Found film "It’s Never Over, Jeff Buckley" with 1 showtimes: 9:00 pm
+✅ Created event: "It’s Never Over, Jeff Buckley" at 9:00 pm on Wed Aug 20 2025
+🎬 Found film "Together" with 1 showtimes: 9:00 pm
+✅ Created event: "Together" at 9:00 pm on Wed Aug 20 2025
+📅 Processing August 21, 2025 (Thu Aug 21 2025)
+🎬 Found film "Stray Dog" with 1 showtimes: 3:30 pm
+✅ Created event: "Stray Dog" at 3:30 pm on Thu Aug 21 2025
+⏭️ Skipping generic title: El Mariachi – Free screening
+🎬 Found film "CatVideoFest 2025" with 1 showtimes: 6:05 pm
+✅ Created event: "CatVideoFest 2025" at 6:05 pm on Thu Aug 21 2025
+🎬 Found film "It’s Never Over, Jeff Buckley" with 1 showtimes: 8:00 pm
+✅ Created event: "It’s Never Over, Jeff Buckley" at 8:00 pm on Thu Aug 21 2025
+🎬 Found film "Cloud" with 1 showtimes: 8:00 pm
+✅ Created event: "Cloud" at 8:00 pm on Thu Aug 21 2025
+📅 Processing August 22, 2025 (Fri Aug 22 2025)
+🎬 Found film "SFQFF: Opening Night" with 1 showtimes: 6:00 pm
+✅ Created event: "SFQFF: Opening Night" at 6:00 pm on Fri Aug 22 2025
+🎬 Found film "It’s Never Over, Jeff Buckley" with 1 showtimes: 6:15 pm
+✅ Created event: "It’s Never Over, Jeff Buckley" at 6:15 pm on Fri Aug 22 2025
+🎬 Found film "Roxie First Looks #9" with 1 showtimes: 9:00 pm
+✅ Created event: "Roxie First Looks #9" at 9:00 pm on Fri Aug 22 2025
+🎬 Found film "Together" with 1 showtimes: 9:00 pm
+✅ Created event: "Together" at 9:00 pm on Fri Aug 22 2025
+📅 Processing August 23, 2025 (Sat Aug 23 2025)
+🎬 Found film "SFQFF: Program 2 – Smash the Cis-tem" with 1 showtimes: 1:00 pm
+✅ Created event: "SFQFF: Program 2 – Smash the Cis-tem" at 1:00 pm on Sat Aug 23 2025
+🎬 Found film "SFQFF: Program 3 – Purple Haze" with 1 showtimes: 1:30 pm
+✅ Created event: "SFQFF: Program 3 – Purple Haze" at 1:30 pm on Sat Aug 23 2025
+🎬 Found film "SFQFF: Program 4 – Narrative Feature" with 1 showtimes: 2:50 pm
+✅ Created event: "SFQFF: Program 4 – Narrative Feature" at 2:50 pm on Sat Aug 23 2025
+🎬 Found film "SFQFF: Program 5 – Paw-sitively Delicious" with 1 showtimes: 3:00 pm
+✅ Created event: "SFQFF: Program 5 – Paw-sitively Delicious" at 3:00 pm on Sat Aug 23 2025
+🎬 Found film "SFQFF: Program 6 – End the Stigma" with 1 showtimes: 5:00 pm
+✅ Created event: "SFQFF: Program 6 – End the Stigma" at 5:00 pm on Sat Aug 23 2025
+🎬 Found film "Architecton" with 1 showtimes: 5:10 pm
+✅ Created event: "Architecton" at 5:10 pm on Sat Aug 23 2025
+⏭️ Skipping generic title: SFQFF: Program 7 – Centerpiece Film
+🎬 Found film "Roxie First Looks #9" with 1 showtimes: 7:20 pm
+✅ Created event: "Roxie First Looks #9" at 7:20 pm on Sat Aug 23 2025
+📅 Processing August 24, 2025 (Sun Aug 24 2025)
+🎬 Found film "SFQFF: Program 8 – Cafe International" with 1 showtimes: 1:00 pm
+✅ Created event: "SFQFF: Program 8 – Cafe International" at 1:00 pm on Sun Aug 24 2025
+🎬 Found film "SFQFF: Program 9 – Small Bites" with 1 showtimes: 1:00 pm
+✅ Created event: "SFQFF: Program 9 – Small Bites" at 1:00 pm on Sun Aug 24 2025
+🎬 Found film "SFQFF: Program 10 – Feature Documentary" with 1 showtimes: 3:00 pm
+✅ Created event: "SFQFF: Program 10 – Feature Documentary" at 3:00 pm on Sun Aug 24 2025
+🎬 Found film "SFQFF: Program 11 – Female Power" with 1 showtimes: 3:00 pm
+✅ Created event: "SFQFF: Program 11 – Female Power" at 3:00 pm on Sun Aug 24 2025
+🎬 Found film "SFQFF: Program 12 – Box of Chocolates" with 1 showtimes: 5:00 pm
+✅ Created event: "SFQFF: Program 12 – Box of Chocolates" at 5:00 pm on Sun Aug 24 2025
+🎬 Found film "CatVideoFest 2025" with 1 showtimes: 5:10 pm
+✅ Created event: "CatVideoFest 2025" at 5:10 pm on Sun Aug 24 2025
+🎬 Found film "Roxie First Looks #9" with 1 showtimes: 7:00 pm
+✅ Created event: "Roxie First Looks #9" at 7:00 pm on Sun Aug 24 2025
+🎬 Found film "SFQFF: Program 13 – Closing Night" with 1 showtimes: 7:10 pm
+✅ Created event: "SFQFF: Program 13 – Closing Night" at 7:10 pm on Sun Aug 24 2025
+📅 Processing August 25, 2025 (Mon Aug 25 2025)
+🎬 Found film "Olas de Recuerdo" with 1 showtimes: 6:00 pm
+✅ Created event: "Olas de Recuerdo" at 6:00 pm on Mon Aug 25 2025
+🎬 Found film "Sudan, Remember Us" with 1 showtimes: 6:30 pm
+✅ Created event: "Sudan, Remember Us" at 6:30 pm on Mon Aug 25 2025
+🎬 Found film "Roxie First Looks #9" with 1 showtimes: 8:20 pm
+✅ Created event: "Roxie First Looks #9" at 8:20 pm on Mon Aug 25 2025
+🎬 Found film "High and Low" with 1 showtimes: 8:30 pm
+✅ Created event: "High and Low" at 8:30 pm on Mon Aug 25 2025
+📅 Processing August 26, 2025 (Tue Aug 26 2025)
+⏭️ Skipping generic title: San Francisco Film Preserve: Black Lightning
+🎬 Found film "Masayuki Suo’s Shall We Dance?" with 1 showtimes: 6:30 pm
+✅ Created event: "Masayuki Suo’s Shall We Dance?" at 6:30 pm on Tue Aug 26 2025
+🎬 Found film "In the Mood for Love: 25th Anniversary" with 1 showtimes: 9:00 pm
+✅ Created event: "In the Mood for Love: 25th Anniversary" at 9:00 pm on Tue Aug 26 2025
+🎬 Found film "Roxie First Looks #9" with 1 showtimes: 9:20 pm
+✅ Created event: "Roxie First Looks #9" at 9:20 pm on Tue Aug 26 2025
+📅 Processing August 27, 2025 (Wed Aug 27 2025)
+🎬 Found film "Together" with 1 showtimes: 6:30 pm
+✅ Created event: "Together" at 6:30 pm on Wed Aug 27 2025
+🎬 Found film "The Last Dance: Extended Version (破·地獄:加長版)" with 1 showtimes: 7:00 pm
+✅ Created event: "The Last Dance: Extended Version (破·地獄:加長版)" at 7:00 pm on Wed Aug 27 2025
+🎬 Found film "Roxie First Looks #9" with 1 showtimes: 8:45 pm
+✅ Created event: "Roxie First Looks #9" at 8:45 pm on Wed Aug 27 2025
+🎬 Scraping complete: 37 events found from 8 days (skipped 19 past days, 65 future days)
+✅ Roxie Theater scraper completed: 37 events found in 227ms
+💾 Processing scraper results...
+✅ roxie: 37/37 events inserted
+🔄 Running real scraper: punchline
+🔄 Running single scraper: punchline
+🔄 Starting punchline scraper...
+🌐 Initializing browser...
+🌐 Loading page: https://www.punchlinecomedyclub.com/shows
+✅ Page loaded successfully: 470696 characters
+🔍 Step 1: Extracting from Schema.org structured data...
+✅ Found 36 events from structured data
+✅ Date validated: "Comedy Allstars" - 2025-08-20T19:30:00-07:00 (2025-08-21T02:30:00.000Z Pacific Time - within 14 days)
+✅ Valid event: "Comedy Allstars"
+✅ Date validated: "Rosebud Baker" - 2025-08-21T20:00:00-07:00 (2025-08-22T03:00:00.000Z Pacific Time - within 14 days)
+✅ Valid event: "Rosebud Baker"
+✅ Date validated: "Rosebud Baker" - 2025-08-22T19:30:00-07:00 (2025-08-23T02:30:00.000Z Pacific Time - within 14 days)
+✅ Valid event: "Rosebud Baker"
+✅ Date validated: "Rosebud Baker" - 2025-08-22T21:45:00-07:00 (2025-08-23T04:45:00.000Z Pacific Time - within 14 days)
+✅ Valid event: "Rosebud Baker"
+✅ Date validated: "Rosebud Baker" - 2025-08-23T19:00:00-07:00 (2025-08-24T02:00:00.000Z Pacific Time - within 14 days)
+✅ Valid event: "Rosebud Baker"
+✅ Date validated: "Rosebud Baker" - 2025-08-23T21:15:00-07:00 (2025-08-24T04:15:00.000Z Pacific Time - within 14 days)
+✅ Valid event: "Rosebud Baker"
+✅ Date validated: "S. F. Comedy Showcase" - 2025-08-24T19:30:00-07:00 (2025-08-25T02:30:00.000Z Pacific Time - within 14 days)
+✅ Valid event: "S. F. Comedy Showcase"
+✅ Date validated: "Steve Ausburne & Ben Feldman" - 2025-08-26T19:30:00-07:00 (2025-08-27T02:30:00.000Z Pacific Time - within 14 days)
+✅ Valid event: "Steve Ausburne & Ben Feldman"
+✅ Date validated: "Mark Smalls" - 2025-08-27T20:00:00-07:00 (2025-08-28T03:00:00.000Z Pacific Time - within 14 days)
+✅ Valid event: "Mark Smalls"
+✅ Date validated: "Mark Smalls" - 2025-08-28T20:00:00-07:00 (2025-08-29T03:00:00.000Z Pacific Time - within 14 days)
+✅ Valid event: "Mark Smalls"
+✅ Date validated: "Mark Smalls" - 2025-08-29T19:30:00-07:00 (2025-08-30T02:30:00.000Z Pacific Time - within 14 days)
+✅ Valid event: "Mark Smalls"
+✅ Date validated: "Mark Smalls" - 2025-08-29T21:45:00-07:00 (2025-08-30T04:45:00.000Z Pacific Time - within 14 days)
+✅ Valid event: "Mark Smalls"
+✅ Date validated: "Mark Smalls" - 2025-08-30T19:00:00-07:00 (2025-08-31T02:00:00.000Z Pacific Time - within 14 days)
+✅ Valid event: "Mark Smalls"
+✅ Date validated: "Mark Smalls" - 2025-08-30T21:15:00-07:00 (2025-08-31T04:15:00.000Z Pacific Time - within 14 days)
+✅ Valid event: "Mark Smalls"
+✅ Date validated: "S. F. Comedy Showcase" - 2025-08-31T19:30:00-07:00 (2025-09-01T02:30:00.000Z Pacific Time - within 14 days)
+✅ Valid event: "S. F. Comedy Showcase"
+✅ Date validated: "Ray Lau" - 2025-09-02T19:00:00-07:00 (2025-09-03T02:00:00.000Z Pacific Time - within 14 days)
+✅ Valid event: "Ray Lau"
+✅ Date validated: "Ray Lau" - 2025-09-02T21:15:00-07:00 (2025-09-03T04:15:00.000Z Pacific Time - within 14 days)
+✅ Valid event: "Ray Lau"
+❌ Event too far in future rejected: "Pat Burtscher" - 2025-09-03T20:00:00-07:00 (2025-09-04T03:00:00.000Z Pacific Time - beyond 14 days from 2025-08-20 Pacific Time)
+❌ Event too far in future rejected: "Pat Burtscher" - 2025-09-04T20:00:00-07:00 (2025-09-05T03:00:00.000Z Pacific Time - beyond 14 days from 2025-08-20 Pacific Time)
+❌ Event too far in future rejected: "Pat Burtscher" - 2025-09-05T19:30:00-07:00 (2025-09-06T02:30:00.000Z Pacific Time - beyond 14 days from 2025-08-20 Pacific Time)
+❌ Event too far in future rejected: "Pat Burtscher" - 2025-09-05T21:45:00-07:00 (2025-09-06T04:45:00.000Z Pacific Time - beyond 14 days from 2025-08-20 Pacific Time)
+❌ Event too far in future rejected: "Pat Burtscher" - 2025-09-06T19:00:00-07:00 (2025-09-07T02:00:00.000Z Pacific Time - beyond 14 days from 2025-08-20 Pacific Time)
+❌ Event too far in future rejected: "Pat Burtscher" - 2025-09-06T21:15:00-07:00 (2025-09-07T04:15:00.000Z Pacific Time - beyond 14 days from 2025-08-20 Pacific Time)
+❌ Event too far in future rejected: "S. F. Comedy Showcase" - 2025-09-07T19:30:00-07:00 (2025-09-08T02:30:00.000Z Pacific Time - beyond 14 days from 2025-08-20 Pacific Time)
+❌ Event too far in future rejected: "Comedy Allstars" - 2025-09-09T19:30:00-07:00 (2025-09-10T02:30:00.000Z Pacific Time - beyond 14 days from 2025-08-20 Pacific Time)
+❌ Event too far in future rejected: "Johnny Taylor" - 2025-09-10T19:30:00-07:00 (2025-09-11T02:30:00.000Z Pacific Time - beyond 14 days from 2025-08-20 Pacific Time)
+❌ Event too far in future rejected: "Des Bishop" - 2025-09-11T20:00:00-07:00 (2025-09-12T03:00:00.000Z Pacific Time - beyond 14 days from 2025-08-20 Pacific Time)
+❌ Event too far in future rejected: "Des Bishop" - 2025-09-12T19:30:00-07:00 (2025-09-13T02:30:00.000Z Pacific Time - beyond 14 days from 2025-08-20 Pacific Time)
+❌ Event too far in future rejected: "Des Bishop" - 2025-09-12T21:45:00-07:00 (2025-09-13T04:45:00.000Z Pacific Time - beyond 14 days from 2025-08-20 Pacific Time)
+❌ Event too far in future rejected: "Des Bishop" - 2025-09-13T19:00:00-07:00 (2025-09-14T02:00:00.000Z Pacific Time - beyond 14 days from 2025-08-20 Pacific Time)
+❌ Event too far in future rejected: "Des Bishop" - 2025-09-13T21:15:00-07:00 (2025-09-14T04:15:00.000Z Pacific Time - beyond 14 days from 2025-08-20 Pacific Time)
+❌ Event too far in future rejected: "S. F. Comedy Showcase" - 2025-09-14T19:30:00-07:00 (2025-09-15T02:30:00.000Z Pacific Time - beyond 14 days from 2025-08-20 Pacific Time)
+❌ Event too far in future rejected: "Joe Klocek & Friends" - 2025-09-16T19:30:00-07:00 (2025-09-17T02:30:00.000Z Pacific Time - beyond 14 days from 2025-08-20 Pacific Time)
+❌ Event too far in future rejected: "Comedy Allstars" - 2025-09-17T19:30:00-07:00 (2025-09-18T02:30:00.000Z Pacific Time - beyond 14 days from 2025-08-20 Pacific Time)
+❌ Event too far in future rejected: "Richard Sarvate" - 2025-09-18T20:00:00-07:00 (2025-09-19T03:00:00.000Z Pacific Time - beyond 14 days from 2025-08-20 Pacific Time)
+❌ Event too far in future rejected: "Ashley Hesseltine: Sex Before Marriage Tour" - 2025-09-19T19:30:00-07:00 (2025-09-20T02:30:00.000Z Pacific Time - beyond 14 days from 2025-08-20 Pacific Time)
+Found 17 events from Punchline
+✅ punchline scraper completed: 17 events found in 6001ms
+💾 Processing scraper results...
+✅ punchline: 17/17 events inserted
+🔄 Running real scraper: giants
+🔄 Running single scraper: giants
+🔄 Starting giants scraper...
+⚾ Scraping San Francisco Giants games...
+📅 Looking for Giants games in next 7 days from today (Wed Aug 20 2025)
+🎯 Found Giants game: Giants vs Chicago Cubs on Tue Aug 26 2025
+✅ San Francisco Giants scraper found 1 upcoming games
+✅ giants scraper completed: 1 events found in 331ms
+💾 Processing scraper results...
+✅ giants: 1/1 events inserted
+🔄 Running real scraper: valkyries
+🔄 Running single scraper: valkyries
+🔄 Starting valkyries scraper...
+🏀 Scraping Las Vegas Valkyries basketball games...
+📅 Looking for Valkyries HOME games in next 7 days from today (Wed Aug 20 2025)
+Found 46 games from ESPN API
+⚠️ Error processing Valkyries game 38: gameType is not defined
+✅ Valkyries scraper found 1 upcoming games
+✅ valkyries scraper completed: 1 events found in 280ms
+💾 Processing scraper results...
+✅ valkyries: 1/1 events inserted
+🔄 Running real scraper: creativemornings
+🔄 Running single scraper: creativemornings
+🔄 Starting creativemornings scraper...
+🎨 Scraping Creative Mornings FieldTrips...
+🌐 Initializing browser...
+🌐 Loading page: https://creativemornings.com/fieldtrips/browse
+✅ Page loaded successfully: 383575 characters
+🎯 Found FieldTrip: WTF is AI | Thriving Through Change on 2025-08-21T18:00:00.000Z
+🎯 Found FieldTrip: Feel it, write it on 2025-08-21T20:00:00.000Z
+🎯 Found FieldTrip: Thought Sovereignty: Reclaiming Your Inner Narrative on 2025-08-25T19:00:00.000Z
+🎯 Found FieldTrip: LEVEL UP: Your Career on 2025-08-26T16:30:00.000Z
+🎯 Found FieldTrip: Digital Declutter Party on 2025-08-26T23:00:00.000Z
+🎯 Found FieldTrip: Qigong: Move, Meditate, & Recharge on 2025-08-27T19:30:00.000Z
+🎯 Found FieldTrip: Calm Your Nervous System in One Minute on 2025-08-28T15:00:00.000Z
+🎯 Found FieldTrip: LEVEL UP: Your Freelance on 2025-09-02T16:30:00.000Z
+🎯 Found FieldTrip: Cultivating Inspired Work: An Alternative to Hustle & Grind on 2025-09-02T18:30:00.000Z
+🎯 Found FieldTrip: Big Ideas for Spiritual Creative Types: Rick Rubin’s ‘A Creative Act’ on 2025-09-03T20:00:00.000Z
+🎯 Found FieldTrip: LEVEL UP: Start Your Next Creative Chapter: Pave a Path to Creative Joy & Success on 2025-09-08T19:00:00.000Z
+🎯 Found FieldTrip: Build Bonds Beyond Screens on 2025-09-09T16:30:00.000Z
+🎯 Found FieldTrip: LEVEL UP: How to Design Flow Experiences to Propel Your Creative Work on 2025-09-10T19:30:00.000Z
+🎯 Found FieldTrip: Start Making Your Art Again on 2025-09-11T23:00:00.000Z
+🎯 Found FieldTrip: LEVEL UP: Business Strategies for ADHD Creatives on 2025-09-16T18:30:00.000Z
+🎯 Found FieldTrip: Uncondition Your Posture to Reclaim Your Power on 2025-09-22T17:00:00.000Z
+🎯 Found FieldTrip: Improv for groundedness in uncertain times on 2025-09-24T20:00:00.000Z
+🎯 Found FieldTrip: Rewrite Your Money Story: A Creative Workshop to Break Free From Scarcity on 2025-09-25T17:00:00.000Z
+🎯 Found FieldTrip: LEVEL UP: How to Overcome Self-Doubt and Build Unshakeable Creative Confidence on 2025-10-01T19:30:00.000Z
+🎯 Found FieldTrip: LEVEL UP: 💡The Full-Time Creative Formula: Learn the 5 Vital Elements You Need to Succeed on 2025-10-06T19:00:00.000Z
+🎯 Found FieldTrip: LEVEL UP: Navigating Chaos: The Freelancer's Survival Guide on 2025-10-14T18:30:00.000Z
+🎯 Found FieldTrip: LEVEL UP: The Freelancer’s Survival Guide: Pricing, Pitching & Getting Paid on 2025-10-21T20:00:00.000Z
+✅ CreativeMornings FieldTrips scraper found 22 events
+✅ creativemornings scraper completed: 22 events found in 5354ms
+💾 Processing scraper results...
+✅ creativemornings: 22/22 events inserted
+🔄 Running real scraper: sfrando
+🔄 Running single scraper: sfrando
+🔄 Starting sfrando scraper...
+🚴‍♂️ Scraping SF Randonneurs cycling events...
+📅 Looking for next 3 upcoming rides from today (Wed Aug 20 2025)
+Found 31 event rows
+🎯 Found SF Rando event: Laguna Lake 200k on Sat Aug 30 2025 at 7:00
+🎯 Found SF Rando event: El Paseito Mixto 103k ≈ on Sun Sep 14 2025 at 8:00
+🎯 Found SF Rando event: Lucas Valley Populaire on Sun Sep 14 2025 at 8:00
+🎯 Found SF Rando event: SFR Dart Populaire on Sat Sep 27 2025 at †
+🎯 Found SF Rando event: SFR DART on Sat Sep 27 2025 at †
+🎯 Found SF Rando event: Winters 200k on Sat Oct 11 2025 at 7:00
+🎯 Found SF Rando event: SFR Dart Populaire on Sat Oct 18 2025 at †
+🎯 Found SF Rando event: Del Puerto Canyon 200k on Sat Nov 01 2025 at 8:00
+🎯 Found SF Rando event: Del Puerto Canyon Junior on Sat Nov 01 2025 at 9:00
+🎯 Found SF Rando event: Estero Americano 200k on Sat Dec 06 2025 at 7:00
+✅ SF Randonneurs scraper found 3 next upcoming rides
+✅ sfrando scraper completed: 3 events found in 628ms
+💾 Processing scraper results...
+✅ sfrando: 3/3 events inserted
+🔄 Fetching events from real scrapers...
+📊 Returning 94 events from real scrapers
+🔄 Fetching events from real scrapers...
+📊 Returning 94 events from real scrapers
+🔄 Fetching events from real scrapers...
+📊 Returning 94 events from real scrapers
+🔄 Running real scraper: warriors
+🔄 Running single scraper: warriors
+🔄 Starting warriors scraper...
+🏀 Scraping Golden State Warriors basketball games...
+📅 Looking for Warriors HOME games in next 7 days from today (Wed Aug 20 2025)
+Found 5 games from ESPN API
+✅ Warriors scraper found 0 upcoming games
+✅ warriors scraper completed: 0 events found in 221ms
+💾 Processing scraper results...
+❌ warriors: Failed to scrape
+🔄 Running real scraper: oaklandroots
+🔄 Running single scraper: oaklandroots
+🔄 Starting oaklandroots scraper...
+⚽ Scraping Oakland Roots SC soccer events...
+📅 Looking for upcoming soccer games from today (Wed Aug 20 2025)
+Found 0 events from API
+✅ Oakland Roots SC scraper found 0 upcoming games
+✅ oaklandroots scraper completed: 0 events found in 716ms
+💾 Processing scraper results...
+❌ oaklandroots: Failed to scrape
+🔄 Running real scraper: sfcityfc
+🔄 Running single scraper: sfcityfc
+🔄 Starting sfcityfc scraper...
+⚽ Scraping SF City FC soccer events...
+📅 Looking for upcoming soccer games from today (Wed Aug 20 2025)
+Found 14 match cards
+✅ SF City FC scraper found 0 upcoming games
+✅ sfcityfc scraper completed: 0 events found in 284ms
+💾 Processing scraper results...
+❌ sfcityfc: Failed to scrape
+🔄 Running real scraper: ape
+🔄 Running single scraper: ape
+🔄 Starting ape scraper...
+🎵 Scraping APE Concerts events...
+🌐 Initializing browser...
+🌐 Loading page: https://apeconcerts.com/calendar/
+✅ Page loaded successfully: 795006 characters
+📅 Looking for APE concerts from Wed Aug 20 2025 to Wed Aug 27 2025
+🔍 Found 320 potential events using selector: .event
+⚠️ No date found for APE event: Making Room for the Light Album Release Show!
+⚠️ No date found for APE event: How To Save A Life: The 20th Anniversary Tour
+⚠️ No date found for APE event: The Final Tour
+⚠️ No date found for APE event: MY MORNING JACKET "is" ON TOUR
+⚠️ No date found for APE event: Lady Camden Presents: The Peach Pit Cabaret
+⚠️ No date found for APE event: The Smoking Gun Tour
+⚠️ No date found for APE event: Hope We Have Fun TourAn Evening With
+⚠️ No date found for APE event: Ben Harper & The Innocent Criminals
+⚠️ No date found for APE event: Bigger & Weirder 2025 Tour
+⚠️ No date found for APE event: CAN WE GO BACK TO SLEEP TOUR
+⚠️ No date found for APE event: Summer Tour 2025
+⚠️ No date found for APE event: Kyle Dion
+⚠️ No date found for APE event: LIVE 105 presentsNorth American Tour
+⚠️ No date found for APE event: Lewis Black: Goodbye Yeller Brick Road, The Final Tour
+⚠️ No date found for APE event: Meet Me at The Club
+⚠️ No date found for APE event: Son of the San Lorenzo
+⚠️ No date found for APE event: The Melancholy Tour
+⚠️ No date found for APE event: Cardinal Black
+⚠️ No date found for APE event: Warp Riders 15th Anniversary Tour
+⚠️ No date found for APE event: CalPerformances presentsSarabande Africaine
+⚠️ No date found for APE event: It's Relative! presents
+⚠️ No date found for APE event: Tennis
+⚠️ No date found for APE event: Summer Anthem Tour
+⚠️ No date found for APE event: Noel Miller: Live!
+⚠️ No date found for APE event: Justin Willman: One For The Ages
+⚠️ No date found for APE event: I've Tried Everything But Therapy Tour
+⚠️ No date found for APE event: Solo Dragon TourAn Evening With
+⚠️ No date found for APE event: weirdthrob world tour
+⚠️ No date found for APE event: Show Moved from 4/5/25Unleashed XL '25
+⚠️ No date found for APE event: I've Tried Everything But Therapy Tour
+⚠️ No date found for APE event: North American Tour 2025
+⚠️ No date found for APE event: La Misa Negra
+⚠️ No date found for APE event: Another Planet Entertainment's SF Free Concerts
+⚠️ No date found for APE event: The Flaming Lips Modest Mouse
+⚠️ No date found for APE event: HANNAH BERNER: NONE OF MY BUSINESS TOUR
+⚠️ No date found for APE event: No Bandwidth!One Man! One Night! Three Decades of Hits!An Evening With
+⏭️ Skipping generic element: 7th Show Added by Popular Demand!Homecoming Show After Edinburgh Fringe Run
+⚠️ No date found for APE event: No Bandwidth!One Man! One Night! Three Decades of Hits!An Evening With
+⚠️ No date found for APE event: Welcome Back to the Plains Tour
+⚠️ No date found for APE event: Ridin' Tour
+⚠️ No date found for APE event: A Tip Toe High Wire
+⚠️ No date found for APE event: A Celebration of ATLAS - the 11 Year and 7 Month Anniversary Tour
+⚠️ No date found for APE event: Gregory Alan Isakov
+⚠️ No date found for APE event: Welcome Back to the Plains Tour
+⚠️ No date found for APE event: Ridin' Tour
+⚠️ No date found for APE event: 2025 TOUR
+⚠️ No date found for APE event: ASTROPICAL TOUR 2025
+⚠️ No date found for APE event: 2 Nights!
+⚠️ No date found for APE event: The Fading Tour EP Release Party
+⚠️ No date found for APE event: Another Planet Entertainment's SF Free ConcertsCelebrating 15 Years of EMPIRE in San Francisco
+⚠️ No date found for APE event: Darius Rucker
+⚠️ No date found for APE event: Kruder & Dorfmeister play the K&D Sessions LiveAn Evening With
+⚠️ No date found for APE event: Love For The Music Tour
+⚠️ No date found for APE event: 2 Nights!
+⚠️ No date found for APE event: Billie Marten
+⚠️ No date found for APE event: It's A Nice Day To...Tour Again! 2025
+⚠️ No date found for APE event: The Theater at Bill Graham Civic Auditorium2025 'EASY CRAZY HOT' IN NORTH AMERICA TOURAn Evening With
+⚠️ No date found for APE event: Hot Flash Heat Wave & Mind’s Eye
+⚠️ No date found for APE event: The Pit Tour
+⚠️ No date found for APE event: Show Rescheduled from 12/28/24 & 3/27/25In the Round!
+⚠️ No date found for APE event: Somersault Slide 360 Tour
+⚠️ No date found for APE event: Coheed And Cambria * Taking Back Sunday
+⚠️ No date found for APE event: The Psychedelic Furs
+⚠️ No date found for APE event: Teenie Weenie Westward Run
+⚠️ No date found for APE event: 2nd Show Added by Popular Demand!
+⚠️ No date found for APE event: BABABA World Tour
+⚠️ No date found for APE event: The Psychedelic Furs
+⚠️ No date found for APE event: Tour de Dance 2025
+⚠️ No date found for APE event: Still Shakin' TourAn Evening With
+⚠️ No date found for APE event: Am I Okay? Tour
+⚠️ No date found for APE event: Two Nights!
+⚠️ No date found for APE event: Sid the Cat PresentsBury the Key Tour
+⚠️ No date found for APE event: The Crashing This Party Tour
+⚠️ No date found for APE event: The Symposium
+⚠️ No date found for APE event: Celebrating 20 Years of Pretty In Black
+⚠️ No date found for APE event: Two Nights!
+⚠️ No date found for APE event: Aperture Tour
+⚠️ No date found for APE event: 2nd Show Added by Popular Demand!
+⚠️ No date found for APE event: Fall 2025
+⚠️ No date found for APE event: Somersault Slide 360 Tour
+⚠️ No date found for APE event: Aperture Tour
+⚠️ No date found for APE event: Dan's Boogie Tour
+⚠️ No date found for APE event: Bandalos Chinos
+⚠️ No date found for APE event: Ask That God Tour
+⚠️ No date found for APE event: North American Tour 2025
+⚠️ No date found for APE event: Jessie Murph – Worldwide Hysteria
+⚠️ No date found for APE event: Yaya Bey
+⚠️ No date found for APE event: Disclosure (Live)
+⚠️ No date found for APE event: Another Planet Entertainment & Outback present
+⚠️ No date found for APE event: 2025 North American TourPlaying the Album Laid
+⚠️ No date found for APE event: Earthly Delights Tour
+⚠️ No date found for APE event: Thanks For Coming Tour
+⚠️ No date found for APE event: All American Freak Show Tour
+⚠️ No date found for APE event: Two Nights!LIVE 105 presentsnorth american moistourizer 2025
+⚠️ No date found for APE event: The Autumn Effect - 20th Anniversary Tour
+⚠️ No date found for APE event: 2nd Show Added by Popular Demand!LIVE 105 presentsnorth american moistourizer 2025
+⚠️ No date found for APE event: Show Cancelled
+⚠️ No date found for APE event: Americas Tour 2025
+⚠️ No date found for APE event: The Theater at Bill Graham Civic Auditorium
+⚠️ No date found for APE event: Wild Child Tour
+⚠️ No date found for APE event: The Passionate Ones Tour
+⚠️ No date found for APE event: Childish Tour
+⚠️ No date found for APE event: Wild Child Tour
+⚠️ No date found for APE event: North American Tour
+⚠️ No date found for APE event: Diggin’ Dirt
+⚠️ No date found for APE event: Klangphonics
+⚠️ No date found for APE event: A CATACLYSMIC RAPTURE OF FRIENDSHIPNESS
+⚠️ No date found for APE event: Dear Beloved, The Tour
+⚠️ No date found for APE event: Model/Actriz
+⚠️ No date found for APE event: THE NEVER ENOUGH TOUR
+⚠️ No date found for APE event: Show Rescheduled from 3/11/25
+⚠️ No date found for APE event: The Unstoppable Summer Slammer Summer Tour
+⚠️ No date found for APE event: Back In Bidness Tour
+⚠️ No date found for APE event: The Dandy Warhols
+⚠️ No date found for APE event: I quit tour
+⚠️ No date found for APE event: Flowers Tour 2025
+⚠️ No date found for APE event: portals//polarities tour
+⚠️ No date found for APE event: múm
+⚠️ No date found for APE event: Alive Online Tour
+⚠️ No date found for APE event: D36 & Another Planet Entertainment present Loose Threads
+⚠️ No date found for APE event: Mount Olympus Tour
+⚠️ No date found for APE event: portals//polarities tour
+⚠️ No date found for APE event: jadu heart
+⚠️ No date found for APE event: Early Show Added by Popular Demand!LIVE 105 presentsPortal
+⚠️ No date found for APE event: CG5 Presents:The TOO MANY SONGS Tour
+⚠️ No date found for APE event: Wolf Alice North American Tour 2025
+⚠️ No date found for APE event: Late Show!LIVE 105 presentsPortal
+⚠️ No date found for APE event: Palm Tree Music Festival Napa
+⚠️ No date found for APE event: Crankdat
+⚠️ No date found for APE event: Forever Yung Tour
+⚠️ No date found for APE event: LIVE 105 presentsAn Evening With
+⚠️ No date found for APE event: Electric Feels: Indie Rock + Electronic Dance Party
+⚠️ No date found for APE event: Divided We Fall Tour
+⚠️ No date found for APE event: TV On The Radio
+⚠️ No date found for APE event: Rival Schools & Narrow Head
+⚠️ No date found for APE event: PARCELS LIVE 2025
+⚠️ No date found for APE event: The Good Fight 10 Year Anniversary Tour
+⚠️ No date found for APE event: James Vickery
+⚠️ No date found for APE event: ACCELERATOUR
+⚠️ No date found for APE event: LIVE 105 presents
+⚠️ No date found for APE event: elbow
+⚠️ No date found for APE event: An Attempt at Romantic
+⚠️ No date found for APE event: BITE ME TOUR
+⚠️ No date found for APE event: Covet
+⚠️ No date found for APE event: Rilo Kiley
+⚠️ No date found for APE event: Autofiction Tour
+⚠️ No date found for APE event: The Addison Tour
+⚠️ No date found for APE event: Johnny Stimson
+⚠️ No date found for APE event: Tailing The Ghost Tour
+⚠️ No date found for APE event: ALT 94.7 presentsAnother Bite Tour
+⚠️ No date found for APE event: The Princess of Power Tour
+⚠️ No date found for APE event: SG Lewis Anemoia Live Tour
+⚠️ No date found for APE event: Your Friend From The Real World Tour
+⚠️ No date found for APE event: LIVE 105 presentsAnother Bite Tour
+⚠️ No date found for APE event: Wednesday
+⚠️ No date found for APE event: Fall Tour 2025
+⚠️ No date found for APE event: Oliver Hazard & The Last Revel: Head West
+⚠️ No date found for APE event: Ultrasound Tour
+⚠️ No date found for APE event: Vanity Tour
+⚠️ No date found for APE event: At The Beach, In Every Life Tour
+⚠️ No date found for APE event: shut up and love me tour
+⚠️ No date found for APE event: Tour For You My Whole Life
+⚠️ No date found for APE event: Superchunk
+⚠️ No date found for APE event: The Hours Tour
+⚠️ No date found for APE event: The Theater at Bill Graham Civic AuditoriumThe Summer Portraits TourAn Evening With
+⚠️ No date found for APE event: All in the Family: 10 Years of Men Amongst Mountains
+⚠️ No date found for APE event: Dirty Work Tour
+⚠️ No date found for APE event: 3 Nights!
+⚠️ No date found for APE event: An Evening With
+⚠️ No date found for APE event: The Infinite Anxiety Tour of 2025
+⚠️ No date found for APE event: Live For One Night Only
+⚠️ No date found for APE event: The Army, The Navy
+⚠️ No date found for APE event: 3 Nights!
+⚠️ No date found for APE event: An Evening With
+⚠️ No date found for APE event: Rory Scovel: Know Your Enemy Tour
+⚠️ No date found for APE event: SONS World Tour 2025
+⚠️ No date found for APE event: 2 Nights!Flowers Tour 2025
+⚠️ No date found for APE event: Rachael & Vilray
+⚠️ No date found for APE event: Sister Tour
+⚠️ No date found for APE event: 3 Nights!
+⚠️ No date found for APE event: Two Nights!
+⚠️ No date found for APE event: Last Podcast On The Left: JK Ultra
+⚠️ No date found for APE event: SONS World Tour 2025
+⚠️ No date found for APE event: 2nd Show Added by Popular Demand!Flowers Tour 2025
+⚠️ No date found for APE event: Show Rescheduled from 3/29/25
+⚠️ No date found for APE event: Second Night Added!
+⚠️ No date found for APE event: The Paper Doll Tour
+⚠️ No date found for APE event: KNEECAP
+⚠️ No date found for APE event: Show Moved to Fox Theater
+⚠️ No date found for APE event: FLOOD FM x POPSCENE present
+⚠️ No date found for APE event: Show Moved From The Independent
+⚠️ No date found for APE event: Seventeen Tour 2025
+⚠️ No date found for APE event: Ela Minus
+⚠️ No date found for APE event: Water From Your Eyes
+⚠️ No date found for APE event: SØN OF DAD TOUR 2025
+⚠️ No date found for APE event: Winged Victory Tour
+⚠️ No date found for APE event: Places I've Never Played & Will Never Play Again Tour
+⚠️ No date found for APE event: Desert Daze Presents
+⚠️ No date found for APE event: LIVE '25
+⚠️ No date found for APE event: Shea Couleé presents Creepy.Sexy.Cool.
+⚠️ No date found for APE event: The Scholars Tour
+⚠️ No date found for APE event: Martyr Tour
+⚠️ No date found for APE event: For The Crows Tour
+⚠️ No date found for APE event: Psychedelic P**n Crumpets
+⚠️ No date found for APE event: Dark Tour
+⚠️ No date found for APE event: LIVE 105 presents
+⚠️ No date found for APE event: LIVE 105 presents
+⚠️ No date found for APE event: Two Nights!An Evening With
+⚠️ No date found for APE event: WELCOME TO THE MOOD TOUR
+⚠️ No date found for APE event: The Theater at Bill Graham Civic Auditorium
+⚠️ No date found for APE event: 2nd Show Added by Popular Demand!An Evening With
+⚠️ No date found for APE event: bar italia
+⚠️ No date found for APE event: feeble little horse
+⚠️ No date found for APE event: Dijon 2025-2026
+⚠️ No date found for APE event: So Much To Tell You Tour 2025
+⚠️ No date found for APE event: Live from the Swamp Tour
+⚠️ No date found for APE event: Two Nights!The Oh Hellos - Yours Truly
+⚠️ No date found for APE event: I Almost Graduated Tour
+⚠️ No date found for APE event: Second Night Added!The Oh Hellos - Yours Truly
+⚠️ No date found for APE event: Easy Street Tour
+⚠️ No date found for APE event: The Theater at Bill Graham Civic AuditoriumRIIZING LOUDAn Evening With
+⚠️ No date found for APE event: Revelation Tour
+⚠️ No date found for APE event: Lo Mismo de la Otra Vez Tour 2025
+⚠️ No date found for APE event: A Very Special Evening With
+⚠️ No date found for APE event: Fall Tour 2025
+⚠️ No date found for APE event: Out of the Blue Tour
+⚠️ No date found for APE event: Future Behind Me - The Americas World Tour - Leg 2An Evening With
+⏭️ Skipping generic element: Home Is Where
+⚠️ No date found for APE event: PORTUGAL. THE MAN – The Denali Tour
+⚠️ No date found for APE event: Patti Smith and her band
+⚠️ No date found for APE event: God Does Like Paradise Tour
+⚠️ No date found for APE event: The Original Skibidi Tour
+⚠️ No date found for APE event: An Evening With
+⚠️ No date found for APE event: The Westward Tour
+⚠️ No date found for APE event: 2nd Show Added by Popular Demand![CHEMISTRY] Album Tour
+⚠️ No date found for APE event: KCRW Presents
+⚠️ No date found for APE event: The Weightless Tour
+⚠️ No date found for APE event: The Slow Down Tour
+⚠️ No date found for APE event: LOVETAP! 10th Anniversary Tour
+⚠️ No date found for APE event: Two Nights![CHEMISTRY] Album Tour
+⚠️ No date found for APE event: Knower
+⚠️ No date found for APE event: In the Round!
+⚠️ No date found for APE event: Early Show Added by Popular Demand!The Foreword Tour
+⚠️ No date found for APE event: Late Show!The Foreword Tour
+⚠️ No date found for APE event: The Theater at Bill Graham Civic AuditoriumWho is the Sky TourThree Evenings With
+⚠️ No date found for APE event: The Lotus Tour
+⚠️ No date found for APE event: The Theater at Bill Graham Civic AuditoriumWho is the Sky TourThree Evenings With
+⚠️ No date found for APE event: North American Tour 2025
+⚠️ No date found for APE event: The Theater at Bill Graham Civic Auditorium3rd Show Added by Popular Demand!Who is the Sky TourThree Evenings With
+⚠️ No date found for APE event: The Fatal Optimist Tour
+⚠️ No date found for APE event: Joel Sunny
+⚠️ No date found for APE event: INERTIA tour
+⚠️ No date found for APE event: Live 2025
+⚠️ No date found for APE event: THE SOUND A BODY MAKES WHEN IT'S STILL TOUR
+⚠️ No date found for APE event: AN ECHO OF LOVE TOUR
+⚠️ No date found for APE event: Tei Shi
+⚠️ No date found for APE event: Roar In The Fall
+⚠️ No date found for APE event: An Evening With
+⚠️ No date found for APE event: Two Nights!Human Dream:Artifact Twenty
+⚠️ No date found for APE event: GEE LEE
+⚠️ No date found for APE event: The Greatest Show In Human History
+⚠️ No date found for APE event: Two Nights!Human Dream:Artifact Twenty
+⚠️ No date found for APE event: DARGZ
+⚠️ No date found for APE event: Jay Som
+⚠️ No date found for APE event: Sam Alfred
+⚠️ No date found for APE event: 54 Ultra
+⚠️ No date found for APE event: The Mars Volta
+⚠️ No date found for APE event: The Mars Volta
+⚠️ No date found for APE event: LIVE 105 presentsThe Mouse Parade Tour
+⚠️ No date found for APE event: Flamingosis
+⚠️ No date found for APE event: Jens Lekman
+⚠️ No date found for APE event: To Love A Thing That Fades 2025 Tour
+⚠️ No date found for APE event: Lover's Tour
+⚠️ No date found for APE event: Lola Young
+⚠️ No date found for APE event: I Know What I Want Tour
+⚠️ No date found for APE event: Show Rescheduled from September 17, 2025!50th Anniversary Tour
+⚠️ No date found for APE event: The Theater at Bill Graham Civic AuditoriumTHE BEAUTIFUL CHAOS TOURTwo Evenings With
+⚠️ No date found for APE event: Druski: The Coulda Fest Tour
+⚠️ No date found for APE event: The Polish Ambassador
+⚠️ No date found for APE event: Gold Star Baby Tour
+⚠️ No date found for APE event: The Theater at Bill Graham Civic AuditoriumTHE BEAUTIFUL CHAOS TOURTwo Evenings With
+⚠️ No date found for APE event: Gold Star Baby Tour
+⚠️ No date found for APE event: The 2er
+⚠️ No date found for APE event: Post Animal
+⚠️ No date found for APE event: The Soundtrack to Everything You Forgot
+⚠️ No date found for APE event: KCRW PresentsThe 2er
+⚠️ No date found for APE event: Third Show Added By Popular Demand!
+⚠️ No date found for APE event: EAST COAST! F#CK YOU! TOUR
+⚠️ No date found for APE event: The Frights
+⚠️ No date found for APE event: Fourth Show Added By Popular Demand!
+⚠️ No date found for APE event: Early Show!
+⚠️ No date found for APE event: How The Grouch Stole Christmas
+⚠️ No date found for APE event: Lipstick & Pearls Tour
+⚠️ No date found for APE event: Late Show Added By Popular Demand!
+⚠️ No date found for APE event: Show Rescheduled from 5/01/25
+⚠️ No date found for APE event: Early Show!
+⚠️ No date found for APE event: Late Show Added By Popular Demand!
+⚠️ No date found for APE event: Early Show!
+⚠️ No date found for APE event: Mutts Don’t Heel Tour
+⚠️ No date found for APE event: Donzii
+⚠️ No date found for APE event: Late Show Added By Popular Demand!
+⚠️ No date found for APE event: 3rd Show Added by Popular Demand!
+⚠️ No date found for APE event: Hunnymoon Mountain Tour US 2025
+⚠️ No date found for APE event: Two Nights!
+⚠️ No date found for APE event: Two Nights!New Year's Eve!
+⚠️ No date found for APE event: Show Rescheduled from May 2, 2025!The Epilogue World Tour
+⚠️ No date found for APE event: Trevor Wallace: The Alpha Beta Male
+⚠️ No date found for APE event: Trevor Wallace: The Alpha Beta Male
+⚠️ No date found for APE event: Ray Volpe
+⚠️ No date found for APE event: MENTAL TOUR
+⚠️ No date found for APE event: Plæygirl World Tour
+⚠️ No date found for APE event: Pale, Through The Window Tour
+⚠️ No date found for APE event: Two Evenings With
+⚠️ No date found for APE event: Two Evenings With
+⚠️ No date found for APE event: Odezenne
+⚠️ No date found for APE event: Show Rescheduled from June 12, 2025!U.S. Tour 2025 Broken Fantasy Part II: Found In Pain
+⚠️ No date found for APE event: Bob Schneider
+⚠️ No date found for APE event: dodie
+⚠️ No date found for APE event: Good Story Tour
+⚠️ No date found for APE event: Show Moved From 11/7/2025
+🔄 No events found with specific selectors, trying broader approach...
+🔍 Found 680 potential concert-related elements
+✅ APE Concerts scraper found 0 events
+✅ ape scraper completed: undefined events found in 5126ms
+💾 Processing scraper results...
+❌ ape: Failed to scrape
+🔄 Running real scraper: commonwealth
+🔄 Running single scraper: commonwealth
+🔄 Starting commonwealth scraper...
+🌐 Initializing browser...
+🌐 Loading page: https://www.commonwealthclub.org/events
+✅ Page loaded successfully: 125537 characters
+Found 17 events from Commonwealth Club
+✅ commonwealth scraper completed: 17 events found in 5092ms
+💾 Processing scraper results...
+✅ commonwealth: 17/17 events inserted
+🔄 Running real scraper: knockout
+🔄 Running single scraper: knockout
+🔄 Starting knockout scraper...
+🌐 Initializing browser...
+🌐 Loading page: https://theknockoutsf.com/calendar2
+✅ Page loaded successfully: 220580 characters
+Found 54 events from The Knockout
+✅ knockout scraper completed: 54 events found in 4510ms
+💾 Processing scraper results...
+✅ knockout: 54/54 events inserted
+🗑️ Clearing all events from database...
+🔄 Running real scraper: grizzlypeak
+🔄 Running single scraper: grizzlypeak
+🔄 Starting Grizzly Peak Cyclists scraper...
+🚴‍♂️ Scraping Grizzly Peak Cyclists events...
+📅 Looking for rides from Wed Aug 20 2025 to Wed Aug 27 2025
+🔍 Found 63 ride listings
+🔍 Processing: WED AUG 20 - Wed Ride - Deb's Diversion: Marin Headlands from Mill Valley (4/T/24)
+🎯 Found Grizzly Peak ride: Wed Ride - Deb's Diversion: Marin Headlands from Mill Valley on Wed Aug 20 2025 at 10:30 AM in Mill Valley - Public Safety Buildings
+🔍 Processing: WED AUG 20 - Wednesday BARTable Mixed Terrain (4!/T/18)
+🎯 Found Grizzly Peak ride: Wednesday BARTable Mixed Terrain on Wed Aug 20 2025 at 5:25 PM in El Cerrito Plaza BART
+🔍 Processing: THU AUG 21 - Duros West - Nicasio to Lighthouse (3/TM,M/62)
+🎯 Found Grizzly Peak ride: Duros West - Nicasio to Lighthouse on Thu Aug 21 2025 at 9:30 AM in Nicasio
+🔍 Processing: THU AUG 21 - Spruce to Space (4/TM/26.5)
+🎯 Found Grizzly Peak ride: Spruce to Space on Thu Aug 21 2025 at 5:20 PM in North Berkeley BART
+🔍 Processing: THU AUG 21 - Thursday Evening T Pace Ride (4!/T/22)
+🎯 Found Grizzly Peak ride: Thursday Evening T Pace Ride on Thu Aug 21 2025 at 5:25 PM in North Berkeley BART
+🔍 Processing: THU AUG 21 - Thirsty Thursday Mixty (5/0/17)
+🎯 Found Grizzly Peak ride: Thirsty Thursday Mixty on Thu Aug 21 2025 at 5:30 PM in Canyon Club Brewery
+🔍 Processing: SAT AUG 23 - Nicasio Lasso CCW from Albany (2/T/59)
+🎯 Found Grizzly Peak ride: Nicasio Lasso CCW from Albany on Sat Aug 23 2025 at 8:20 AM in San Francisco Bay Area
+🔍 Processing: SAT AUG 23 - Cotati to the Coast (3!/TM/75)
+🎯 Found Grizzly Peak ride: Cotati to the Coast on Sat Aug 23 2025 at 9:15 AM in Cotati - Gravenstein Hwy Park-&amp;-Ride (Westside)
+🔍 Processing: SUN AUG 24 - Novice Series Ride #4 - Lamorinda (3/LT/28)
+🎯 Found Grizzly Peak ride: Novice Series Ride #4 - Lamorinda on Sun Aug 24 2025 at 10:00 AM in Orinda BART NW corner of parking lot
+🔍 Processing: MON AUG 25 - Monday TI Lap (3!/T/16)
+🎯 Found Grizzly Peak ride: Monday TI Lap on Mon Aug 25 2025 at 5:25 PM in Emeryville - Opposite IKEA
+🔍 Processing: TUE AUG 26 - GPC Tuesday Night Ride - Brisk Group (5/B/32)
+🎯 Found Grizzly Peak ride: GPC Tuesday Night Ride - Brisk Group on Tue Aug 26 2025 at 5:25 PM in Berkeley - Spruce &amp; Grizzly Peak Blvd - Plaza
+🔍 Processing: TUE AUG 26 - GPC Tuesday Evening Ride (5/M/24)
+🎯 Found Grizzly Peak ride: GPC Tuesday Evening Ride on Tue Aug 26 2025 at 5:30 PM in Berkeley - Spruce &amp; Grizzly Peak Blvd - Plaza
+🔍 Processing: WED AUG 27 - Wednesday BARTable Mixed Terrain (4!/T/18)
+🎯 Found Grizzly Peak ride: Wednesday BARTable Mixed Terrain on Wed Aug 27 2025 at 5:25 PM in El Cerrito Plaza BART
+🔍 Processing: THU AUG 28 - Duros West (3/TM,M/60)
+🔍 Processing: THU AUG 28 - Spruce to Space (4/TM/26.5)
+🔍 Processing: THU AUG 28 - Thursday Evening T Pace Ride (4!/T/22)
+🔍 Processing: THU AUG 28 - Thirsty Thursday Mixty (5/0/17)
+🔍 Processing: SUN AUG 31 - Novice Series Ride #5 - Franklin Canyon and Carquinez Shoreline (3/LT,T/34)
+🔍 Processing: MON SEP 1 - Monday TI Lap (3!/T/16)
+🔍 Processing: TUE SEP 2 - GPC Tuesday Night Ride - Brisk Group (5/B/32)
+🔍 Processing: TUE SEP 2 - GPC Tuesday Evening Ride (5/M/24)
+🔍 Processing: WED SEP 3 - Wednesday BARTable Mixed Terrain (4!/T/18)
+🔍 Processing: THU SEP 4 - Duros West (3/TM,M/60)
+🔍 Processing: THU SEP 4 - Spruce to Space (4/TM/26.5)
+🔍 Processing: THU SEP 4 - Thirsty Thursday Mixty (5/0/17)
+🔍 Processing: FRI SEP 5 - Bay Trail / E-ville / Point Richmond (1/T/34)
+🔍 Processing: SAT SEP 6 - Croissant and Hot Cocoa: Rustic Bakery (2/LT/35)
+🔍 Processing: SUN SEP 7 - Novice Series Ride #6 - Central Marin Redwoods - Long Version (3/T/42)
+🔍 Processing: MON SEP 8 - Monday TI Lap (3!/T/16)
+🔍 Processing: TUE SEP 9 - GPC Tuesday Night Ride - Brisk Group (5/B/32)
+🔍 Processing: TUE SEP 9 - GPC Tuesday Evening Ride (5/M/24)
+🔍 Processing: WED SEP 10 - Wednesday BARTable Mixed Terrain (4!/T/18)
+🔍 Processing: THU SEP 11 - Duros West (3/TM,M/60)
+🔍 Processing: THU SEP 11 - Spruce to Space (4/TM/26.5)
+🔍 Processing: THU SEP 11 - Thirsty Thursday Mixty (5/0/17)
+🔍 Processing: MON SEP 15 - Monday TI Lap (3!/T/16)
+🔍 Processing: TUE SEP 16 - GPC Tuesday Night Ride - Brisk Group (5/B/32)
+🔍 Processing: TUE SEP 16 - GPC Tuesday Evening Ride (5/M/24)
+🔍 Processing: WED SEP 17 - Wednesday BARTable Mixed Terrain (4!/T/18)
+🔍 Processing: THU SEP 18 - Duros West (3/TM,M/60)
+🔍 Processing: THU SEP 18 - Spruce to Space (4/TM/26.5)
+🔍 Processing: THU SEP 18 - Thirsty Thursday Mixty (5/0/17)
+🔍 Processing: SAT SEP 20 - Individual Time Trial/GPC Pace Ride (5/0/19)
+🔍 Processing: MON SEP 22 - Monday TI Lap (3!/T/16)
+🔍 Processing: TUE SEP 23 - GPC Tuesday Night Ride - Brisk Group (5/B/32)
+🔍 Processing: TUE SEP 23 - GPC Tuesday Evening Ride (5/M/24)
+🔍 Processing: WED SEP 24 - Wednesday BARTable Mixed Terrain (4!/T/18)
+🔍 Processing: THU SEP 25 - Duros West (3/TM,M/60)
+🔍 Processing: THU SEP 25 - Spruce to Space (4/TM/26.5)
+🔍 Processing: THU SEP 25 - Thirsty Thursday Mixty (5/0/17)
+🔍 Processing: MON SEP 29 - Monday TI Lap (3!/T/16)
+🔍 Processing: TUE SEP 30 - GPC Tuesday Night Ride - Brisk Group (5/B/32)
+🔍 Processing: TUE SEP 30 - GPC Tuesday Evening Ride (5/M/24)
+🔍 Processing: WED OCT 1 - Wednesday BARTable Mixed Terrain (4!/T/18)
+🎯 Total events created: 13
+✅ Grizzly Peak Cyclists scraper completed: 13 events found in 379ms
+💾 Processing scraper results...
+✅ grizzlypeak: 13/13 events inserted
+🔄 Running real scraper: roxie
+🔄 Running single scraper: roxie
+🔄 Starting Roxie Theater scraper...
+🎬 Starting Roxie scraper (HTTP version)...
+🔧 Scraper config: {
+  "name": "Roxie Theater",
+  "url": "https://roxie.com/calendar/",
+  "description": "Independent film theater in San Francisco (HTTP version)"
+}
+🌐 Fetching https://roxie.com/calendar/...
+🌐 Using URL: https://roxie.com/calendar/
+📄 Page loaded: 332756 characters
+📅 Today's date: Wed Aug 20 2025
+🔍 Found 92 calendar days, processing events within next 7 days
+📅 Processing August 20, 2025 (Wed Aug 20 2025)
+🎬 Found film "Architecton" with 1 showtimes: 6:50 pm
+✅ Created event: "Architecton" at 6:50 pm on Wed Aug 20 2025
+🎬 Found film "Drugs in the Tenderloin" with 1 showtimes: 7:00 pm
+✅ Created event: "Drugs in the Tenderloin" at 7:00 pm on Wed Aug 20 2025
+🎬 Found film "It’s Never Over, Jeff Buckley" with 1 showtimes: 9:00 pm
+✅ Created event: "It’s Never Over, Jeff Buckley" at 9:00 pm on Wed Aug 20 2025
+🎬 Found film "Together" with 1 showtimes: 9:00 pm
+✅ Created event: "Together" at 9:00 pm on Wed Aug 20 2025
+📅 Processing August 21, 2025 (Thu Aug 21 2025)
+🎬 Found film "Stray Dog" with 1 showtimes: 3:30 pm
+✅ Created event: "Stray Dog" at 3:30 pm on Thu Aug 21 2025
+⏭️ Skipping generic title: El Mariachi – Free screening
+🎬 Found film "CatVideoFest 2025" with 1 showtimes: 6:05 pm
+✅ Created event: "CatVideoFest 2025" at 6:05 pm on Thu Aug 21 2025
+🎬 Found film "It’s Never Over, Jeff Buckley" with 1 showtimes: 8:00 pm
+✅ Created event: "It’s Never Over, Jeff Buckley" at 8:00 pm on Thu Aug 21 2025
+🎬 Found film "Cloud" with 1 showtimes: 8:00 pm
+✅ Created event: "Cloud" at 8:00 pm on Thu Aug 21 2025
+📅 Processing August 22, 2025 (Fri Aug 22 2025)
+🎬 Found film "SFQFF: Opening Night" with 1 showtimes: 6:00 pm
+✅ Created event: "SFQFF: Opening Night" at 6:00 pm on Fri Aug 22 2025
+🎬 Found film "It’s Never Over, Jeff Buckley" with 1 showtimes: 6:15 pm
+✅ Created event: "It’s Never Over, Jeff Buckley" at 6:15 pm on Fri Aug 22 2025
+🎬 Found film "Roxie First Looks #9" with 1 showtimes: 9:00 pm
+✅ Created event: "Roxie First Looks #9" at 9:00 pm on Fri Aug 22 2025
+🎬 Found film "Together" with 1 showtimes: 9:00 pm
+✅ Created event: "Together" at 9:00 pm on Fri Aug 22 2025
+📅 Processing August 23, 2025 (Sat Aug 23 2025)
+🎬 Found film "SFQFF: Program 2 – Smash the Cis-tem" with 1 showtimes: 1:00 pm
+✅ Created event: "SFQFF: Program 2 – Smash the Cis-tem" at 1:00 pm on Sat Aug 23 2025
+🎬 Found film "SFQFF: Program 3 – Purple Haze" with 1 showtimes: 1:30 pm
+✅ Created event: "SFQFF: Program 3 – Purple Haze" at 1:30 pm on Sat Aug 23 2025
+🎬 Found film "SFQFF: Program 4 – Narrative Feature" with 1 showtimes: 2:50 pm
+✅ Created event: "SFQFF: Program 4 – Narrative Feature" at 2:50 pm on Sat Aug 23 2025
+🎬 Found film "SFQFF: Program 5 – Paw-sitively Delicious" with 1 showtimes: 3:00 pm
+✅ Created event: "SFQFF: Program 5 – Paw-sitively Delicious" at 3:00 pm on Sat Aug 23 2025
+🎬 Found film "SFQFF: Program 6 – End the Stigma" with 1 showtimes: 5:00 pm
+✅ Created event: "SFQFF: Program 6 – End the Stigma" at 5:00 pm on Sat Aug 23 2025
+🎬 Found film "Architecton" with 1 showtimes: 5:10 pm
+✅ Created event: "Architecton" at 5:10 pm on Sat Aug 23 2025
+⏭️ Skipping generic title: SFQFF: Program 7 – Centerpiece Film
+🎬 Found film "Roxie First Looks #9" with 1 showtimes: 7:20 pm
+✅ Created event: "Roxie First Looks #9" at 7:20 pm on Sat Aug 23 2025
+📅 Processing August 24, 2025 (Sun Aug 24 2025)
+🎬 Found film "SFQFF: Program 8 – Cafe International" with 1 showtimes: 1:00 pm
+✅ Created event: "SFQFF: Program 8 – Cafe International" at 1:00 pm on Sun Aug 24 2025
+🎬 Found film "SFQFF: Program 9 – Small Bites" with 1 showtimes: 1:00 pm
+✅ Created event: "SFQFF: Program 9 – Small Bites" at 1:00 pm on Sun Aug 24 2025
+🎬 Found film "SFQFF: Program 10 – Feature Documentary" with 1 showtimes: 3:00 pm
+✅ Created event: "SFQFF: Program 10 – Feature Documentary" at 3:00 pm on Sun Aug 24 2025
+🎬 Found film "SFQFF: Program 11 – Female Power" with 1 showtimes: 3:00 pm
+✅ Created event: "SFQFF: Program 11 – Female Power" at 3:00 pm on Sun Aug 24 2025
+🎬 Found film "SFQFF: Program 12 – Box of Chocolates" with 1 showtimes: 5:00 pm
+✅ Created event: "SFQFF: Program 12 – Box of Chocolates" at 5:00 pm on Sun Aug 24 2025
+🎬 Found film "CatVideoFest 2025" with 1 showtimes: 5:10 pm
+✅ Created event: "CatVideoFest 2025" at 5:10 pm on Sun Aug 24 2025
+🎬 Found film "Roxie First Looks #9" with 1 showtimes: 7:00 pm
+✅ Created event: "Roxie First Looks #9" at 7:00 pm on Sun Aug 24 2025
+🎬 Found film "SFQFF: Program 13 – Closing Night" with 1 showtimes: 7:10 pm
+✅ Created event: "SFQFF: Program 13 – Closing Night" at 7:10 pm on Sun Aug 24 2025
+📅 Processing August 25, 2025 (Mon Aug 25 2025)
+🎬 Found film "Olas de Recuerdo" with 1 showtimes: 6:00 pm
+✅ Created event: "Olas de Recuerdo" at 6:00 pm on Mon Aug 25 2025
+🎬 Found film "Sudan, Remember Us" with 1 showtimes: 6:30 pm
+✅ Created event: "Sudan, Remember Us" at 6:30 pm on Mon Aug 25 2025
+🎬 Found film "Roxie First Looks #9" with 1 showtimes: 8:20 pm
+✅ Created event: "Roxie First Looks #9" at 8:20 pm on Mon Aug 25 2025
+🎬 Found film "High and Low" with 1 showtimes: 8:30 pm
+✅ Created event: "High and Low" at 8:30 pm on Mon Aug 25 2025
+📅 Processing August 26, 2025 (Tue Aug 26 2025)
+⏭️ Skipping generic title: San Francisco Film Preserve: Black Lightning
+🎬 Found film "Masayuki Suo’s Shall We Dance?" with 1 showtimes: 6:30 pm
+✅ Created event: "Masayuki Suo’s Shall We Dance?" at 6:30 pm on Tue Aug 26 2025
+🎬 Found film "In the Mood for Love: 25th Anniversary" with 1 showtimes: 9:00 pm
+✅ Created event: "In the Mood for Love: 25th Anniversary" at 9:00 pm on Tue Aug 26 2025
+🎬 Found film "Roxie First Looks #9" with 1 showtimes: 9:20 pm
+✅ Created event: "Roxie First Looks #9" at 9:20 pm on Tue Aug 26 2025
+📅 Processing August 27, 2025 (Wed Aug 27 2025)
+🎬 Found film "Together" with 1 showtimes: 6:30 pm
+✅ Created event: "Together" at 6:30 pm on Wed Aug 27 2025
+🎬 Found film "The Last Dance: Extended Version (破·地獄:加長版)" with 1 showtimes: 7:00 pm
+✅ Created event: "The Last Dance: Extended Version (破·地獄:加長版)" at 7:00 pm on Wed Aug 27 2025
+🎬 Found film "Roxie First Looks #9" with 1 showtimes: 8:45 pm
+✅ Created event: "Roxie First Looks #9" at 8:45 pm on Wed Aug 27 2025
+🎬 Scraping complete: 37 events found from 8 days (skipped 19 past days, 65 future days)
+✅ Roxie Theater scraper completed: 37 events found in 97ms
+💾 Processing scraper results...
+✅ roxie: 37/37 events inserted
+🔄 Running real scraper: punchline
+🔄 Running single scraper: punchline
+🔄 Starting punchline scraper...
+🌐 Initializing browser...
+🌐 Loading page: https://www.punchlinecomedyclub.com/shows
+✅ Page loaded successfully: 475587 characters
+🔍 Step 1: Extracting from Schema.org structured data...
+✅ Found 36 events from structured data
+✅ Date validated: "Comedy Allstars" - 2025-08-20T19:30:00-07:00 (2025-08-21T02:30:00.000Z Pacific Time - within 14 days)
+✅ Valid event: "Comedy Allstars"
+✅ Date validated: "Rosebud Baker" - 2025-08-21T20:00:00-07:00 (2025-08-22T03:00:00.000Z Pacific Time - within 14 days)
+✅ Valid event: "Rosebud Baker"
+✅ Date validated: "Rosebud Baker" - 2025-08-22T19:30:00-07:00 (2025-08-23T02:30:00.000Z Pacific Time - within 14 days)
+✅ Valid event: "Rosebud Baker"
+✅ Date validated: "Rosebud Baker" - 2025-08-22T21:45:00-07:00 (2025-08-23T04:45:00.000Z Pacific Time - within 14 days)
+✅ Valid event: "Rosebud Baker"
+✅ Date validated: "Rosebud Baker" - 2025-08-23T19:00:00-07:00 (2025-08-24T02:00:00.000Z Pacific Time - within 14 days)
+✅ Valid event: "Rosebud Baker"
+✅ Date validated: "Rosebud Baker" - 2025-08-23T21:15:00-07:00 (2025-08-24T04:15:00.000Z Pacific Time - within 14 days)
+✅ Valid event: "Rosebud Baker"
+✅ Date validated: "S. F. Comedy Showcase" - 2025-08-24T19:30:00-07:00 (2025-08-25T02:30:00.000Z Pacific Time - within 14 days)
+✅ Valid event: "S. F. Comedy Showcase"
+✅ Date validated: "Steve Ausburne & Ben Feldman" - 2025-08-26T19:30:00-07:00 (2025-08-27T02:30:00.000Z Pacific Time - within 14 days)
+✅ Valid event: "Steve Ausburne & Ben Feldman"
+✅ Date validated: "Mark Smalls" - 2025-08-27T20:00:00-07:00 (2025-08-28T03:00:00.000Z Pacific Time - within 14 days)
+✅ Valid event: "Mark Smalls"
+✅ Date validated: "Mark Smalls" - 2025-08-28T20:00:00-07:00 (2025-08-29T03:00:00.000Z Pacific Time - within 14 days)
+✅ Valid event: "Mark Smalls"
+✅ Date validated: "Mark Smalls" - 2025-08-29T19:30:00-07:00 (2025-08-30T02:30:00.000Z Pacific Time - within 14 days)
+✅ Valid event: "Mark Smalls"
+✅ Date validated: "Mark Smalls" - 2025-08-29T21:45:00-07:00 (2025-08-30T04:45:00.000Z Pacific Time - within 14 days)
+✅ Valid event: "Mark Smalls"
+✅ Date validated: "Mark Smalls" - 2025-08-30T19:00:00-07:00 (2025-08-31T02:00:00.000Z Pacific Time - within 14 days)
+✅ Valid event: "Mark Smalls"
+✅ Date validated: "Mark Smalls" - 2025-08-30T21:15:00-07:00 (2025-08-31T04:15:00.000Z Pacific Time - within 14 days)
+✅ Valid event: "Mark Smalls"
+✅ Date validated: "S. F. Comedy Showcase" - 2025-08-31T19:30:00-07:00 (2025-09-01T02:30:00.000Z Pacific Time - within 14 days)
+✅ Valid event: "S. F. Comedy Showcase"
+✅ Date validated: "Ray Lau" - 2025-09-02T19:00:00-07:00 (2025-09-03T02:00:00.000Z Pacific Time - within 14 days)
+✅ Valid event: "Ray Lau"
+✅ Date validated: "Ray Lau" - 2025-09-02T21:15:00-07:00 (2025-09-03T04:15:00.000Z Pacific Time - within 14 days)
+✅ Valid event: "Ray Lau"
+❌ Event too far in future rejected: "Pat Burtscher" - 2025-09-03T20:00:00-07:00 (2025-09-04T03:00:00.000Z Pacific Time - beyond 14 days from 2025-08-20 Pacific Time)
+❌ Event too far in future rejected: "Pat Burtscher" - 2025-09-04T20:00:00-07:00 (2025-09-05T03:00:00.000Z Pacific Time - beyond 14 days from 2025-08-20 Pacific Time)
+❌ Event too far in future rejected: "Pat Burtscher" - 2025-09-05T19:30:00-07:00 (2025-09-06T02:30:00.000Z Pacific Time - beyond 14 days from 2025-08-20 Pacific Time)
+❌ Event too far in future rejected: "Pat Burtscher" - 2025-09-05T21:45:00-07:00 (2025-09-06T04:45:00.000Z Pacific Time - beyond 14 days from 2025-08-20 Pacific Time)
+❌ Event too far in future rejected: "Pat Burtscher" - 2025-09-06T19:00:00-07:00 (2025-09-07T02:00:00.000Z Pacific Time - beyond 14 days from 2025-08-20 Pacific Time)
+❌ Event too far in future rejected: "Pat Burtscher" - 2025-09-06T21:15:00-07:00 (2025-09-07T04:15:00.000Z Pacific Time - beyond 14 days from 2025-08-20 Pacific Time)
+❌ Event too far in future rejected: "S. F. Comedy Showcase" - 2025-09-07T19:30:00-07:00 (2025-09-08T02:30:00.000Z Pacific Time - beyond 14 days from 2025-08-20 Pacific Time)
+❌ Event too far in future rejected: "Comedy Allstars" - 2025-09-09T19:30:00-07:00 (2025-09-10T02:30:00.000Z Pacific Time - beyond 14 days from 2025-08-20 Pacific Time)
+❌ Event too far in future rejected: "Johnny Taylor" - 2025-09-10T19:30:00-07:00 (2025-09-11T02:30:00.000Z Pacific Time - beyond 14 days from 2025-08-20 Pacific Time)
+❌ Event too far in future rejected: "Des Bishop" - 2025-09-11T20:00:00-07:00 (2025-09-12T03:00:00.000Z Pacific Time - beyond 14 days from 2025-08-20 Pacific Time)
+❌ Event too far in future rejected: "Des Bishop" - 2025-09-12T19:30:00-07:00 (2025-09-13T02:30:00.000Z Pacific Time - beyond 14 days from 2025-08-20 Pacific Time)
+❌ Event too far in future rejected: "Des Bishop" - 2025-09-12T21:45:00-07:00 (2025-09-13T04:45:00.000Z Pacific Time - beyond 14 days from 2025-08-20 Pacific Time)
+❌ Event too far in future rejected: "Des Bishop" - 2025-09-13T19:00:00-07:00 (2025-09-14T02:00:00.000Z Pacific Time - beyond 14 days from 2025-08-20 Pacific Time)
+❌ Event too far in future rejected: "Des Bishop" - 2025-09-13T21:15:00-07:00 (2025-09-14T04:15:00.000Z Pacific Time - beyond 14 days from 2025-08-20 Pacific Time)
+❌ Event too far in future rejected: "S. F. Comedy Showcase" - 2025-09-14T19:30:00-07:00 (2025-09-15T02:30:00.000Z Pacific Time - beyond 14 days from 2025-08-20 Pacific Time)
+❌ Event too far in future rejected: "Joe Klocek & Friends" - 2025-09-16T19:30:00-07:00 (2025-09-17T02:30:00.000Z Pacific Time - beyond 14 days from 2025-08-20 Pacific Time)
+❌ Event too far in future rejected: "Comedy Allstars" - 2025-09-17T19:30:00-07:00 (2025-09-18T02:30:00.000Z Pacific Time - beyond 14 days from 2025-08-20 Pacific Time)
+❌ Event too far in future rejected: "Richard Sarvate" - 2025-09-18T20:00:00-07:00 (2025-09-19T03:00:00.000Z Pacific Time - beyond 14 days from 2025-08-20 Pacific Time)
+❌ Event too far in future rejected: "Ashley Hesseltine: Sex Before Marriage Tour" - 2025-09-19T19:30:00-07:00 (2025-09-20T02:30:00.000Z Pacific Time - beyond 14 days from 2025-08-20 Pacific Time)
+Found 17 events from Punchline
+✅ punchline scraper completed: 17 events found in 4738ms
+💾 Processing scraper results...
+✅ punchline: 17/17 events inserted
+🔄 Running real scraper: giants
+🔄 Running single scraper: giants
+🔄 Starting giants scraper...
+⚾ Scraping San Francisco Giants games...
+📅 Looking for Giants games in next 7 days from today (Wed Aug 20 2025)
+🎯 Found Giants game: Giants vs Chicago Cubs on Tue Aug 26 2025
+✅ San Francisco Giants scraper found 1 upcoming games
+✅ giants scraper completed: 1 events found in 407ms
+💾 Processing scraper results...
+✅ giants: 1/1 events inserted
+🔄 Running real scraper: valkyries
+🔄 Running single scraper: valkyries
+🔄 Starting valkyries scraper...
+🏀 Scraping Las Vegas Valkyries basketball games...
+📅 Looking for Valkyries HOME games in next 7 days from today (Wed Aug 20 2025)
+Found 46 games from ESPN API
+⚠️ Error processing Valkyries game 38: gameType is not defined
+✅ Valkyries scraper found 1 upcoming games
+✅ valkyries scraper completed: 1 events found in 136ms
+💾 Processing scraper results...
+✅ valkyries: 1/1 events inserted
+🔄 Running real scraper: creativemornings
+🔄 Running single scraper: creativemornings
+🔄 Starting creativemornings scraper...
+🎨 Scraping Creative Mornings FieldTrips...
+🌐 Initializing browser...
+🌐 Loading page: https://creativemornings.com/fieldtrips/browse
+✅ Page loaded successfully: 383591 characters
+🎯 Found FieldTrip: WTF is AI | Thriving Through Change on 2025-08-21T18:00:00.000Z
+🎯 Found FieldTrip: Feel it, write it on 2025-08-21T20:00:00.000Z
+🎯 Found FieldTrip: Thought Sovereignty: Reclaiming Your Inner Narrative on 2025-08-25T19:00:00.000Z
+🎯 Found FieldTrip: LEVEL UP: Your Career on 2025-08-26T16:30:00.000Z
+🎯 Found FieldTrip: Digital Declutter Party on 2025-08-26T23:00:00.000Z
+🎯 Found FieldTrip: Qigong: Move, Meditate, & Recharge on 2025-08-27T19:30:00.000Z
+🎯 Found FieldTrip: Calm Your Nervous System in One Minute on 2025-08-28T15:00:00.000Z
+🎯 Found FieldTrip: LEVEL UP: Your Freelance on 2025-09-02T16:30:00.000Z
+🎯 Found FieldTrip: Cultivating Inspired Work: An Alternative to Hustle & Grind on 2025-09-02T18:30:00.000Z
+🎯 Found FieldTrip: Big Ideas for Spiritual Creative Types: Rick Rubin’s ‘A Creative Act’ on 2025-09-03T20:00:00.000Z
+🎯 Found FieldTrip: LEVEL UP: Start Your Next Creative Chapter: Pave a Path to Creative Joy & Success on 2025-09-08T19:00:00.000Z
+🎯 Found FieldTrip: Build Bonds Beyond Screens on 2025-09-09T16:30:00.000Z
+🎯 Found FieldTrip: LEVEL UP: How to Design Flow Experiences to Propel Your Creative Work on 2025-09-10T19:30:00.000Z
+🎯 Found FieldTrip: Start Making Your Art Again on 2025-09-11T23:00:00.000Z
+🎯 Found FieldTrip: LEVEL UP: Business Strategies for ADHD Creatives on 2025-09-16T18:30:00.000Z
+🎯 Found FieldTrip: Uncondition Your Posture to Reclaim Your Power on 2025-09-22T17:00:00.000Z
+🎯 Found FieldTrip: Improv for groundedness in uncertain times on 2025-09-24T20:00:00.000Z
+🎯 Found FieldTrip: Rewrite Your Money Story: A Creative Workshop to Break Free From Scarcity on 2025-09-25T17:00:00.000Z
+🎯 Found FieldTrip: LEVEL UP: How to Overcome Self-Doubt and Build Unshakeable Creative Confidence on 2025-10-01T19:30:00.000Z
+🎯 Found FieldTrip: LEVEL UP: 💡The Full-Time Creative Formula: Learn the 5 Vital Elements You Need to Succeed on 2025-10-06T19:00:00.000Z
+🎯 Found FieldTrip: LEVEL UP: Navigating Chaos: The Freelancer's Survival Guide on 2025-10-14T18:30:00.000Z
+🎯 Found FieldTrip: LEVEL UP: The Freelancer’s Survival Guide: Pricing, Pitching & Getting Paid on 2025-10-21T20:00:00.000Z
+✅ CreativeMornings FieldTrips scraper found 22 events
+✅ creativemornings scraper completed: 22 events found in 5119ms
+💾 Processing scraper results...
+✅ creativemornings: 22/22 events inserted
+🔄 Running real scraper: sfrando
+🔄 Running single scraper: sfrando
+🔄 Starting sfrando scraper...
+🚴‍♂️ Scraping SF Randonneurs cycling events...
+📅 Looking for next 3 upcoming rides from today (Wed Aug 20 2025)
+Found 31 event rows
+🎯 Found SF Rando event: Laguna Lake 200k on Sat Aug 30 2025 at 7:00
+🎯 Found SF Rando event: El Paseito Mixto 103k ≈ on Sun Sep 14 2025 at 8:00
+🎯 Found SF Rando event: Lucas Valley Populaire on Sun Sep 14 2025 at 8:00
+🎯 Found SF Rando event: SFR Dart Populaire on Sat Sep 27 2025 at †
+🎯 Found SF Rando event: SFR DART on Sat Sep 27 2025 at †
+🎯 Found SF Rando event: Winters 200k on Sat Oct 11 2025 at 7:00
+🎯 Found SF Rando event: SFR Dart Populaire on Sat Oct 18 2025 at †
+🎯 Found SF Rando event: Del Puerto Canyon 200k on Sat Nov 01 2025 at 8:00
+🎯 Found SF Rando event: Del Puerto Canyon Junior on Sat Nov 01 2025 at 9:00
+🎯 Found SF Rando event: Estero Americano 200k on Sat Dec 06 2025 at 7:00
+✅ SF Randonneurs scraper found 3 next upcoming rides
+✅ sfrando scraper completed: 3 events found in 466ms
+💾 Processing scraper results...
+✅ sfrando: 3/3 events inserted
+🔄 Fetching events from real scrapers...
+🔄 Fetching events from real scrapers...
+📊 Returning 94 events from real scrapers
+📊 Returning 94 events from real scrapers
+🔄 Fetching events from real scrapers...
+📊 Returning 94 events from real scrapers
+🔄 Running real scraper: booksmith
+🔄 Running single scraper: booksmith
+🔄 Starting booksmith scraper...
+📚 Scraping Booksmith events...
+🌐 Initializing browser...
+🌐 Loading page: https://www.booksmith.com/events
+✅ Page loaded successfully: 51647 characters
+🔍 No events found with main selectors, trying alternative approach...
+🎯 Found alternative Booksmith event: BSKY | INSTAGRAM | FACEBOOK | YOUTUBE
+✅ Booksmith scraper found 1 events
+✅ booksmith scraper completed: 1 events found in 8658ms
+💾 Processing scraper results...
+✅ booksmith: 1/1 events inserted
+🔄 Running real scraper: sfpl
+🔄 Running single scraper: sfpl
+🔄 Starting sfpl scraper...
+🌐 Initializing browser...
+🌐 Loading page: https://sfpl.org/events
+✅ Page loaded successfully: 282406 characters
+Found 111 events from SFPL
+✅ sfpl scraper completed: 111 events found in 5212ms
+💾 Processing scraper results...
+✅ sfpl: 111/111 events inserted
+🔄 Running real scraper: gamh
+🔄 Running single scraper: gamh
+🔄 Starting gamh scraper...
+🎵 Scraping Great American Music Hall events...
+🌐 Initializing browser...
+🌐 Loading page: https://gamh.com/calendar/
+✅ Page loaded successfully: 278973 characters
+🔍 No events found with main selectors, trying limited alternative approach...
+🎯 Found alternative GAMH event: Join Our Mailing List
+✅ Great American Music Hall scraper found 1 events
+✅ gamh scraper completed: 1 events found in 4271ms
+💾 Processing scraper results...
+✅ gamh: 1/1 events inserted
+🔄 Running real scraper: cobbs
+🔄 Running single scraper: cobbs
+🔄 Starting cobbs scraper...
+🌐 Initializing browser...
+🌐 Loading page: https://www.cobbscomedy.com/events
+✅ Page loaded successfully: 173477 characters
+Found 6 events from Cobb's
+✅ cobbs scraper completed: 6 events found in 6241ms
+💾 Processing scraper results...
+✅ cobbs: 6/6 events inserted
+🗑️ Clearing all events from database...
+🔄 Running real scraper: grizzlypeak
+🔄 Running single scraper: grizzlypeak
+🔄 Starting Grizzly Peak Cyclists scraper...
+🚴‍♂️ Scraping Grizzly Peak Cyclists events...
+📅 Looking for rides from Wed Aug 20 2025 to Wed Aug 27 2025
+🔍 Found 63 ride listings
+🔍 Processing: WED AUG 20 - Wed Ride - Deb's Diversion: Marin Headlands from Mill Valley (4/T/24)
+🎯 Found Grizzly Peak ride: Wed Ride - Deb's Diversion: Marin Headlands from Mill Valley on Wed Aug 20 2025 at 10:30 AM in Mill Valley - Public Safety Buildings
+🔍 Processing: WED AUG 20 - Wednesday BARTable Mixed Terrain (4!/T/18)
+🎯 Found Grizzly Peak ride: Wednesday BARTable Mixed Terrain on Wed Aug 20 2025 at 5:25 PM in El Cerrito Plaza BART
+🔍 Processing: THU AUG 21 - Duros West - Nicasio to Lighthouse (3/TM,M/62)
+🎯 Found Grizzly Peak ride: Duros West - Nicasio to Lighthouse on Thu Aug 21 2025 at 9:30 AM in Nicasio
+🔍 Processing: THU AUG 21 - Spruce to Space (4/TM/26.5)
+🎯 Found Grizzly Peak ride: Spruce to Space on Thu Aug 21 2025 at 5:20 PM in North Berkeley BART
+🔍 Processing: THU AUG 21 - Thursday Evening T Pace Ride (4!/T/22)
+🎯 Found Grizzly Peak ride: Thursday Evening T Pace Ride on Thu Aug 21 2025 at 5:25 PM in North Berkeley BART
+🔍 Processing: THU AUG 21 - Thirsty Thursday Mixty (5/0/17)
+🎯 Found Grizzly Peak ride: Thirsty Thursday Mixty on Thu Aug 21 2025 at 5:30 PM in Canyon Club Brewery
+🔍 Processing: SAT AUG 23 - Nicasio Lasso CCW from Albany (2/T/59)
+🎯 Found Grizzly Peak ride: Nicasio Lasso CCW from Albany on Sat Aug 23 2025 at 8:20 AM in San Francisco Bay Area
+🔍 Processing: SAT AUG 23 - Cotati to the Coast (3!/TM/75)
+🎯 Found Grizzly Peak ride: Cotati to the Coast on Sat Aug 23 2025 at 9:15 AM in Cotati - Gravenstein Hwy Park-&amp;-Ride (Westside)
+🔍 Processing: SUN AUG 24 - Novice Series Ride #4 - Lamorinda (3/LT/28)
+🎯 Found Grizzly Peak ride: Novice Series Ride #4 - Lamorinda on Sun Aug 24 2025 at 10:00 AM in Orinda BART NW corner of parking lot
+🔍 Processing: MON AUG 25 - Monday TI Lap (3!/T/16)
+🎯 Found Grizzly Peak ride: Monday TI Lap on Mon Aug 25 2025 at 5:25 PM in Emeryville - Opposite IKEA
+🔍 Processing: TUE AUG 26 - GPC Tuesday Night Ride - Brisk Group (5/B/32)
+🎯 Found Grizzly Peak ride: GPC Tuesday Night Ride - Brisk Group on Tue Aug 26 2025 at 5:25 PM in Berkeley - Spruce &amp; Grizzly Peak Blvd - Plaza
+🔍 Processing: TUE AUG 26 - GPC Tuesday Evening Ride (5/M/24)
+🎯 Found Grizzly Peak ride: GPC Tuesday Evening Ride on Tue Aug 26 2025 at 5:30 PM in Berkeley - Spruce &amp; Grizzly Peak Blvd - Plaza
+🔍 Processing: WED AUG 27 - Wednesday BARTable Mixed Terrain (4!/T/18)
+🎯 Found Grizzly Peak ride: Wednesday BARTable Mixed Terrain on Wed Aug 27 2025 at 5:25 PM in El Cerrito Plaza BART
+🔍 Processing: THU AUG 28 - Duros West (3/TM,M/60)
+🔍 Processing: THU AUG 28 - Spruce to Space (4/TM/26.5)
+🔍 Processing: THU AUG 28 - Thursday Evening T Pace Ride (4!/T/22)
+🔍 Processing: THU AUG 28 - Thirsty Thursday Mixty (5/0/17)
+🔍 Processing: SUN AUG 31 - Novice Series Ride #5 - Franklin Canyon and Carquinez Shoreline (3/LT,T/34)
+🔍 Processing: MON SEP 1 - Monday TI Lap (3!/T/16)
+🔍 Processing: TUE SEP 2 - GPC Tuesday Night Ride - Brisk Group (5/B/32)
+🔍 Processing: TUE SEP 2 - GPC Tuesday Evening Ride (5/M/24)
+🔍 Processing: WED SEP 3 - Wednesday BARTable Mixed Terrain (4!/T/18)
+🔍 Processing: THU SEP 4 - Duros West (3/TM,M/60)
+🔍 Processing: THU SEP 4 - Spruce to Space (4/TM/26.5)
+🔍 Processing: THU SEP 4 - Thirsty Thursday Mixty (5/0/17)
+🔍 Processing: FRI SEP 5 - Bay Trail / E-ville / Point Richmond (1/T/34)
+🔍 Processing: SAT SEP 6 - Croissant and Hot Cocoa: Rustic Bakery (2/LT/35)
+🔍 Processing: SUN SEP 7 - Novice Series Ride #6 - Central Marin Redwoods - Long Version (3/T/42)
+🔍 Processing: MON SEP 8 - Monday TI Lap (3!/T/16)
+🔍 Processing: TUE SEP 9 - GPC Tuesday Night Ride - Brisk Group (5/B/32)
+🔍 Processing: TUE SEP 9 - GPC Tuesday Evening Ride (5/M/24)
+🔍 Processing: WED SEP 10 - Wednesday BARTable Mixed Terrain (4!/T/18)
+🔍 Processing: THU SEP 11 - Duros West (3/TM,M/60)
+🔍 Processing: THU SEP 11 - Spruce to Space (4/TM/26.5)
+🔍 Processing: THU SEP 11 - Thirsty Thursday Mixty (5/0/17)
+🔍 Processing: MON SEP 15 - Monday TI Lap (3!/T/16)
+🔍 Processing: TUE SEP 16 - GPC Tuesday Night Ride - Brisk Group (5/B/32)
+🔍 Processing: TUE SEP 16 - GPC Tuesday Evening Ride (5/M/24)
+🔍 Processing: WED SEP 17 - Wednesday BARTable Mixed Terrain (4!/T/18)
+🔍 Processing: THU SEP 18 - Duros West (3/TM,M/60)
+🔍 Processing: THU SEP 18 - Spruce to Space (4/TM/26.5)
+🔍 Processing: THU SEP 18 - Thirsty Thursday Mixty (5/0/17)
+🔍 Processing: SAT SEP 20 - Individual Time Trial/GPC Pace Ride (5/0/19)
+🔍 Processing: MON SEP 22 - Monday TI Lap (3!/T/16)
+🔍 Processing: TUE SEP 23 - GPC Tuesday Night Ride - Brisk Group (5/B/32)
+🔍 Processing: TUE SEP 23 - GPC Tuesday Evening Ride (5/M/24)
+🔍 Processing: WED SEP 24 - Wednesday BARTable Mixed Terrain (4!/T/18)
+🔍 Processing: THU SEP 25 - Duros West (3/TM,M/60)
+🔍 Processing: THU SEP 25 - Spruce to Space (4/TM/26.5)
+🔍 Processing: THU SEP 25 - Thirsty Thursday Mixty (5/0/17)
+🔍 Processing: MON SEP 29 - Monday TI Lap (3!/T/16)
+🔍 Processing: TUE SEP 30 - GPC Tuesday Night Ride - Brisk Group (5/B/32)
+🔍 Processing: TUE SEP 30 - GPC Tuesday Evening Ride (5/M/24)
+🔍 Processing: WED OCT 1 - Wednesday BARTable Mixed Terrain (4!/T/18)
+🎯 Total events created: 13
+✅ Grizzly Peak Cyclists scraper completed: 13 events found in 419ms
+💾 Processing scraper results...
+✅ grizzlypeak: 13/13 events inserted
+🔄 Running real scraper: roxie
+🔄 Running single scraper: roxie
+🔄 Starting Roxie Theater scraper...
+🎬 Starting Roxie scraper (HTTP version)...
+🔧 Scraper config: {
+  "name": "Roxie Theater",
+  "url": "https://roxie.com/calendar/",
+  "description": "Independent film theater in San Francisco (HTTP version)"
+}
+🌐 Fetching https://roxie.com/calendar/...
+🌐 Using URL: https://roxie.com/calendar/
+📄 Page loaded: 332756 characters
+📅 Today's date: Wed Aug 20 2025
+🔍 Found 92 calendar days, processing events within next 7 days
+📅 Processing August 20, 2025 (Wed Aug 20 2025)
+🎬 Found film "Architecton" with 1 showtimes: 6:50 pm
+✅ Created event: "Architecton" at 6:50 pm on Wed Aug 20 2025
+🎬 Found film "Drugs in the Tenderloin" with 1 showtimes: 7:00 pm
+✅ Created event: "Drugs in the Tenderloin" at 7:00 pm on Wed Aug 20 2025
+🎬 Found film "It’s Never Over, Jeff Buckley" with 1 showtimes: 9:00 pm
+✅ Created event: "It’s Never Over, Jeff Buckley" at 9:00 pm on Wed Aug 20 2025
+🎬 Found film "Together" with 1 showtimes: 9:00 pm
+✅ Created event: "Together" at 9:00 pm on Wed Aug 20 2025
+📅 Processing August 21, 2025 (Thu Aug 21 2025)
+🎬 Found film "Stray Dog" with 1 showtimes: 3:30 pm
+✅ Created event: "Stray Dog" at 3:30 pm on Thu Aug 21 2025
+⏭️ Skipping generic title: El Mariachi – Free screening
+🎬 Found film "CatVideoFest 2025" with 1 showtimes: 6:05 pm
+✅ Created event: "CatVideoFest 2025" at 6:05 pm on Thu Aug 21 2025
+🎬 Found film "It’s Never Over, Jeff Buckley" with 1 showtimes: 8:00 pm
+✅ Created event: "It’s Never Over, Jeff Buckley" at 8:00 pm on Thu Aug 21 2025
+🎬 Found film "Cloud" with 1 showtimes: 8:00 pm
+✅ Created event: "Cloud" at 8:00 pm on Thu Aug 21 2025
+📅 Processing August 22, 2025 (Fri Aug 22 2025)
+🎬 Found film "SFQFF: Opening Night" with 1 showtimes: 6:00 pm
+✅ Created event: "SFQFF: Opening Night" at 6:00 pm on Fri Aug 22 2025
+🎬 Found film "It’s Never Over, Jeff Buckley" with 1 showtimes: 6:15 pm
+✅ Created event: "It’s Never Over, Jeff Buckley" at 6:15 pm on Fri Aug 22 2025
+🎬 Found film "Roxie First Looks #9" with 1 showtimes: 9:00 pm
+✅ Created event: "Roxie First Looks #9" at 9:00 pm on Fri Aug 22 2025
+🎬 Found film "Together" with 1 showtimes: 9:00 pm
+✅ Created event: "Together" at 9:00 pm on Fri Aug 22 2025
+📅 Processing August 23, 2025 (Sat Aug 23 2025)
+🎬 Found film "SFQFF: Program 2 – Smash the Cis-tem" with 1 showtimes: 1:00 pm
+✅ Created event: "SFQFF: Program 2 – Smash the Cis-tem" at 1:00 pm on Sat Aug 23 2025
+🎬 Found film "SFQFF: Program 3 – Purple Haze" with 1 showtimes: 1:30 pm
+✅ Created event: "SFQFF: Program 3 – Purple Haze" at 1:30 pm on Sat Aug 23 2025
+🎬 Found film "SFQFF: Program 4 – Narrative Feature" with 1 showtimes: 2:50 pm
+✅ Created event: "SFQFF: Program 4 – Narrative Feature" at 2:50 pm on Sat Aug 23 2025
+🎬 Found film "SFQFF: Program 5 – Paw-sitively Delicious" with 1 showtimes: 3:00 pm
+✅ Created event: "SFQFF: Program 5 – Paw-sitively Delicious" at 3:00 pm on Sat Aug 23 2025
+🎬 Found film "SFQFF: Program 6 – End the Stigma" with 1 showtimes: 5:00 pm
+✅ Created event: "SFQFF: Program 6 – End the Stigma" at 5:00 pm on Sat Aug 23 2025
+🎬 Found film "Architecton" with 1 showtimes: 5:10 pm
+✅ Created event: "Architecton" at 5:10 pm on Sat Aug 23 2025
+⏭️ Skipping generic title: SFQFF: Program 7 – Centerpiece Film
+🎬 Found film "Roxie First Looks #9" with 1 showtimes: 7:20 pm
+✅ Created event: "Roxie First Looks #9" at 7:20 pm on Sat Aug 23 2025
+📅 Processing August 24, 2025 (Sun Aug 24 2025)
+🎬 Found film "SFQFF: Program 8 – Cafe International" with 1 showtimes: 1:00 pm
+✅ Created event: "SFQFF: Program 8 – Cafe International" at 1:00 pm on Sun Aug 24 2025
+🎬 Found film "SFQFF: Program 9 – Small Bites" with 1 showtimes: 1:00 pm
+✅ Created event: "SFQFF: Program 9 – Small Bites" at 1:00 pm on Sun Aug 24 2025
+🎬 Found film "SFQFF: Program 10 – Feature Documentary" with 1 showtimes: 3:00 pm
+✅ Created event: "SFQFF: Program 10 – Feature Documentary" at 3:00 pm on Sun Aug 24 2025
+🎬 Found film "SFQFF: Program 11 – Female Power" with 1 showtimes: 3:00 pm
+✅ Created event: "SFQFF: Program 11 – Female Power" at 3:00 pm on Sun Aug 24 2025
+🎬 Found film "SFQFF: Program 12 – Box of Chocolates" with 1 showtimes: 5:00 pm
+✅ Created event: "SFQFF: Program 12 – Box of Chocolates" at 5:00 pm on Sun Aug 24 2025
+🎬 Found film "CatVideoFest 2025" with 1 showtimes: 5:10 pm
+✅ Created event: "CatVideoFest 2025" at 5:10 pm on Sun Aug 24 2025
+🎬 Found film "Roxie First Looks #9" with 1 showtimes: 7:00 pm
+✅ Created event: "Roxie First Looks #9" at 7:00 pm on Sun Aug 24 2025
+🎬 Found film "SFQFF: Program 13 – Closing Night" with 1 showtimes: 7:10 pm
+✅ Created event: "SFQFF: Program 13 – Closing Night" at 7:10 pm on Sun Aug 24 2025
+📅 Processing August 25, 2025 (Mon Aug 25 2025)
+🎬 Found film "Olas de Recuerdo" with 1 showtimes: 6:00 pm
+✅ Created event: "Olas de Recuerdo" at 6:00 pm on Mon Aug 25 2025
+🎬 Found film "Sudan, Remember Us" with 1 showtimes: 6:30 pm
+✅ Created event: "Sudan, Remember Us" at 6:30 pm on Mon Aug 25 2025
+🎬 Found film "Roxie First Looks #9" with 1 showtimes: 8:20 pm
+✅ Created event: "Roxie First Looks #9" at 8:20 pm on Mon Aug 25 2025
+🎬 Found film "High and Low" with 1 showtimes: 8:30 pm
+✅ Created event: "High and Low" at 8:30 pm on Mon Aug 25 2025
+📅 Processing August 26, 2025 (Tue Aug 26 2025)
+⏭️ Skipping generic title: San Francisco Film Preserve: Black Lightning
+🎬 Found film "Masayuki Suo’s Shall We Dance?" with 1 showtimes: 6:30 pm
+✅ Created event: "Masayuki Suo’s Shall We Dance?" at 6:30 pm on Tue Aug 26 2025
+🎬 Found film "In the Mood for Love: 25th Anniversary" with 1 showtimes: 9:00 pm
+✅ Created event: "In the Mood for Love: 25th Anniversary" at 9:00 pm on Tue Aug 26 2025
+🎬 Found film "Roxie First Looks #9" with 1 showtimes: 9:20 pm
+✅ Created event: "Roxie First Looks #9" at 9:20 pm on Tue Aug 26 2025
+📅 Processing August 27, 2025 (Wed Aug 27 2025)
+🎬 Found film "Together" with 1 showtimes: 6:30 pm
+✅ Created event: "Together" at 6:30 pm on Wed Aug 27 2025
+🎬 Found film "The Last Dance: Extended Version (破·地獄:加長版)" with 1 showtimes: 7:00 pm
+✅ Created event: "The Last Dance: Extended Version (破·地獄:加長版)" at 7:00 pm on Wed Aug 27 2025
+🎬 Found film "Roxie First Looks #9" with 1 showtimes: 8:45 pm
+✅ Created event: "Roxie First Looks #9" at 8:45 pm on Wed Aug 27 2025
+🎬 Scraping complete: 37 events found from 8 days (skipped 19 past days, 65 future days)
+✅ Roxie Theater scraper completed: 37 events found in 216ms
+💾 Processing scraper results...
+✅ roxie: 37/37 events inserted
+🔄 Running real scraper: punchline
+🔄 Running single scraper: punchline
+🔄 Starting punchline scraper...
+🌐 Initializing browser...
+🌐 Loading page: https://www.punchlinecomedyclub.com/shows
+✅ Page loaded successfully: 458601 characters
+🔍 Step 1: Extracting from Schema.org structured data...
+✅ Found 36 events from structured data
+✅ Date validated: "Comedy Allstars" - 2025-08-20T19:30:00-07:00 (2025-08-21T02:30:00.000Z Pacific Time - within 14 days)
+✅ Valid event: "Comedy Allstars"
+✅ Date validated: "Rosebud Baker" - 2025-08-21T20:00:00-07:00 (2025-08-22T03:00:00.000Z Pacific Time - within 14 days)
+✅ Valid event: "Rosebud Baker"
+✅ Date validated: "Rosebud Baker" - 2025-08-22T19:30:00-07:00 (2025-08-23T02:30:00.000Z Pacific Time - within 14 days)
+✅ Valid event: "Rosebud Baker"
+✅ Date validated: "Rosebud Baker" - 2025-08-22T21:45:00-07:00 (2025-08-23T04:45:00.000Z Pacific Time - within 14 days)
+✅ Valid event: "Rosebud Baker"
+✅ Date validated: "Rosebud Baker" - 2025-08-23T19:00:00-07:00 (2025-08-24T02:00:00.000Z Pacific Time - within 14 days)
+✅ Valid event: "Rosebud Baker"
+✅ Date validated: "Rosebud Baker" - 2025-08-23T21:15:00-07:00 (2025-08-24T04:15:00.000Z Pacific Time - within 14 days)
+✅ Valid event: "Rosebud Baker"
+✅ Date validated: "S. F. Comedy Showcase" - 2025-08-24T19:30:00-07:00 (2025-08-25T02:30:00.000Z Pacific Time - within 14 days)
+✅ Valid event: "S. F. Comedy Showcase"
+✅ Date validated: "Steve Ausburne & Ben Feldman" - 2025-08-26T19:30:00-07:00 (2025-08-27T02:30:00.000Z Pacific Time - within 14 days)
+✅ Valid event: "Steve Ausburne & Ben Feldman"
+✅ Date validated: "Mark Smalls" - 2025-08-27T20:00:00-07:00 (2025-08-28T03:00:00.000Z Pacific Time - within 14 days)
+✅ Valid event: "Mark Smalls"
+✅ Date validated: "Mark Smalls" - 2025-08-28T20:00:00-07:00 (2025-08-29T03:00:00.000Z Pacific Time - within 14 days)
+✅ Valid event: "Mark Smalls"
+✅ Date validated: "Mark Smalls" - 2025-08-29T19:30:00-07:00 (2025-08-30T02:30:00.000Z Pacific Time - within 14 days)
+✅ Valid event: "Mark Smalls"
+✅ Date validated: "Mark Smalls" - 2025-08-29T21:45:00-07:00 (2025-08-30T04:45:00.000Z Pacific Time - within 14 days)
+✅ Valid event: "Mark Smalls"
+✅ Date validated: "Mark Smalls" - 2025-08-30T19:00:00-07:00 (2025-08-31T02:00:00.000Z Pacific Time - within 14 days)
+✅ Valid event: "Mark Smalls"
+✅ Date validated: "Mark Smalls" - 2025-08-30T21:15:00-07:00 (2025-08-31T04:15:00.000Z Pacific Time - within 14 days)
+✅ Valid event: "Mark Smalls"
+✅ Date validated: "S. F. Comedy Showcase" - 2025-08-31T19:30:00-07:00 (2025-09-01T02:30:00.000Z Pacific Time - within 14 days)
+✅ Valid event: "S. F. Comedy Showcase"
+✅ Date validated: "Ray Lau" - 2025-09-02T19:00:00-07:00 (2025-09-03T02:00:00.000Z Pacific Time - within 14 days)
+✅ Valid event: "Ray Lau"
+✅ Date validated: "Ray Lau" - 2025-09-02T21:15:00-07:00 (2025-09-03T04:15:00.000Z Pacific Time - within 14 days)
+✅ Valid event: "Ray Lau"
+❌ Event too far in future rejected: "Pat Burtscher" - 2025-09-03T20:00:00-07:00 (2025-09-04T03:00:00.000Z Pacific Time - beyond 14 days from 2025-08-20 Pacific Time)
+❌ Event too far in future rejected: "Pat Burtscher" - 2025-09-04T20:00:00-07:00 (2025-09-05T03:00:00.000Z Pacific Time - beyond 14 days from 2025-08-20 Pacific Time)
+❌ Event too far in future rejected: "Pat Burtscher" - 2025-09-05T19:30:00-07:00 (2025-09-06T02:30:00.000Z Pacific Time - beyond 14 days from 2025-08-20 Pacific Time)
+❌ Event too far in future rejected: "Pat Burtscher" - 2025-09-05T21:45:00-07:00 (2025-09-06T04:45:00.000Z Pacific Time - beyond 14 days from 2025-08-20 Pacific Time)
+❌ Event too far in future rejected: "Pat Burtscher" - 2025-09-06T19:00:00-07:00 (2025-09-07T02:00:00.000Z Pacific Time - beyond 14 days from 2025-08-20 Pacific Time)
+❌ Event too far in future rejected: "Pat Burtscher" - 2025-09-06T21:15:00-07:00 (2025-09-07T04:15:00.000Z Pacific Time - beyond 14 days from 2025-08-20 Pacific Time)
+❌ Event too far in future rejected: "S. F. Comedy Showcase" - 2025-09-07T19:30:00-07:00 (2025-09-08T02:30:00.000Z Pacific Time - beyond 14 days from 2025-08-20 Pacific Time)
+❌ Event too far in future rejected: "Comedy Allstars" - 2025-09-09T19:30:00-07:00 (2025-09-10T02:30:00.000Z Pacific Time - beyond 14 days from 2025-08-20 Pacific Time)
+❌ Event too far in future rejected: "Johnny Taylor" - 2025-09-10T19:30:00-07:00 (2025-09-11T02:30:00.000Z Pacific Time - beyond 14 days from 2025-08-20 Pacific Time)
+❌ Event too far in future rejected: "Des Bishop" - 2025-09-11T20:00:00-07:00 (2025-09-12T03:00:00.000Z Pacific Time - beyond 14 days from 2025-08-20 Pacific Time)
+❌ Event too far in future rejected: "Des Bishop" - 2025-09-12T19:30:00-07:00 (2025-09-13T02:30:00.000Z Pacific Time - beyond 14 days from 2025-08-20 Pacific Time)
+❌ Event too far in future rejected: "Des Bishop" - 2025-09-12T21:45:00-07:00 (2025-09-13T04:45:00.000Z Pacific Time - beyond 14 days from 2025-08-20 Pacific Time)
+❌ Event too far in future rejected: "Des Bishop" - 2025-09-13T19:00:00-07:00 (2025-09-14T02:00:00.000Z Pacific Time - beyond 14 days from 2025-08-20 Pacific Time)
+❌ Event too far in future rejected: "Des Bishop" - 2025-09-13T21:15:00-07:00 (2025-09-14T04:15:00.000Z Pacific Time - beyond 14 days from 2025-08-20 Pacific Time)
+❌ Event too far in future rejected: "S. F. Comedy Showcase" - 2025-09-14T19:30:00-07:00 (2025-09-15T02:30:00.000Z Pacific Time - beyond 14 days from 2025-08-20 Pacific Time)
+❌ Event too far in future rejected: "Joe Klocek & Friends" - 2025-09-16T19:30:00-07:00 (2025-09-17T02:30:00.000Z Pacific Time - beyond 14 days from 2025-08-20 Pacific Time)
+❌ Event too far in future rejected: "Comedy Allstars" - 2025-09-17T19:30:00-07:00 (2025-09-18T02:30:00.000Z Pacific Time - beyond 14 days from 2025-08-20 Pacific Time)
+❌ Event too far in future rejected: "Richard Sarvate" - 2025-09-18T20:00:00-07:00 (2025-09-19T03:00:00.000Z Pacific Time - beyond 14 days from 2025-08-20 Pacific Time)
+❌ Event too far in future rejected: "Ashley Hesseltine: Sex Before Marriage Tour" - 2025-09-19T19:30:00-07:00 (2025-09-20T02:30:00.000Z Pacific Time - beyond 14 days from 2025-08-20 Pacific Time)
+Found 17 events from Punchline
+✅ punchline scraper completed: 17 events found in 7475ms
+💾 Processing scraper results...
+✅ punchline: 17/17 events inserted
+🔄 Running real scraper: giants
+🔄 Running single scraper: giants
+🔄 Starting giants scraper...
+⚾ Scraping San Francisco Giants games...
+📅 Looking for Giants games in next 7 days from today (Wed Aug 20 2025)
+🎯 Found Giants game: Giants vs Chicago Cubs on Tue Aug 26 2025
+✅ San Francisco Giants scraper found 1 upcoming games
+✅ giants scraper completed: 1 events found in 370ms
+💾 Processing scraper results...
+✅ giants: 1/1 events inserted
+🔄 Running real scraper: valkyries
+🔄 Running single scraper: valkyries
+🔄 Starting valkyries scraper...
+🏀 Scraping Las Vegas Valkyries basketball games...
+📅 Looking for Valkyries HOME games in next 7 days from today (Wed Aug 20 2025)
+Found 46 games from ESPN API
+⚠️ Error processing Valkyries game 38: gameType is not defined
+✅ Valkyries scraper found 1 upcoming games
+✅ valkyries scraper completed: 1 events found in 465ms
+💾 Processing scraper results...
+✅ valkyries: 1/1 events inserted
+🔄 Running real scraper: creativemornings
+🔄 Running single scraper: creativemornings
+🔄 Starting creativemornings scraper...
+🎨 Scraping Creative Mornings FieldTrips...
+🌐 Initializing browser...
+🌐 Loading page: https://creativemornings.com/fieldtrips/browse
+✅ Page loaded successfully: 383591 characters
+🎯 Found FieldTrip: WTF is AI | Thriving Through Change on 2025-08-21T18:00:00.000Z
+🎯 Found FieldTrip: Feel it, write it on 2025-08-21T20:00:00.000Z
+🎯 Found FieldTrip: Thought Sovereignty: Reclaiming Your Inner Narrative on 2025-08-25T19:00:00.000Z
+🎯 Found FieldTrip: LEVEL UP: Your Career on 2025-08-26T16:30:00.000Z
+🎯 Found FieldTrip: Digital Declutter Party on 2025-08-26T23:00:00.000Z
+🎯 Found FieldTrip: Qigong: Move, Meditate, & Recharge on 2025-08-27T19:30:00.000Z
+🎯 Found FieldTrip: Calm Your Nervous System in One Minute on 2025-08-28T15:00:00.000Z
+🎯 Found FieldTrip: LEVEL UP: Your Freelance on 2025-09-02T16:30:00.000Z
+🎯 Found FieldTrip: Cultivating Inspired Work: An Alternative to Hustle & Grind on 2025-09-02T18:30:00.000Z
+🎯 Found FieldTrip: Big Ideas for Spiritual Creative Types: Rick Rubin’s ‘A Creative Act’ on 2025-09-03T20:00:00.000Z
+🎯 Found FieldTrip: LEVEL UP: Start Your Next Creative Chapter: Pave a Path to Creative Joy & Success on 2025-09-08T19:00:00.000Z
+🎯 Found FieldTrip: Build Bonds Beyond Screens on 2025-09-09T16:30:00.000Z
+🎯 Found FieldTrip: LEVEL UP: How to Design Flow Experiences to Propel Your Creative Work on 2025-09-10T19:30:00.000Z
+🎯 Found FieldTrip: Start Making Your Art Again on 2025-09-11T23:00:00.000Z
+🎯 Found FieldTrip: LEVEL UP: Business Strategies for ADHD Creatives on 2025-09-16T18:30:00.000Z
+🎯 Found FieldTrip: Uncondition Your Posture to Reclaim Your Power on 2025-09-22T17:00:00.000Z
+🎯 Found FieldTrip: Improv for groundedness in uncertain times on 2025-09-24T20:00:00.000Z
+🎯 Found FieldTrip: Rewrite Your Money Story: A Creative Workshop to Break Free From Scarcity on 2025-09-25T17:00:00.000Z
+🎯 Found FieldTrip: LEVEL UP: How to Overcome Self-Doubt and Build Unshakeable Creative Confidence on 2025-10-01T19:30:00.000Z
+🎯 Found FieldTrip: LEVEL UP: 💡The Full-Time Creative Formula: Learn the 5 Vital Elements You Need to Succeed on 2025-10-06T19:00:00.000Z
+🎯 Found FieldTrip: LEVEL UP: Navigating Chaos: The Freelancer's Survival Guide on 2025-10-14T18:30:00.000Z
+🎯 Found FieldTrip: LEVEL UP: The Freelancer’s Survival Guide: Pricing, Pitching & Getting Paid on 2025-10-21T20:00:00.000Z
+✅ CreativeMornings FieldTrips scraper found 22 events
+✅ creativemornings scraper completed: 22 events found in 6943ms
+💾 Processing scraper results...
+✅ creativemornings: 22/22 events inserted
+🔄 Running real scraper: sfrando
+🔄 Running single scraper: sfrando
+🔄 Starting sfrando scraper...
+🚴‍♂️ Scraping SF Randonneurs cycling events...
+📅 Looking for next 3 upcoming rides from today (Wed Aug 20 2025)
+Found 31 event rows
+🎯 Found SF Rando event: Laguna Lake 200k on Sat Aug 30 2025 at 7:00
+🎯 Found SF Rando event: El Paseito Mixto 103k ≈ on Sun Sep 14 2025 at 8:00
+🎯 Found SF Rando event: Lucas Valley Populaire on Sun Sep 14 2025 at 8:00
+🎯 Found SF Rando event: SFR Dart Populaire on Sat Sep 27 2025 at †
+🎯 Found SF Rando event: SFR DART on Sat Sep 27 2025 at †
+🎯 Found SF Rando event: Winters 200k on Sat Oct 11 2025 at 7:00
+🎯 Found SF Rando event: SFR Dart Populaire on Sat Oct 18 2025 at †
+🎯 Found SF Rando event: Del Puerto Canyon 200k on Sat Nov 01 2025 at 8:00
+🎯 Found SF Rando event: Del Puerto Canyon Junior on Sat Nov 01 2025 at 9:00
+🎯 Found SF Rando event: Estero Americano 200k on Sat Dec 06 2025 at 7:00
+✅ SF Randonneurs scraper found 3 next upcoming rides
+✅ sfrando scraper completed: 3 events found in 681ms
+💾 Processing scraper results...
+✅ sfrando: 3/3 events inserted
+🔄 Running real scraper: strava
+🔄 Running single scraper: strava
+🔄 Starting strava scraper...
+🌐 Initializing browser...
+🌐 Loading page: https://www.strava.com/clubs
+✅ Page loaded successfully: 487577 characters
+Found 1 groups from Strava
+✅ strava scraper completed: 1 events found in 10900ms
+💾 Processing scraper results...
+✅ strava: 1/1 events inserted
+🗑️ Clearing all events from database...
+🔄 Running real scraper: grizzlypeak
+🔄 Running single scraper: grizzlypeak
+🔄 Starting Grizzly Peak Cyclists scraper...
+🚴‍♂️ Scraping Grizzly Peak Cyclists events...
+📅 Looking for rides from Wed Aug 20 2025 to Wed Aug 27 2025
+🔍 Found 63 ride listings
+🔍 Processing: WED AUG 20 - Wed Ride - Deb's Diversion: Marin Headlands from Mill Valley (4/T/24)
+🎯 Found Grizzly Peak ride: Wed Ride - Deb's Diversion: Marin Headlands from Mill Valley on Wed Aug 20 2025 at 10:30 AM in Mill Valley - Public Safety Buildings
+🔍 Processing: WED AUG 20 - Wednesday BARTable Mixed Terrain (4!/T/18)
+🎯 Found Grizzly Peak ride: Wednesday BARTable Mixed Terrain on Wed Aug 20 2025 at 5:25 PM in El Cerrito Plaza BART
+🔍 Processing: THU AUG 21 - Duros West - Nicasio to Lighthouse (3/TM,M/62)
+🎯 Found Grizzly Peak ride: Duros West - Nicasio to Lighthouse on Thu Aug 21 2025 at 9:30 AM in Nicasio
+🔍 Processing: THU AUG 21 - Spruce to Space (4/TM/26.5)
+🎯 Found Grizzly Peak ride: Spruce to Space on Thu Aug 21 2025 at 5:20 PM in North Berkeley BART
+🔍 Processing: THU AUG 21 - Thursday Evening T Pace Ride (4!/T/22)
+🎯 Found Grizzly Peak ride: Thursday Evening T Pace Ride on Thu Aug 21 2025 at 5:25 PM in North Berkeley BART
+🔍 Processing: THU AUG 21 - Thirsty Thursday Mixty (5/0/17)
+🎯 Found Grizzly Peak ride: Thirsty Thursday Mixty on Thu Aug 21 2025 at 5:30 PM in Canyon Club Brewery
+🔍 Processing: SAT AUG 23 - Nicasio Lasso CCW from Albany (2/T/59)
+🎯 Found Grizzly Peak ride: Nicasio Lasso CCW from Albany on Sat Aug 23 2025 at 8:20 AM in San Francisco Bay Area
+🔍 Processing: SAT AUG 23 - Cotati to the Coast (3!/TM/75)
+🎯 Found Grizzly Peak ride: Cotati to the Coast on Sat Aug 23 2025 at 9:15 AM in Cotati - Gravenstein Hwy Park-&amp;-Ride (Westside)
+🔍 Processing: SUN AUG 24 - Novice Series Ride #4 - Lamorinda (3/LT/28)
+🎯 Found Grizzly Peak ride: Novice Series Ride #4 - Lamorinda on Sun Aug 24 2025 at 10:00 AM in Orinda BART NW corner of parking lot
+🔍 Processing: MON AUG 25 - Monday TI Lap (3!/T/16)
+🎯 Found Grizzly Peak ride: Monday TI Lap on Mon Aug 25 2025 at 5:25 PM in Emeryville - Opposite IKEA
+🔍 Processing: TUE AUG 26 - GPC Tuesday Night Ride - Brisk Group (5/B/32)
+🎯 Found Grizzly Peak ride: GPC Tuesday Night Ride - Brisk Group on Tue Aug 26 2025 at 5:25 PM in Berkeley - Spruce &amp; Grizzly Peak Blvd - Plaza
+🔍 Processing: TUE AUG 26 - GPC Tuesday Evening Ride (5/M/24)
+🎯 Found Grizzly Peak ride: GPC Tuesday Evening Ride on Tue Aug 26 2025 at 5:30 PM in Berkeley - Spruce &amp; Grizzly Peak Blvd - Plaza
+🔍 Processing: WED AUG 27 - Wednesday BARTable Mixed Terrain (4!/T/18)
+🎯 Found Grizzly Peak ride: Wednesday BARTable Mixed Terrain on Wed Aug 27 2025 at 5:25 PM in El Cerrito Plaza BART
+🔍 Processing: THU AUG 28 - Duros West (3/TM,M/60)
+🔍 Processing: THU AUG 28 - Spruce to Space (4/TM/26.5)
+🔍 Processing: THU AUG 28 - Thursday Evening T Pace Ride (4!/T/22)
+🔍 Processing: THU AUG 28 - Thirsty Thursday Mixty (5/0/17)
+🔍 Processing: SUN AUG 31 - Novice Series Ride #5 - Franklin Canyon and Carquinez Shoreline (3/LT,T/34)
+🔍 Processing: MON SEP 1 - Monday TI Lap (3!/T/16)
+🔍 Processing: TUE SEP 2 - GPC Tuesday Night Ride - Brisk Group (5/B/32)
+🔍 Processing: TUE SEP 2 - GPC Tuesday Evening Ride (5/M/24)
+🔍 Processing: WED SEP 3 - Wednesday BARTable Mixed Terrain (4!/T/18)
+🔍 Processing: THU SEP 4 - Duros West (3/TM,M/60)
+🔍 Processing: THU SEP 4 - Spruce to Space (4/TM/26.5)
+🔍 Processing: THU SEP 4 - Thirsty Thursday Mixty (5/0/17)
+🔍 Processing: FRI SEP 5 - Bay Trail / E-ville / Point Richmond (1/T/34)
+🔍 Processing: SAT SEP 6 - Croissant and Hot Cocoa: Rustic Bakery (2/LT/35)
+🔍 Processing: SUN SEP 7 - Novice Series Ride #6 - Central Marin Redwoods - Long Version (3/T/42)
+🔍 Processing: MON SEP 8 - Monday TI Lap (3!/T/16)
+🔍 Processing: TUE SEP 9 - GPC Tuesday Night Ride - Brisk Group (5/B/32)
+🔍 Processing: TUE SEP 9 - GPC Tuesday Evening Ride (5/M/24)
+🔍 Processing: WED SEP 10 - Wednesday BARTable Mixed Terrain (4!/T/18)
+🔍 Processing: THU SEP 11 - Duros West (3/TM,M/60)
+🔍 Processing: THU SEP 11 - Spruce to Space (4/TM/26.5)
+🔍 Processing: THU SEP 11 - Thirsty Thursday Mixty (5/0/17)
+🔍 Processing: MON SEP 15 - Monday TI Lap (3!/T/16)
+🔍 Processing: TUE SEP 16 - GPC Tuesday Night Ride - Brisk Group (5/B/32)
+🔍 Processing: TUE SEP 16 - GPC Tuesday Evening Ride (5/M/24)
+🔍 Processing: WED SEP 17 - Wednesday BARTable Mixed Terrain (4!/T/18)
+🔍 Processing: THU SEP 18 - Duros West (3/TM,M/60)
+🔍 Processing: THU SEP 18 - Spruce to Space (4/TM/26.5)
+🔍 Processing: THU SEP 18 - Thirsty Thursday Mixty (5/0/17)
+🔍 Processing: SAT SEP 20 - Individual Time Trial/GPC Pace Ride (5/0/19)
+🔍 Processing: MON SEP 22 - Monday TI Lap (3!/T/16)
+🔍 Processing: TUE SEP 23 - GPC Tuesday Night Ride - Brisk Group (5/B/32)
+🔍 Processing: TUE SEP 23 - GPC Tuesday Evening Ride (5/M/24)
+🔍 Processing: WED SEP 24 - Wednesday BARTable Mixed Terrain (4!/T/18)
+🔍 Processing: THU SEP 25 - Duros West (3/TM,M/60)
+🔍 Processing: THU SEP 25 - Spruce to Space (4/TM/26.5)
+🔍 Processing: THU SEP 25 - Thirsty Thursday Mixty (5/0/17)
+🔍 Processing: MON SEP 29 - Monday TI Lap (3!/T/16)
+🔍 Processing: TUE SEP 30 - GPC Tuesday Night Ride - Brisk Group (5/B/32)
+🔍 Processing: TUE SEP 30 - GPC Tuesday Evening Ride (5/M/24)
+🔍 Processing: WED OCT 1 - Wednesday BARTable Mixed Terrain (4!/T/18)
+🎯 Total events created: 13
+✅ Grizzly Peak Cyclists scraper completed: 13 events found in 417ms
+💾 Processing scraper results...
+✅ grizzlypeak: 13/13 events inserted
+🔄 Running real scraper: roxie
+🔄 Running single scraper: roxie
+🔄 Starting Roxie Theater scraper...
+🎬 Starting Roxie scraper (HTTP version)...
+🔧 Scraper config: {
+  "name": "Roxie Theater",
+  "url": "https://roxie.com/calendar/",
+  "description": "Independent film theater in San Francisco (HTTP version)"
+}
+🌐 Fetching https://roxie.com/calendar/...
+🌐 Using URL: https://roxie.com/calendar/
+📄 Page loaded: 332756 characters
+📅 Today's date: Wed Aug 20 2025
+🔍 Found 92 calendar days, processing events within next 7 days
+📅 Processing August 20, 2025 (Wed Aug 20 2025)
+🎬 Found film "Architecton" with 1 showtimes: 6:50 pm
+✅ Created event: "Architecton" at 6:50 pm on Wed Aug 20 2025
+🎬 Found film "Drugs in the Tenderloin" with 1 showtimes: 7:00 pm
+✅ Created event: "Drugs in the Tenderloin" at 7:00 pm on Wed Aug 20 2025
+🎬 Found film "It’s Never Over, Jeff Buckley" with 1 showtimes: 9:00 pm
+✅ Created event: "It’s Never Over, Jeff Buckley" at 9:00 pm on Wed Aug 20 2025
+🎬 Found film "Together" with 1 showtimes: 9:00 pm
+✅ Created event: "Together" at 9:00 pm on Wed Aug 20 2025
+📅 Processing August 21, 2025 (Thu Aug 21 2025)
+🎬 Found film "Stray Dog" with 1 showtimes: 3:30 pm
+✅ Created event: "Stray Dog" at 3:30 pm on Thu Aug 21 2025
+⏭️ Skipping generic title: El Mariachi – Free screening
+🎬 Found film "CatVideoFest 2025" with 1 showtimes: 6:05 pm
+✅ Created event: "CatVideoFest 2025" at 6:05 pm on Thu Aug 21 2025
+🎬 Found film "It’s Never Over, Jeff Buckley" with 1 showtimes: 8:00 pm
+✅ Created event: "It’s Never Over, Jeff Buckley" at 8:00 pm on Thu Aug 21 2025
+🎬 Found film "Cloud" with 1 showtimes: 8:00 pm
+✅ Created event: "Cloud" at 8:00 pm on Thu Aug 21 2025
+📅 Processing August 22, 2025 (Fri Aug 22 2025)
+🎬 Found film "SFQFF: Opening Night" with 1 showtimes: 6:00 pm
+✅ Created event: "SFQFF: Opening Night" at 6:00 pm on Fri Aug 22 2025
+🎬 Found film "It’s Never Over, Jeff Buckley" with 1 showtimes: 6:15 pm
+✅ Created event: "It’s Never Over, Jeff Buckley" at 6:15 pm on Fri Aug 22 2025
+🎬 Found film "Roxie First Looks #9" with 1 showtimes: 9:00 pm
+✅ Created event: "Roxie First Looks #9" at 9:00 pm on Fri Aug 22 2025
+🎬 Found film "Together" with 1 showtimes: 9:00 pm
+✅ Created event: "Together" at 9:00 pm on Fri Aug 22 2025
+📅 Processing August 23, 2025 (Sat Aug 23 2025)
+🎬 Found film "SFQFF: Program 2 – Smash the Cis-tem" with 1 showtimes: 1:00 pm
+✅ Created event: "SFQFF: Program 2 – Smash the Cis-tem" at 1:00 pm on Sat Aug 23 2025
+🎬 Found film "SFQFF: Program 3 – Purple Haze" with 1 showtimes: 1:30 pm
+✅ Created event: "SFQFF: Program 3 – Purple Haze" at 1:30 pm on Sat Aug 23 2025
+🎬 Found film "SFQFF: Program 4 – Narrative Feature" with 1 showtimes: 2:50 pm
+✅ Created event: "SFQFF: Program 4 – Narrative Feature" at 2:50 pm on Sat Aug 23 2025
+🎬 Found film "SFQFF: Program 5 – Paw-sitively Delicious" with 1 showtimes: 3:00 pm
+✅ Created event: "SFQFF: Program 5 – Paw-sitively Delicious" at 3:00 pm on Sat Aug 23 2025
+🎬 Found film "SFQFF: Program 6 – End the Stigma" with 1 showtimes: 5:00 pm
+✅ Created event: "SFQFF: Program 6 – End the Stigma" at 5:00 pm on Sat Aug 23 2025
+🎬 Found film "Architecton" with 1 showtimes: 5:10 pm
+✅ Created event: "Architecton" at 5:10 pm on Sat Aug 23 2025
+⏭️ Skipping generic title: SFQFF: Program 7 – Centerpiece Film
+🎬 Found film "Roxie First Looks #9" with 1 showtimes: 7:20 pm
+✅ Created event: "Roxie First Looks #9" at 7:20 pm on Sat Aug 23 2025
+📅 Processing August 24, 2025 (Sun Aug 24 2025)
+🎬 Found film "SFQFF: Program 8 – Cafe International" with 1 showtimes: 1:00 pm
+✅ Created event: "SFQFF: Program 8 – Cafe International" at 1:00 pm on Sun Aug 24 2025
+🎬 Found film "SFQFF: Program 9 – Small Bites" with 1 showtimes: 1:00 pm
+✅ Created event: "SFQFF: Program 9 – Small Bites" at 1:00 pm on Sun Aug 24 2025
+🎬 Found film "SFQFF: Program 10 – Feature Documentary" with 1 showtimes: 3:00 pm
+✅ Created event: "SFQFF: Program 10 – Feature Documentary" at 3:00 pm on Sun Aug 24 2025
+🎬 Found film "SFQFF: Program 11 – Female Power" with 1 showtimes: 3:00 pm
+✅ Created event: "SFQFF: Program 11 – Female Power" at 3:00 pm on Sun Aug 24 2025
+🎬 Found film "SFQFF: Program 12 – Box of Chocolates" with 1 showtimes: 5:00 pm
+✅ Created event: "SFQFF: Program 12 – Box of Chocolates" at 5:00 pm on Sun Aug 24 2025
+🎬 Found film "CatVideoFest 2025" with 1 showtimes: 5:10 pm
+✅ Created event: "CatVideoFest 2025" at 5:10 pm on Sun Aug 24 2025
+🎬 Found film "Roxie First Looks #9" with 1 showtimes: 7:00 pm
+✅ Created event: "Roxie First Looks #9" at 7:00 pm on Sun Aug 24 2025
+🎬 Found film "SFQFF: Program 13 – Closing Night" with 1 showtimes: 7:10 pm
+✅ Created event: "SFQFF: Program 13 – Closing Night" at 7:10 pm on Sun Aug 24 2025
+📅 Processing August 25, 2025 (Mon Aug 25 2025)
+🎬 Found film "Olas de Recuerdo" with 1 showtimes: 6:00 pm
+✅ Created event: "Olas de Recuerdo" at 6:00 pm on Mon Aug 25 2025
+🎬 Found film "Sudan, Remember Us" with 1 showtimes: 6:30 pm
+✅ Created event: "Sudan, Remember Us" at 6:30 pm on Mon Aug 25 2025
+🎬 Found film "Roxie First Looks #9" with 1 showtimes: 8:20 pm
+✅ Created event: "Roxie First Looks #9" at 8:20 pm on Mon Aug 25 2025
+🎬 Found film "High and Low" with 1 showtimes: 8:30 pm
+✅ Created event: "High and Low" at 8:30 pm on Mon Aug 25 2025
+📅 Processing August 26, 2025 (Tue Aug 26 2025)
+⏭️ Skipping generic title: San Francisco Film Preserve: Black Lightning
+🎬 Found film "Masayuki Suo’s Shall We Dance?" with 1 showtimes: 6:30 pm
+✅ Created event: "Masayuki Suo’s Shall We Dance?" at 6:30 pm on Tue Aug 26 2025
+🎬 Found film "In the Mood for Love: 25th Anniversary" with 1 showtimes: 9:00 pm
+✅ Created event: "In the Mood for Love: 25th Anniversary" at 9:00 pm on Tue Aug 26 2025
+🎬 Found film "Roxie First Looks #9" with 1 showtimes: 9:20 pm
+✅ Created event: "Roxie First Looks #9" at 9:20 pm on Tue Aug 26 2025
+📅 Processing August 27, 2025 (Wed Aug 27 2025)
+🎬 Found film "Together" with 1 showtimes: 6:30 pm
+✅ Created event: "Together" at 6:30 pm on Wed Aug 27 2025
+🎬 Found film "The Last Dance: Extended Version (破·地獄:加長版)" with 1 showtimes: 7:00 pm
+✅ Created event: "The Last Dance: Extended Version (破·地獄:加長版)" at 7:00 pm on Wed Aug 27 2025
+🎬 Found film "Roxie First Looks #9" with 1 showtimes: 8:45 pm
+✅ Created event: "Roxie First Looks #9" at 8:45 pm on Wed Aug 27 2025
+🎬 Scraping complete: 37 events found from 8 days (skipped 19 past days, 65 future days)
+✅ Roxie Theater scraper completed: 37 events found in 148ms
+💾 Processing scraper results...
+✅ roxie: 37/37 events inserted
+🔄 Running real scraper: punchline
+🔄 Running single scraper: punchline
+🔄 Starting punchline scraper...
+🌐 Initializing browser...
+🌐 Loading page: https://www.punchlinecomedyclub.com/shows
+✅ Page loaded successfully: 469448 characters
+🔍 Step 1: Extracting from Schema.org structured data...
+✅ Found 36 events from structured data
+✅ Date validated: "Comedy Allstars" - 2025-08-20T19:30:00-07:00 (2025-08-21T02:30:00.000Z Pacific Time - within 14 days)
+✅ Valid event: "Comedy Allstars"
+✅ Date validated: "Rosebud Baker" - 2025-08-21T20:00:00-07:00 (2025-08-22T03:00:00.000Z Pacific Time - within 14 days)
+✅ Valid event: "Rosebud Baker"
+✅ Date validated: "Rosebud Baker" - 2025-08-22T19:30:00-07:00 (2025-08-23T02:30:00.000Z Pacific Time - within 14 days)
+✅ Valid event: "Rosebud Baker"
+✅ Date validated: "Rosebud Baker" - 2025-08-22T21:45:00-07:00 (2025-08-23T04:45:00.000Z Pacific Time - within 14 days)
+✅ Valid event: "Rosebud Baker"
+✅ Date validated: "Rosebud Baker" - 2025-08-23T19:00:00-07:00 (2025-08-24T02:00:00.000Z Pacific Time - within 14 days)
+✅ Valid event: "Rosebud Baker"
+✅ Date validated: "Rosebud Baker" - 2025-08-23T21:15:00-07:00 (2025-08-24T04:15:00.000Z Pacific Time - within 14 days)
+✅ Valid event: "Rosebud Baker"
+✅ Date validated: "S. F. Comedy Showcase" - 2025-08-24T19:30:00-07:00 (2025-08-25T02:30:00.000Z Pacific Time - within 14 days)
+✅ Valid event: "S. F. Comedy Showcase"
+✅ Date validated: "Steve Ausburne & Ben Feldman" - 2025-08-26T19:30:00-07:00 (2025-08-27T02:30:00.000Z Pacific Time - within 14 days)
+✅ Valid event: "Steve Ausburne & Ben Feldman"
+✅ Date validated: "Mark Smalls" - 2025-08-27T20:00:00-07:00 (2025-08-28T03:00:00.000Z Pacific Time - within 14 days)
+✅ Valid event: "Mark Smalls"
+✅ Date validated: "Mark Smalls" - 2025-08-28T20:00:00-07:00 (2025-08-29T03:00:00.000Z Pacific Time - within 14 days)
+✅ Valid event: "Mark Smalls"
+✅ Date validated: "Mark Smalls" - 2025-08-29T19:30:00-07:00 (2025-08-30T02:30:00.000Z Pacific Time - within 14 days)
+✅ Valid event: "Mark Smalls"
+✅ Date validated: "Mark Smalls" - 2025-08-29T21:45:00-07:00 (2025-08-30T04:45:00.000Z Pacific Time - within 14 days)
+✅ Valid event: "Mark Smalls"
+✅ Date validated: "Mark Smalls" - 2025-08-30T19:00:00-07:00 (2025-08-31T02:00:00.000Z Pacific Time - within 14 days)
+✅ Valid event: "Mark Smalls"
+✅ Date validated: "Mark Smalls" - 2025-08-30T21:15:00-07:00 (2025-08-31T04:15:00.000Z Pacific Time - within 14 days)
+✅ Valid event: "Mark Smalls"
+✅ Date validated: "S. F. Comedy Showcase" - 2025-08-31T19:30:00-07:00 (2025-09-01T02:30:00.000Z Pacific Time - within 14 days)
+✅ Valid event: "S. F. Comedy Showcase"
+✅ Date validated: "Ray Lau" - 2025-09-02T19:00:00-07:00 (2025-09-03T02:00:00.000Z Pacific Time - within 14 days)
+✅ Valid event: "Ray Lau"
+✅ Date validated: "Ray Lau" - 2025-09-02T21:15:00-07:00 (2025-09-03T04:15:00.000Z Pacific Time - within 14 days)
+✅ Valid event: "Ray Lau"
+❌ Event too far in future rejected: "Pat Burtscher" - 2025-09-03T20:00:00-07:00 (2025-09-04T03:00:00.000Z Pacific Time - beyond 14 days from 2025-08-20 Pacific Time)
+❌ Event too far in future rejected: "Pat Burtscher" - 2025-09-04T20:00:00-07:00 (2025-09-05T03:00:00.000Z Pacific Time - beyond 14 days from 2025-08-20 Pacific Time)
+❌ Event too far in future rejected: "Pat Burtscher" - 2025-09-05T19:30:00-07:00 (2025-09-06T02:30:00.000Z Pacific Time - beyond 14 days from 2025-08-20 Pacific Time)
+❌ Event too far in future rejected: "Pat Burtscher" - 2025-09-05T21:45:00-07:00 (2025-09-06T04:45:00.000Z Pacific Time - beyond 14 days from 2025-08-20 Pacific Time)
+❌ Event too far in future rejected: "Pat Burtscher" - 2025-09-06T19:00:00-07:00 (2025-09-07T02:00:00.000Z Pacific Time - beyond 14 days from 2025-08-20 Pacific Time)
+❌ Event too far in future rejected: "Pat Burtscher" - 2025-09-06T21:15:00-07:00 (2025-09-07T04:15:00.000Z Pacific Time - beyond 14 days from 2025-08-20 Pacific Time)
+❌ Event too far in future rejected: "S. F. Comedy Showcase" - 2025-09-07T19:30:00-07:00 (2025-09-08T02:30:00.000Z Pacific Time - beyond 14 days from 2025-08-20 Pacific Time)
+❌ Event too far in future rejected: "Comedy Allstars" - 2025-09-09T19:30:00-07:00 (2025-09-10T02:30:00.000Z Pacific Time - beyond 14 days from 2025-08-20 Pacific Time)
+❌ Event too far in future rejected: "Johnny Taylor" - 2025-09-10T19:30:00-07:00 (2025-09-11T02:30:00.000Z Pacific Time - beyond 14 days from 2025-08-20 Pacific Time)
+❌ Event too far in future rejected: "Des Bishop" - 2025-09-11T20:00:00-07:00 (2025-09-12T03:00:00.000Z Pacific Time - beyond 14 days from 2025-08-20 Pacific Time)
+❌ Event too far in future rejected: "Des Bishop" - 2025-09-12T19:30:00-07:00 (2025-09-13T02:30:00.000Z Pacific Time - beyond 14 days from 2025-08-20 Pacific Time)
+❌ Event too far in future rejected: "Des Bishop" - 2025-09-12T21:45:00-07:00 (2025-09-13T04:45:00.000Z Pacific Time - beyond 14 days from 2025-08-20 Pacific Time)
+❌ Event too far in future rejected: "Des Bishop" - 2025-09-13T19:00:00-07:00 (2025-09-14T02:00:00.000Z Pacific Time - beyond 14 days from 2025-08-20 Pacific Time)
+❌ Event too far in future rejected: "Des Bishop" - 2025-09-13T21:15:00-07:00 (2025-09-14T04:15:00.000Z Pacific Time - beyond 14 days from 2025-08-20 Pacific Time)
+❌ Event too far in future rejected: "S. F. Comedy Showcase" - 2025-09-14T19:30:00-07:00 (2025-09-15T02:30:00.000Z Pacific Time - beyond 14 days from 2025-08-20 Pacific Time)
+❌ Event too far in future rejected: "Joe Klocek & Friends" - 2025-09-16T19:30:00-07:00 (2025-09-17T02:30:00.000Z Pacific Time - beyond 14 days from 2025-08-20 Pacific Time)
+❌ Event too far in future rejected: "Comedy Allstars" - 2025-09-17T19:30:00-07:00 (2025-09-18T02:30:00.000Z Pacific Time - beyond 14 days from 2025-08-20 Pacific Time)
+❌ Event too far in future rejected: "Richard Sarvate" - 2025-09-18T20:00:00-07:00 (2025-09-19T03:00:00.000Z Pacific Time - beyond 14 days from 2025-08-20 Pacific Time)
+❌ Event too far in future rejected: "Ashley Hesseltine: Sex Before Marriage Tour" - 2025-09-19T19:30:00-07:00 (2025-09-20T02:30:00.000Z Pacific Time - beyond 14 days from 2025-08-20 Pacific Time)
+Found 17 events from Punchline
+✅ punchline scraper completed: 17 events found in 7436ms
+💾 Processing scraper results...
+✅ punchline: 17/17 events inserted
+🔄 Running real scraper: giants
+🔄 Running single scraper: giants
+🔄 Starting giants scraper...
+⚾ Scraping San Francisco Giants games...
+📅 Looking for Giants games in next 7 days from today (Wed Aug 20 2025)
+🎯 Found Giants game: Giants vs Chicago Cubs on Tue Aug 26 2025
+✅ San Francisco Giants scraper found 1 upcoming games
+✅ giants scraper completed: 1 events found in 94ms
+💾 Processing scraper results...
+✅ giants: 1/1 events inserted
+🔄 Running real scraper: valkyries
+🔄 Running single scraper: valkyries
+🔄 Starting valkyries scraper...
+🏀 Scraping Las Vegas Valkyries basketball games...
+📅 Looking for Valkyries HOME games in next 7 days from today (Wed Aug 20 2025)
+Found 46 games from ESPN API
+⚠️ Error processing Valkyries game 38: gameType is not defined
+✅ Valkyries scraper found 1 upcoming games
+✅ valkyries scraper completed: 1 events found in 158ms
+💾 Processing scraper results...
+✅ valkyries: 1/1 events inserted
+🔄 Running real scraper: creativemornings
+🔄 Running single scraper: creativemornings
+🔄 Starting creativemornings scraper...
+🎨 Scraping Creative Mornings FieldTrips...
+🌐 Initializing browser...
+🌐 Loading page: https://creativemornings.com/fieldtrips/browse
+✅ Page loaded successfully: 383591 characters
+🎯 Found FieldTrip: WTF is AI | Thriving Through Change on 2025-08-21T18:00:00.000Z
+🎯 Found FieldTrip: Feel it, write it on 2025-08-21T20:00:00.000Z
+🎯 Found FieldTrip: Thought Sovereignty: Reclaiming Your Inner Narrative on 2025-08-25T19:00:00.000Z
+🎯 Found FieldTrip: LEVEL UP: Your Career on 2025-08-26T16:30:00.000Z
+🎯 Found FieldTrip: Digital Declutter Party on 2025-08-26T23:00:00.000Z
+🎯 Found FieldTrip: Qigong: Move, Meditate, & Recharge on 2025-08-27T19:30:00.000Z
+🎯 Found FieldTrip: Calm Your Nervous System in One Minute on 2025-08-28T15:00:00.000Z
+🎯 Found FieldTrip: LEVEL UP: Your Freelance on 2025-09-02T16:30:00.000Z
+🎯 Found FieldTrip: Cultivating Inspired Work: An Alternative to Hustle & Grind on 2025-09-02T18:30:00.000Z
+🎯 Found FieldTrip: Big Ideas for Spiritual Creative Types: Rick Rubin’s ‘A Creative Act’ on 2025-09-03T20:00:00.000Z
+🎯 Found FieldTrip: LEVEL UP: Start Your Next Creative Chapter: Pave a Path to Creative Joy & Success on 2025-09-08T19:00:00.000Z
+🎯 Found FieldTrip: Build Bonds Beyond Screens on 2025-09-09T16:30:00.000Z
+🎯 Found FieldTrip: LEVEL UP: How to Design Flow Experiences to Propel Your Creative Work on 2025-09-10T19:30:00.000Z
+🎯 Found FieldTrip: Start Making Your Art Again on 2025-09-11T23:00:00.000Z
+🎯 Found FieldTrip: LEVEL UP: Business Strategies for ADHD Creatives on 2025-09-16T18:30:00.000Z
+🎯 Found FieldTrip: Uncondition Your Posture to Reclaim Your Power on 2025-09-22T17:00:00.000Z
+🎯 Found FieldTrip: Improv for groundedness in uncertain times on 2025-09-24T20:00:00.000Z
+🎯 Found FieldTrip: Rewrite Your Money Story: A Creative Workshop to Break Free From Scarcity on 2025-09-25T17:00:00.000Z
+🎯 Found FieldTrip: LEVEL UP: How to Overcome Self-Doubt and Build Unshakeable Creative Confidence on 2025-10-01T19:30:00.000Z
+🎯 Found FieldTrip: LEVEL UP: 💡The Full-Time Creative Formula: Learn the 5 Vital Elements You Need to Succeed on 2025-10-06T19:00:00.000Z
+🎯 Found FieldTrip: LEVEL UP: Navigating Chaos: The Freelancer's Survival Guide on 2025-10-14T18:30:00.000Z
+🎯 Found FieldTrip: LEVEL UP: The Freelancer’s Survival Guide: Pricing, Pitching & Getting Paid on 2025-10-21T20:00:00.000Z
+✅ CreativeMornings FieldTrips scraper found 22 events
+✅ creativemornings scraper completed: 22 events found in 5986ms
+💾 Processing scraper results...
+✅ creativemornings: 22/22 events inserted
+🔄 Running real scraper: sfrando
+🔄 Running single scraper: sfrando
+🔄 Starting sfrando scraper...
+🚴‍♂️ Scraping SF Randonneurs cycling events...
+📅 Looking for next 3 upcoming rides from today (Wed Aug 20 2025)
+Found 31 event rows
+🎯 Found SF Rando event: Laguna Lake 200k on Sat Aug 30 2025 at 7:00
+🎯 Found SF Rando event: El Paseito Mixto 103k ≈ on Sun Sep 14 2025 at 8:00
+🎯 Found SF Rando event: Lucas Valley Populaire on Sun Sep 14 2025 at 8:00
+🎯 Found SF Rando event: SFR Dart Populaire on Sat Sep 27 2025 at †
+🎯 Found SF Rando event: SFR DART on Sat Sep 27 2025 at †
+🎯 Found SF Rando event: Winters 200k on Sat Oct 11 2025 at 7:00
+🎯 Found SF Rando event: SFR Dart Populaire on Sat Oct 18 2025 at †
+🎯 Found SF Rando event: Del Puerto Canyon 200k on Sat Nov 01 2025 at 8:00
+🎯 Found SF Rando event: Del Puerto Canyon Junior on Sat Nov 01 2025 at 9:00
+🎯 Found SF Rando event: Estero Americano 200k on Sat Dec 06 2025 at 7:00
+✅ SF Randonneurs scraper found 3 next upcoming rides
+✅ sfrando scraper completed: 3 events found in 273ms
+💾 Processing scraper results...
+✅ sfrando: 3/3 events inserted
+🔄 Running real scraper: knockout
+🔄 Running single scraper: knockout
+🔄 Starting knockout scraper...
+🌐 Initializing browser...
+🌐 Loading page: https://theknockoutsf.com/calendar2
+✅ Page loaded successfully: 220580 characters
+Found 54 events from The Knockout
+✅ knockout scraper completed: 54 events found in 4979ms
+💾 Processing scraper results...
+✅ knockout: 54/54 events inserted
+🔄 Fetching events from real scrapers...
+🔄 Fetching events from real scrapers...
+📊 Returning 148 events from real scrapers
+📊 Returning 148 events from real scrapers
+🔄 Fetching events from real scrapers...
+📊 Returning 148 events from real scrapers
+🔄 Fetching events from real scrapers...
+📊 Returning 148 events from real scrapers
+🔄 Running real scraper: knockout
+🔄 Running single scraper: knockout
+🔄 Starting knockout scraper...
+🌐 Initializing browser...
+🌐 Loading page: https://theknockoutsf.com/calendar2
+✅ Page loaded successfully: 220580 characters
+Found 54 events from The Knockout
+✅ knockout scraper completed: 54 events found in 5131ms
+💾 Processing scraper results...
+✅ knockout: 54/54 events inserted
+🔄 Running real scraper: knockout
+🔄 Running single scraper: knockout
+🔄 Starting knockout scraper...
+🌐 Initializing browser...
+🌐 Loading page: https://theknockoutsf.com/calendar2
+✅ Page loaded successfully: 220580 characters
+Found 54 events from The Knockout
+✅ knockout scraper completed: 54 events found in 6178ms
+💾 Processing scraper results...
+✅ knockout: 54/54 events inserted
+
+🛑 Shutting down enhanced scraping service gracefully...

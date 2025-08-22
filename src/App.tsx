@@ -112,7 +112,9 @@ function App() {
       } else if (event.source === 'punchline') {
         venueName = 'Punchline Comedy Club';
       } else if (event.source === 'ape') {
-        venueName = 'APE';
+        venueName = 'Balboa Theater';
+      } else if (event.source === 'balboa') {
+        venueName = 'Balboa Theater';
       } else if (event.source === 'gamh') {
         venueName = 'Great American Music Hall';
       } else if (event.source === 'chapel') {
@@ -131,20 +133,34 @@ function App() {
         venueName = 'Strava';
       } else if (event.source === 'booksmith') {
         venueName = 'Booksmith';
+      } else if (event.source === 'sfcityfc') {
+        venueName = 'SF City FC';
+      } else if (event.source === 'oaklandroots') {
+        venueName = 'Oakland Roots SC';
+      } else if (event.source === 'warriors') {
+        venueName = 'Golden State Warriors';
+      } else if (event.source === 'valkyries') {
+        venueName = 'Las Vegas Valkyries';
+      } else if (event.source === 'giants') {
+        venueName = 'San Francisco Giants';
       }
       
       // Determine category based on source
       let category = event.category || 'Other';
       if (['sfrando', 'grizzlypeak'].includes(event.source)) {
         category = 'Cycling';
-      } else if (['roxie', 'gamh'].includes(event.source)) {
+      } else if (['roxie', 'gamh', 'balboa', 'ape'].includes(event.source)) {
         category = 'Film';
-      } else if (['punchline', 'cobbs', 'knockout'].includes(event.source)) {
+      } else if (['punchline', 'cobbs'].includes(event.source)) {
         category = 'Comedy';
-      } else if (['ape', 'chapel', 'cafedunord'].includes(event.source)) {
-        category = 'Music';
+              } else if (['knockout', 'rickshawstop', 'chapel', 'cafedunord'].includes(event.source)) {
+          category = 'Music';
+      } else if (['booksmith'].includes(event.source)) {
+        category = 'Books';
       } else if (['creativemornings', 'commonwealth', 'sfpl'].includes(event.source)) {
-        category = 'Tech';
+        category = 'Meetups';
+      } else if (['sfcityfc', 'oaklandroots', 'warriors', 'valkyries', 'giants'].includes(event.source)) {
+        category = 'Sports';
       }
       
       const venueKey = venueName;
@@ -185,10 +201,12 @@ function App() {
       'Film': venues.filter(v => v.category === 'Film'),
       'Comedy': venues.filter(v => v.category === 'Comedy'),
       'Music': venues.filter(v => v.category === 'Music'),
+      'Books': venues.filter(v => v.category === 'Books'),
       'Food': venues.filter(v => v.category === 'Food'),
       'Tech': venues.filter(v => v.category === 'Tech'),
       'Cycling': venues.filter(v => v.category === 'Cycling'),
-      'Other': venues.filter(v => !['Film', 'Comedy', 'Music', 'Food', 'Tech', 'Cycling'].includes(v.category))
+      'Sports': venues.filter(v => v.category === 'Sports'),
+      'Other': venues.filter(v => !['Film', 'Comedy', 'Music', 'Books', 'Food', 'Tech', 'Cycling', 'Sports'].includes(v.category))
     };
 
     return categories;
@@ -199,9 +217,11 @@ function App() {
       case 'Film': return '🎬';
       case 'Comedy': return '🎭';
       case 'Music': return '🎵';
+      case 'Books': return '📚';
       case 'Food': return '🍽️';
       case 'Tech': return '💻';
       case 'Cycling': return '🚴‍♂️';
+      case 'Sports': return '🏈';
       default: return '📅';
     }
   };
@@ -211,9 +231,11 @@ function App() {
       case 'Film': return 'Film & Cinema';
       case 'Comedy': return 'Comedy & Entertainment';
       case 'Music': return 'Music & Concerts';
+      case 'Books': return 'Books & Literature';
       case 'Food': return 'Food & Dining';
       case 'Tech': return 'Tech & Innovation';
       case 'Cycling': return 'Cycling & Rides';
+      case 'Sports': return 'Sports & Games';
       default: return 'Other Events';
     }
   };
@@ -277,10 +299,7 @@ function App() {
   const categorizedVenues = groupVenuesByCategory(venues);
   const hasEvents = venues.some(venue => venue.events.length > 0);
 
-  console.log(`🔍 Render Debug: venues=${venues.length}, hasEvents=${hasEvents}, categorizedVenues:`, Object.keys(categorizedVenues).map(cat => `${cat}: ${categorizedVenues[cat as keyof typeof categorizedVenues].length} venues`));
-  console.log(`🔍 hasEvents calculation:`, venues.map(v => ({ name: v.name, eventCount: v.events.length, hasEvents: v.events.length > 0 })));
-  console.log(`🔍 venues state at render:`, venues);
-  console.log(`🔍 categorizedVenues at render:`, categorizedVenues);
+
 
   return (
     <div className={`App ${theme}`}>
@@ -332,12 +351,7 @@ function App() {
         </div>
       ) : (
         <>
-          <div style={{background: 'red', color: 'white', padding: '20px', margin: '20px'}}>
-            🎯 DEBUG: This should show when hasEvents=true and venues exist!
-            <br/>venues.length: {venues.length}
-            <br/>hasEvents: {hasEvents.toString()}
-            <br/>initialLoadComplete: {initialLoadComplete.toString()}
-          </div>
+
 
           <EventTicker events={events.filter(event => {
             const eventDate = new Date(event.date);
@@ -347,32 +361,23 @@ function App() {
 
           <div className="mt-8">
             {Object.entries(categorizedVenues).map(([category, categoryVenues]) => {
-              if (categoryVenues.length === 0) return null;
+              if (categoryVenues.length === 0) {
+                return null;
+              }
               
               return (
-                <div key={category} className={`mb-8 p-6 rounded-xl border-2 font-mono ${
-                  category === 'Film' ? 'border-blue-500 bg-blue-50 dark:bg-blue-900/20' :
-                  category === 'Comedy' ? 'border-purple-500 bg-purple-50 dark:bg-purple-900/20' :
-                  category === 'Music' ? 'border-green-500 bg-green-50 dark:bg-green-900/20' :
-                  category === 'Food' ? 'border-orange-500 bg-orange-50 dark:bg-orange-900/20' :
-                  category === 'Tech' ? 'border-indigo-500 bg-indigo-500/20' :
-                  category === 'Cycling' ? 'border-yellow-500 bg-yellow-50 dark:bg-yellow-900/20' :
-                  'border-gray-500 bg-gray-50 dark:bg-gray-900/20'
-                }`}>
+                <div key={category} className="mb-12">
                   <h2 className="text-2xl font-bold mb-6 text-center uppercase tracking-wider font-mono">
                     {getCategoryIcon(category)} {getCategoryName(category)}
                   </h2>
                   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    {categoryVenues.map(venue => {
-                      console.log(`🎭 Rendering VenueNode for ${venue.name} with ${venue.events.length} events:`, venue.events.slice(0, 2));
-                      return (
-                        <VenueNode 
-                          key={venue.id} 
-                          venue={venue} 
-                          isDarkMode={theme === 'dark'} 
-                        />
-                      );
-                    })}
+                    {categoryVenues.map(venue => (
+                      <VenueNode 
+                        key={venue.id}
+                        venue={venue} 
+                        isDarkMode={theme === 'dark'} 
+                      />
+                    ))}
                   </div>
                 </div>
               );

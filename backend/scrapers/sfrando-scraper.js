@@ -1,9 +1,10 @@
-const puppeteer = require('puppeteer');
+import puppeteer from 'puppeteer';
 
-class SFRandoScraper {
+export class SFRandoScraper {
     constructor() {
         this.url = 'https://sfrandonneurs.org/';
         this.name = 'SF Randonneurs';
+        this.category = 'Sports';
         this.browser = null;
     }
 
@@ -251,5 +252,3 @@ class SFRandoScraper {
         return text.replace(/\s+/g, ' ').trim();
     }
 }
-
-module.exports = { SFRandoScraper };

@@ -74,6 +74,30 @@ const VenueNode: React.FC<VenueNodeProps> = ({ venue, isDarkMode }) => {
     });
   };
 
+  const formatTime = (dateString: string) => {
+    const date = new Date(dateString);
+    return date.toLocaleTimeString('en-US', {
+      hour: 'numeric',
+      minute: '2-digit',
+      hour12: true,
+      timeZone: 'America/Los_Angeles'
+    });
+  };
+
+  const isTimeAtMidnight = (dateString: string) => {
+    const date = new Date(dateString);
+    const hours = date.getUTCHours();
+    const minutes = date.getUTCMinutes();
+    
+    // Check if it's midnight in Pacific timezone
+    // If stored as T00:00:00-07:00, it means no valid showtime was found
+    if (dateString.includes('T00:00:00-07:00')) {
+      return true;
+    }
+    
+    return false;
+  };
+
   const renderEvent = (event: Event) => (
     <div
       key={event.id}
@@ -102,7 +126,10 @@ const VenueNode: React.FC<VenueNodeProps> = ({ venue, isDarkMode }) => {
         isDarkMode ? 'text-slate-400' : 'text-gray-600'
       }`}>
         <Calendar size={12} />
-        <span>{formatDate(event.date)} {event.time && `at ${event.time}`}</span>
+        <span>
+          {formatDate(event.date)}
+          {!isTimeAtMidnight(event.date) && ` at ${formatTime(event.date)}`}
+        </span>
       </div>
       
       {event.location && (

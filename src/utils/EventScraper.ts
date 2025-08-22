@@ -73,12 +73,19 @@ class EventScraper {
               venueName = backendEvent.source || 'Unknown Venue';
             }
             
+            // Convert date_start to proper date format
+            let eventDate = backendEvent.date_start || backendEvent.date;
+            if (typeof eventDate === 'number') {
+              // Convert timestamp to ISO string
+              eventDate = new Date(eventDate).toISOString();
+            }
+            
             return {
               id: backendEvent.id?.toString() || `${backendEvent.source}-${Date.now()}-${Math.random()}`,
               title: backendEvent.title,
-              date: backendEvent.date_start || backendEvent.date,
+              date: eventDate,
               time: backendEvent.time,
-              location: backendEvent.location || 'Roxie Theater, San Francisco',
+              location: backendEvent.location || 'Unknown Location',
               cost: backendEvent.price || backendEvent.cost,
               url: backendEvent.source_url || backendEvent.url,
               source: backendEvent.source,

@@ -1,0 +1,397 @@
+🚀 Starting SF Dashboard Enhanced Scraping Service...
+🚫 Fallback scrapers disabled - only real scrapers allowed
+🔍 Attempting to initialize real scrapers...
+ScraperManager: Found 21 scrapers in database
+🔍 Looking for class 'APEScraper' in module for ape
+🔍 Available exports: [ 'APEScraper' ]
+✅ Found class 'APEScraper' for ape
+✅ Loaded scraper: ape
+🔍 Looking for class 'BalboaScraper' in module for balboa
+🔍 Available exports: [ 'BalboaScraper' ]
+✅ Found class 'BalboaScraper' for balboa
+✅ Loaded scraper: balboa
+🔍 Looking for class 'BooksmithScraper' in module for booksmith
+🔍 Available exports: [ 'BooksmithScraper' ]
+✅ Found class 'BooksmithScraper' for booksmith
+📚 Booksmith scraper using correct Booksmith URL: https://www.booksmith.com/events
+✅ Loaded scraper: booksmith
+🔍 Looking for class 'CafeDuNordScraper' in module for cafedunord
+🔍 Available exports: [ 'CafeDuNordScraper' ]
+✅ Found class 'CafeDuNordScraper' for cafedunord
+✅ Loaded scraper: cafedunord
+🔍 Looking for class 'ChapelScraper' in module for chapel
+🔍 Available exports: [ 'ChapelScraper' ]
+✅ Found class 'ChapelScraper' for chapel
+🎵 Chapel scraper using correct Chapel URL: https://thechapelsf.com/calendar/
+✅ Loaded scraper: chapel
+🔍 Looking for class 'CobbsScraper' in module for cobbs
+🔍 Available exports: [ 'CobbsScraper' ]
+✅ Found class 'CobbsScraper' for cobbs
+✅ Loaded scraper: cobbs
+🔍 Looking for class 'CommonwealthScraper' in module for commonwealth
+🔍 Available exports: [ 'CommonwealthScraper' ]
+✅ Found class 'CommonwealthScraper' for commonwealth
+✅ Loaded scraper: commonwealth
+🔍 Looking for class 'CreativeMorningsScraper' in module for creativemornings
+🔍 Available exports: [ 'CreativeMorningsScraper' ]
+✅ Found class 'CreativeMorningsScraper' for creativemornings
+🎨 CreativeMornings scraper forced to use FieldTrips URL: https://creativemornings.com/fieldtrips/browse
+✅ Loaded scraper: creativemornings
+🔍 Looking for class 'GAMHScraper' in module for gamh
+🔍 Available exports: [ 'GAMHScraper' ]
+✅ Found class 'GAMHScraper' for gamh
+🎵 GAMH scraper using correct GAMH URL: https://gamh.com/calendar/
+✅ Loaded scraper: gamh
+🔍 Looking for class 'GiantsScraper' in module for giants
+🔍 Available exports: [ 'GiantsScraper' ]
+✅ Found class 'GiantsScraper' for giants
+✅ Loaded scraper: giants
+🔍 Looking for class 'GrizzlyPeakScraper' in module for grizzlypeak
+🔍 Available exports: [ 'GrizzlyPeakScraper' ]
+✅ Found class 'GrizzlyPeakScraper' for grizzlypeak
+✅ Loaded scraper: grizzlypeak
+🔍 Looking for class 'KnockoutScraper' in module for knockout
+🔍 Available exports: [ 'KnockoutScraper' ]
+✅ Found class 'KnockoutScraper' for knockout
+✅ Loaded scraper: knockout
+🔍 Looking for class 'OaklandrootsScraper' in module for oaklandroots
+🔍 Available exports: [ 'OaklandrootsScraper' ]
+✅ Found class 'OaklandrootsScraper' for oaklandroots
+✅ Loaded scraper: oaklandroots
+🔍 Looking for class 'PunchlineScraper' in module for punchline
+🔍 Available exports: [ 'PunchlineScraper' ]
+✅ Found class 'PunchlineScraper' for punchline
+✅ Loaded scraper: punchline
+🔍 Looking for class 'RoxieScraper' in module for roxie
+🔍 Available exports: [ 'RoxieScraper' ]
+✅ Found class 'RoxieScraper' for roxie
+✅ Loaded scraper: roxie
+🔍 Looking for class 'SfcityfcScraper' in module for sfcityfc
+🔍 Available exports: [ 'SfcityfcScraper' ]
+✅ Found class 'SfcityfcScraper' for sfcityfc
+✅ Loaded scraper: sfcityfc
+🔍 Looking for class 'SFPLScraper' in module for sfpl
+🔍 Available exports: [ 'SFPLScraper' ]
+✅ Found class 'SFPLScraper' for sfpl
+✅ Loaded scraper: sfpl
+🔍 Looking for class 'SFRandoScraper' in module for sfrando
+🔍 Available exports: [ 'SFRandoScraper' ]
+✅ Found class 'SFRandoScraper' for sfrando
+✅ Loaded scraper: sfrando
+🔍 Looking for class 'StravaScraper' in module for strava
+🔍 Available exports: [ 'StravaScraper' ]
+✅ Found class 'StravaScraper' for strava
+✅ Loaded scraper: strava
+🔍 Looking for class 'ValkyriesScraper' in module for valkyries
+🔍 Available exports: [ 'ValkyriesScraper' ]
+✅ Found class 'ValkyriesScraper' for valkyries
+✅ Loaded scraper: valkyries
+🔍 Looking for class 'WarriorsScraper' in module for warriors
+🔍 Available exports: [ 'WarriorsScraper' ]
+✅ Found class 'WarriorsScraper' for warriors
+✅ Loaded scraper: warriors
+ScraperManager: Initialized 21 scrapers
+✅ Real scrapers initialized successfully
+🔍 Available scrapers: 21
+🚀 SF Dashboard Enhanced Scraping Service running on port 3002
+🌐 API available at: http://localhost:3002
+💚 Health check: http://localhost:3002/health
+🔍 Real scrapers active: 21 available
+📊 Database: Connected to real event database
+🎯 Mode: REAL SCRAPING (your actual scrapers)
+📊 Sample events: http://localhost:3002/api/events
+🔄 Fetching events from real scrapers...
+📊 Returning 106 events from real scrapers
+🔄 Running real scraper: grizzlypeak
+🔄 Running single scraper: grizzlypeak
+🔄 Starting grizzlypeak scraper...
+🚴‍♂️ Scraping Grizzly Peak Cyclists events...
+🧹 Clearing old Grizzly Peak events from database...
+✅ Old events will be replaced when new ones are inserted
+📅 Looking for rides from Wed Aug 20 2025 to Wed Aug 27 2025
+Found 63 ride listings
+🎯 Found TODAY'S Grizzly Peak ride: Wed Ride - Deb's Diversion: Marin Headlands from Mill Valley at 10:30 AM in Mill Valley - Public Safety Buildings
+🎯 Found TODAY'S Grizzly Peak ride: Wednesday BARTable Mixed Terrain at 5:25 PM in El Cerrito Plaza BART
+✅ Grizzly Peak Cyclists scraper found 2 events in the next 7 days
+✅ grizzlypeak scraper completed: 2 events found in 479ms
+💾 Processing scraper results...
+✅ grizzlypeak: 2/2 events inserted
+🗑️ Clearing all events from database...
+🔄 Fetching events from real scrapers...
+📭 No events found in database
+🔄 Fetching events from real scrapers...
+📭 No events found in database
+🔄 Running real scraper: roxie
+🔄 Running single scraper: roxie
+🔄 Starting Roxie Theater scraper...
+🎬 Starting Roxie scraper (HTTP version)...
+🔧 Scraper config: {
+  "name": "Roxie Theater",
+  "url": "https://roxie.com/calendar/",
+  "description": "Independent film theater in San Francisco (HTTP version)"
+}
+🌐 Fetching https://roxie.com/calendar/...
+🌐 Using URL: https://roxie.com/calendar/
+📄 Page loaded: 330573 characters
+📅 Today's date: Wed Aug 20 2025
+🔍 Found 92 calendar days, processing events within next 7 days
+📅 Processing August 20, 2025 (Wed Aug 20 2025)
+🎬 Found film "Architecton" with 1 showtimes: 6:50 pm
+✅ Created event: "Architecton" at 6:50 pm on Wed Aug 20 2025
+🎬 Found film "Drugs in the Tenderloin" with 1 showtimes: 7:00 pm
+✅ Created event: "Drugs in the Tenderloin" at 7:00 pm on Wed Aug 20 2025
+🎬 Found film "It’s Never Over, Jeff Buckley" with 1 showtimes: 9:00 pm
+✅ Created event: "It’s Never Over, Jeff Buckley" at 9:00 pm on Wed Aug 20 2025
+🎬 Found film "Together" with 1 showtimes: 9:00 pm
+✅ Created event: "Together" at 9:00 pm on Wed Aug 20 2025
+📅 Processing August 21, 2025 (Thu Aug 21 2025)
+🎬 Found film "Stray Dog" with 1 showtimes: 3:30 pm
+✅ Created event: "Stray Dog" at 3:30 pm on Thu Aug 21 2025
+⏭️ Skipping generic title: El Mariachi – Free screening
+🎬 Found film "CatVideoFest 2025" with 1 showtimes: 6:05 pm
+✅ Created event: "CatVideoFest 2025" at 6:05 pm on Thu Aug 21 2025
+🎬 Found film "It’s Never Over, Jeff Buckley" with 1 showtimes: 8:00 pm
+✅ Created event: "It’s Never Over, Jeff Buckley" at 8:00 pm on Thu Aug 21 2025
+🎬 Found film "Cloud" with 1 showtimes: 8:00 pm
+✅ Created event: "Cloud" at 8:00 pm on Thu Aug 21 2025
+📅 Processing August 22, 2025 (Fri Aug 22 2025)
+🎬 Found film "SFQFF: Opening Night" with 1 showtimes: 6:00 pm
+✅ Created event: "SFQFF: Opening Night" at 6:00 pm on Fri Aug 22 2025
+🎬 Found film "It’s Never Over, Jeff Buckley" with 1 showtimes: 6:15 pm
+✅ Created event: "It’s Never Over, Jeff Buckley" at 6:15 pm on Fri Aug 22 2025
+🎬 Found film "Roxie First Looks #9" with 1 showtimes: 9:00 pm
+✅ Created event: "Roxie First Looks #9" at 9:00 pm on Fri Aug 22 2025
+🎬 Found film "Together" with 1 showtimes: 9:00 pm
+✅ Created event: "Together" at 9:00 pm on Fri Aug 22 2025
+📅 Processing August 23, 2025 (Sat Aug 23 2025)
+🎬 Found film "SFQFF: Program 2 – Smash the Cis-tem" with 1 showtimes: 1:00 pm
+✅ Created event: "SFQFF: Program 2 – Smash the Cis-tem" at 1:00 pm on Sat Aug 23 2025
+🎬 Found film "SFQFF: Program 3 – Purple Haze" with 1 showtimes: 1:30 pm
+✅ Created event: "SFQFF: Program 3 – Purple Haze" at 1:30 pm on Sat Aug 23 2025
+🎬 Found film "SFQFF: Program 4 – Narrative Feature" with 1 showtimes: 2:50 pm
+✅ Created event: "SFQFF: Program 4 – Narrative Feature" at 2:50 pm on Sat Aug 23 2025
+🎬 Found film "SFQFF: Program 5 – Paw-sitively Delicious" with 1 showtimes: 3:00 pm
+✅ Created event: "SFQFF: Program 5 – Paw-sitively Delicious" at 3:00 pm on Sat Aug 23 2025
+🎬 Found film "SFQFF: Program 6 – End the Stigma" with 1 showtimes: 5:00 pm
+✅ Created event: "SFQFF: Program 6 – End the Stigma" at 5:00 pm on Sat Aug 23 2025
+🎬 Found film "Architecton" with 1 showtimes: 5:10 pm
+✅ Created event: "Architecton" at 5:10 pm on Sat Aug 23 2025
+⏭️ Skipping generic title: SFQFF: Program 7 – Centerpiece Film
+🎬 Found film "Roxie First Looks #9" with 1 showtimes: 7:20 pm
+✅ Created event: "Roxie First Looks #9" at 7:20 pm on Sat Aug 23 2025
+📅 Processing August 24, 2025 (Sun Aug 24 2025)
+🎬 Found film "SFQFF: Program 8 – Cafe International" with 1 showtimes: 1:00 pm
+✅ Created event: "SFQFF: Program 8 – Cafe International" at 1:00 pm on Sun Aug 24 2025
+🎬 Found film "SFQFF: Program 9 – Small Bites" with 1 showtimes: 1:00 pm
+✅ Created event: "SFQFF: Program 9 – Small Bites" at 1:00 pm on Sun Aug 24 2025
+🎬 Found film "SFQFF: Program 10 – Feature Documentary" with 1 showtimes: 3:00 pm
+✅ Created event: "SFQFF: Program 10 – Feature Documentary" at 3:00 pm on Sun Aug 24 2025
+🎬 Found film "SFQFF: Program 11 – Female Power" with 1 showtimes: 3:00 pm
+✅ Created event: "SFQFF: Program 11 – Female Power" at 3:00 pm on Sun Aug 24 2025
+🎬 Found film "SFQFF: Program 12 – Box of Chocolates" with 1 showtimes: 5:00 pm
+✅ Created event: "SFQFF: Program 12 – Box of Chocolates" at 5:00 pm on Sun Aug 24 2025
+🎬 Found film "CatVideoFest 2025" with 1 showtimes: 5:10 pm
+✅ Created event: "CatVideoFest 2025" at 5:10 pm on Sun Aug 24 2025
+🎬 Found film "Roxie First Looks #9" with 1 showtimes: 7:00 pm
+✅ Created event: "Roxie First Looks #9" at 7:00 pm on Sun Aug 24 2025
+🎬 Found film "SFQFF: Program 13 – Closing Night" with 1 showtimes: 7:10 pm
+✅ Created event: "SFQFF: Program 13 – Closing Night" at 7:10 pm on Sun Aug 24 2025
+📅 Processing August 25, 2025 (Mon Aug 25 2025)
+🎬 Found film "Olas de Recuerdo" with 1 showtimes: 6:00 pm
+✅ Created event: "Olas de Recuerdo" at 6:00 pm on Mon Aug 25 2025
+🎬 Found film "Sudan, Remember Us" with 1 showtimes: 6:30 pm
+✅ Created event: "Sudan, Remember Us" at 6:30 pm on Mon Aug 25 2025
+🎬 Found film "Roxie First Looks #9" with 1 showtimes: 8:20 pm
+✅ Created event: "Roxie First Looks #9" at 8:20 pm on Mon Aug 25 2025
+🎬 Found film "High and Low" with 1 showtimes: 8:30 pm
+✅ Created event: "High and Low" at 8:30 pm on Mon Aug 25 2025
+📅 Processing August 26, 2025 (Tue Aug 26 2025)
+⏭️ Skipping generic title: San Francisco Film Preserve: Black Lightning
+🎬 Found film "Masayuki Suo’s Shall We Dance?" with 1 showtimes: 6:30 pm
+✅ Created event: "Masayuki Suo’s Shall We Dance?" at 6:30 pm on Tue Aug 26 2025
+🎬 Found film "In the Mood for Love: 25th Anniversary" with 1 showtimes: 9:00 pm
+✅ Created event: "In the Mood for Love: 25th Anniversary" at 9:00 pm on Tue Aug 26 2025
+🎬 Found film "Roxie First Looks #9" with 1 showtimes: 9:20 pm
+✅ Created event: "Roxie First Looks #9" at 9:20 pm on Tue Aug 26 2025
+📅 Processing August 27, 2025 (Wed Aug 27 2025)
+🎬 Found film "Together" with 1 showtimes: 6:30 pm
+✅ Created event: "Together" at 6:30 pm on Wed Aug 27 2025
+🎬 Found film "The Last Dance: Extended Version (破·地獄:加長版)" with 1 showtimes: 7:00 pm
+✅ Created event: "The Last Dance: Extended Version (破·地獄:加長版)" at 7:00 pm on Wed Aug 27 2025
+🎬 Found film "Roxie First Looks #9" with 1 showtimes: 8:45 pm
+✅ Created event: "Roxie First Looks #9" at 8:45 pm on Wed Aug 27 2025
+🎬 Scraping complete: 37 events found from 8 days (skipped 19 past days, 65 future days)
+✅ Roxie Theater scraper completed: 37 events found in 273ms
+💾 Processing scraper results...
+✅ roxie: 37/37 events inserted
+🔄 Running real scraper: grizzlypeak
+🔄 Running single scraper: grizzlypeak
+🔄 Starting grizzlypeak scraper...
+🚴‍♂️ Scraping Grizzly Peak Cyclists events...
+🧹 Clearing old Grizzly Peak events from database...
+✅ Old events will be replaced when new ones are inserted
+📅 Looking for rides from Wed Aug 20 2025 to Wed Aug 27 2025
+Found 63 ride listings
+🎯 Found TODAY'S Grizzly Peak ride: Wed Ride - Deb's Diversion: Marin Headlands from Mill Valley at 10:30 AM in Mill Valley - Public Safety Buildings
+🎯 Found TODAY'S Grizzly Peak ride: Wednesday BARTable Mixed Terrain at 5:25 PM in El Cerrito Plaza BART
+✅ Grizzly Peak Cyclists scraper found 2 events in the next 7 days
+✅ grizzlypeak scraper completed: 2 events found in 493ms
+💾 Processing scraper results...
+✅ grizzlypeak: 2/2 events inserted
+🔄 Running real scraper: punchline
+🔄 Running single scraper: punchline
+🔄 Starting punchline scraper...
+🌐 Initializing browser...
+🌐 Loading page: https://www.punchlinecomedyclub.com/shows
+✅ Page loaded successfully: 474999 characters
+🔍 Step 1: Extracting from Schema.org structured data...
+✅ Found 36 events from structured data
+✅ Date validated: "Comedy Allstars" - 2025-08-20T19:30:00-07:00 (2025-08-21T02:30:00.000Z Pacific Time - within 14 days)
+✅ Valid event: "Comedy Allstars"
+✅ Date validated: "Rosebud Baker" - 2025-08-21T20:00:00-07:00 (2025-08-22T03:00:00.000Z Pacific Time - within 14 days)
+✅ Valid event: "Rosebud Baker"
+✅ Date validated: "Rosebud Baker" - 2025-08-22T19:30:00-07:00 (2025-08-23T02:30:00.000Z Pacific Time - within 14 days)
+✅ Valid event: "Rosebud Baker"
+✅ Date validated: "Rosebud Baker" - 2025-08-22T21:45:00-07:00 (2025-08-23T04:45:00.000Z Pacific Time - within 14 days)
+✅ Valid event: "Rosebud Baker"
+✅ Date validated: "Rosebud Baker" - 2025-08-23T19:00:00-07:00 (2025-08-24T02:00:00.000Z Pacific Time - within 14 days)
+✅ Valid event: "Rosebud Baker"
+✅ Date validated: "Rosebud Baker" - 2025-08-23T21:15:00-07:00 (2025-08-24T04:15:00.000Z Pacific Time - within 14 days)
+✅ Valid event: "Rosebud Baker"
+✅ Date validated: "S. F. Comedy Showcase" - 2025-08-24T19:30:00-07:00 (2025-08-25T02:30:00.000Z Pacific Time - within 14 days)
+✅ Valid event: "S. F. Comedy Showcase"
+✅ Date validated: "Steve Ausburne & Ben Feldman" - 2025-08-26T19:30:00-07:00 (2025-08-27T02:30:00.000Z Pacific Time - within 14 days)
+✅ Valid event: "Steve Ausburne & Ben Feldman"
+✅ Date validated: "Mark Smalls" - 2025-08-27T20:00:00-07:00 (2025-08-28T03:00:00.000Z Pacific Time - within 14 days)
+✅ Valid event: "Mark Smalls"
+✅ Date validated: "Mark Smalls" - 2025-08-28T20:00:00-07:00 (2025-08-29T03:00:00.000Z Pacific Time - within 14 days)
+✅ Valid event: "Mark Smalls"
+✅ Date validated: "Mark Smalls" - 2025-08-29T19:30:00-07:00 (2025-08-30T02:30:00.000Z Pacific Time - within 14 days)
+✅ Valid event: "Mark Smalls"
+✅ Date validated: "Mark Smalls" - 2025-08-29T21:45:00-07:00 (2025-08-30T04:45:00.000Z Pacific Time - within 14 days)
+✅ Valid event: "Mark Smalls"
+✅ Date validated: "Mark Smalls" - 2025-08-30T19:00:00-07:00 (2025-08-31T02:00:00.000Z Pacific Time - within 14 days)
+✅ Valid event: "Mark Smalls"
+✅ Date validated: "Mark Smalls" - 2025-08-30T21:15:00-07:00 (2025-08-31T04:15:00.000Z Pacific Time - within 14 days)
+✅ Valid event: "Mark Smalls"
+✅ Date validated: "S. F. Comedy Showcase" - 2025-08-31T19:30:00-07:00 (2025-09-01T02:30:00.000Z Pacific Time - within 14 days)
+✅ Valid event: "S. F. Comedy Showcase"
+✅ Date validated: "Ray Lau" - 2025-09-02T19:00:00-07:00 (2025-09-03T02:00:00.000Z Pacific Time - within 14 days)
+✅ Valid event: "Ray Lau"
+✅ Date validated: "Ray Lau" - 2025-09-02T21:15:00-07:00 (2025-09-03T04:15:00.000Z Pacific Time - within 14 days)
+✅ Valid event: "Ray Lau"
+❌ Event too far in future rejected: "Pat Burtscher" - 2025-09-03T20:00:00-07:00 (2025-09-04T03:00:00.000Z Pacific Time - beyond 14 days from 2025-08-20 Pacific Time)
+❌ Event too far in future rejected: "Pat Burtscher" - 2025-09-04T20:00:00-07:00 (2025-09-05T03:00:00.000Z Pacific Time - beyond 14 days from 2025-08-20 Pacific Time)
+❌ Event too far in future rejected: "Pat Burtscher" - 2025-09-05T19:30:00-07:00 (2025-09-06T02:30:00.000Z Pacific Time - beyond 14 days from 2025-08-20 Pacific Time)
+❌ Event too far in future rejected: "Pat Burtscher" - 2025-09-05T21:45:00-07:00 (2025-09-06T04:45:00.000Z Pacific Time - beyond 14 days from 2025-08-20 Pacific Time)
+❌ Event too far in future rejected: "Pat Burtscher" - 2025-09-06T19:00:00-07:00 (2025-09-07T02:00:00.000Z Pacific Time - beyond 14 days from 2025-08-20 Pacific Time)
+❌ Event too far in future rejected: "Pat Burtscher" - 2025-09-06T21:15:00-07:00 (2025-09-07T04:15:00.000Z Pacific Time - beyond 14 days from 2025-08-20 Pacific Time)
+❌ Event too far in future rejected: "S. F. Comedy Showcase" - 2025-09-07T19:30:00-07:00 (2025-09-08T02:30:00.000Z Pacific Time - beyond 14 days from 2025-08-20 Pacific Time)
+❌ Event too far in future rejected: "Comedy Allstars" - 2025-09-09T19:30:00-07:00 (2025-09-10T02:30:00.000Z Pacific Time - beyond 14 days from 2025-08-20 Pacific Time)
+❌ Event too far in future rejected: "Johnny Taylor" - 2025-09-10T19:30:00-07:00 (2025-09-11T02:30:00.000Z Pacific Time - beyond 14 days from 2025-08-20 Pacific Time)
+❌ Event too far in future rejected: "Des Bishop" - 2025-09-11T20:00:00-07:00 (2025-09-12T03:00:00.000Z Pacific Time - beyond 14 days from 2025-08-20 Pacific Time)
+❌ Event too far in future rejected: "Des Bishop" - 2025-09-12T19:30:00-07:00 (2025-09-13T02:30:00.000Z Pacific Time - beyond 14 days from 2025-08-20 Pacific Time)
+❌ Event too far in future rejected: "Des Bishop" - 2025-09-12T21:45:00-07:00 (2025-09-13T04:45:00.000Z Pacific Time - beyond 14 days from 2025-08-20 Pacific Time)
+❌ Event too far in future rejected: "Des Bishop" - 2025-09-13T19:00:00-07:00 (2025-09-14T02:00:00.000Z Pacific Time - beyond 14 days from 2025-08-20 Pacific Time)
+❌ Event too far in future rejected: "Des Bishop" - 2025-09-13T21:15:00-07:00 (2025-09-14T04:15:00.000Z Pacific Time - beyond 14 days from 2025-08-20 Pacific Time)
+❌ Event too far in future rejected: "S. F. Comedy Showcase" - 2025-09-14T19:30:00-07:00 (2025-09-15T02:30:00.000Z Pacific Time - beyond 14 days from 2025-08-20 Pacific Time)
+❌ Event too far in future rejected: "Joe Klocek & Friends" - 2025-09-16T19:30:00-07:00 (2025-09-17T02:30:00.000Z Pacific Time - beyond 14 days from 2025-08-20 Pacific Time)
+❌ Event too far in future rejected: "Comedy Allstars" - 2025-09-17T19:30:00-07:00 (2025-09-18T02:30:00.000Z Pacific Time - beyond 14 days from 2025-08-20 Pacific Time)
+❌ Event too far in future rejected: "Richard Sarvate" - 2025-09-18T20:00:00-07:00 (2025-09-19T03:00:00.000Z Pacific Time - beyond 14 days from 2025-08-20 Pacific Time)
+❌ Event too far in future rejected: "Ashley Hesseltine: Sex Before Marriage Tour" - 2025-09-19T19:30:00-07:00 (2025-09-20T02:30:00.000Z Pacific Time - beyond 14 days from 2025-08-20 Pacific Time)
+Found 17 events from Punchline
+✅ punchline scraper completed: 17 events found in 5086ms
+💾 Processing scraper results...
+✅ punchline: 17/17 events inserted
+🔄 Fetching events from real scrapers...
+📊 Returning 56 events from real scrapers
+🔄 Fetching events from real scrapers...
+🔄 Fetching events from real scrapers...
+📊 Returning 56 events from real scrapers
+📊 Returning 56 events from real scrapers
+🔄 Running real scraper: grizzlypeak
+🔄 Running single scraper: grizzlypeak
+🔄 Starting grizzlypeak scraper...
+🚴‍♂️ Scraping Grizzly Peak Cyclists events...
+🧹 Clearing old Grizzly Peak events from database...
+✅ Old events will be replaced when new ones are inserted
+📅 Looking for rides from Wed Aug 20 2025 to Wed Aug 27 2025
+Found 63 ride listings
+🎯 Found TODAY'S Grizzly Peak ride: Wed Ride - Deb's Diversion: Marin Headlands from Mill Valley at 10:30 AM in Mill Valley - Public Safety Buildings
+🎯 Found TODAY'S Grizzly Peak ride: Wednesday BARTable Mixed Terrain at 5:25 PM in El Cerrito Plaza BART
+✅ Grizzly Peak Cyclists scraper found 2 events in the next 7 days
+✅ grizzlypeak scraper completed: 2 events found in 593ms
+💾 Processing scraper results...
+✅ grizzlypeak: 2/2 events inserted
+🔄 Running real scraper: grizzlypeak
+🔄 Running single scraper: grizzlypeak
+🔄 Starting grizzlypeak scraper...
+🚴‍♂️ Scraping Grizzly Peak Cyclists events...
+🧹 Clearing old Grizzly Peak events from database...
+✅ Old events will be replaced when new ones are inserted
+📅 Looking for rides from Wed Aug 20 2025 to Wed Aug 27 2025
+Found 63 ride listings
+🎯 Found TODAY'S Grizzly Peak ride: Wed Ride - Deb's Diversion: Marin Headlands from Mill Valley at 10:30 AM in Mill Valley - Public Safety Buildings
+🎯 Found TODAY'S Grizzly Peak ride: Wednesday BARTable Mixed Terrain at 5:25 PM in El Cerrito Plaza BART
+✅ Grizzly Peak Cyclists scraper found 2 events in the next 7 days
+✅ grizzlypeak scraper completed: 2 events found in 405ms
+💾 Processing scraper results...
+✅ grizzlypeak: 2/2 events inserted
+🔄 Running real scraper: grizzlypeak
+🔄 Running single scraper: grizzlypeak
+🔄 Starting grizzlypeak scraper...
+🚴‍♂️ Scraping Grizzly Peak Cyclists events...
+🧹 Clearing old Grizzly Peak events from database...
+✅ Old events will be replaced when new ones are inserted
+📅 Looking for rides from Wed Aug 20 2025 to Wed Aug 27 2025
+Found 63 ride listings
+🎯 Found TODAY'S Grizzly Peak ride: Wed Ride - Deb's Diversion: Marin Headlands from Mill Valley at 10:30 AM in Mill Valley - Public Safety Buildings
+🎯 Found TODAY'S Grizzly Peak ride: Wednesday BARTable Mixed Terrain at 5:25 PM in El Cerrito Plaza BART
+✅ Grizzly Peak Cyclists scraper found 2 events in the next 7 days
+✅ grizzlypeak scraper completed: 2 events found in 404ms
+💾 Processing scraper results...
+✅ grizzlypeak: 2/2 events inserted
+🔄 Running real scraper: grizzlypeak
+🔄 Running single scraper: grizzlypeak
+🔄 Starting grizzlypeak scraper...
+🚴‍♂️ Scraping Grizzly Peak Cyclists events...
+🧹 Clearing old Grizzly Peak events from database...
+✅ Old events will be replaced when new ones are inserted
+📅 Looking for rides from Wed Aug 20 2025 to Wed Aug 27 2025
+Found 63 ride listings
+🎯 Found TODAY'S Grizzly Peak ride: Wed Ride - Deb's Diversion: Marin Headlands from Mill Valley at 10:30 AM in Mill Valley - Public Safety Buildings
+🎯 Found TODAY'S Grizzly Peak ride: Wednesday BARTable Mixed Terrain at 5:25 PM in El Cerrito Plaza BART
+✅ Grizzly Peak Cyclists scraper found 2 events in the next 7 days
+✅ grizzlypeak scraper completed: 2 events found in 408ms
+💾 Processing scraper results...
+✅ grizzlypeak: 2/2 events inserted
+🔄 Running real scraper: grizzlypeak
+🔄 Running single scraper: grizzlypeak
+🔄 Starting grizzlypeak scraper...
+🚴‍♂️ Scraping Grizzly Peak Cyclists events...
+🧹 Clearing old Grizzly Peak events from database...
+✅ Old events will be replaced when new ones are inserted
+📅 Looking for rides from Wed Aug 20 2025 to Wed Aug 27 2025
+Found 63 ride listings
+🎯 Found TODAY'S Grizzly Peak ride: Wed Ride - Deb's Diversion: Marin Headlands from Mill Valley at 10:30 AM in Mill Valley - Public Safety Buildings
+🎯 Found TODAY'S Grizzly Peak ride: Wednesday BARTable Mixed Terrain at 5:25 PM in El Cerrito Plaza BART
+✅ Grizzly Peak Cyclists scraper found 2 events in the next 7 days
+✅ grizzlypeak scraper completed: 2 events found in 496ms
+💾 Processing scraper results...
+✅ grizzlypeak: 2/2 events inserted
+🔄 Running real scraper: grizzlypeak
+🔄 Running single scraper: grizzlypeak
+🔄 Starting grizzlypeak scraper...
+🚴‍♂️ Scraping Grizzly Peak Cyclists events...
+🧹 Clearing old Grizzly Peak events from database...
+✅ Old events will be replaced when new ones are inserted
+📅 Looking for rides from Wed Aug 20 2025 to Wed Aug 27 2025
+Found 63 ride listings
+🎯 Found TODAY'S Grizzly Peak ride: Wed Ride - Deb's Diversion: Marin Headlands from Mill Valley at 10:30 AM in Mill Valley - Public Safety Buildings
+🎯 Found TODAY'S Grizzly Peak ride: Wednesday BARTable Mixed Terrain at 5:25 PM in El Cerrito Plaza BART
+✅ Grizzly Peak Cyclists scraper found 2 events in the next 7 days
+✅ grizzlypeak scraper completed: 2 events found in 384ms
+💾 Processing scraper results...
+✅ grizzlypeak: 2/2 events inserted
+
+🛑 Shutting down enhanced scraping service gracefully...

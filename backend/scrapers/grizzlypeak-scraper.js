@@ -1,231 +1,155 @@
-const puppeteer = require('puppeteer');
+import { BaseScraper } from './base-scraper.js';
+import * as cheerio from 'cheerio';
 
-class GrizzlyPeakScraper {
-    constructor() {
-        this.url = 'https://www.grizz.org/rides/';
-        this.name = 'Grizzly Peak Cyclists';
-        this.browser = null;
-    }
+export class GrizzlyPeakScraper extends BaseScraper {
+  constructor() {
+    super('grizzlypeak', {
+      url: 'https://www.grizz.org/rides/',
+      name: 'Grizzly Peak Cyclists'
+    });
+  }
 
-    async initBrowser() {
-        if (!this.browser) {
-            this.browser = await puppeteer.launch({
-                headless: true,
-                args: ['--no-sandbox', '--disable-setuid-sandbox']
-            });
-        }
-        return this.browser;
-    }
+  async scrapeEvents() {
+    try {
+      console.log('🚴‍♂️ Starting Grizzly Peak Cyclists scraper...');
+      const html = await this.getPageContent(this.config.url);
+      const $ = cheerio.load(html);
+      const events = [];
 
-    async closeBrowser() {
-        if (this.browser) {
-            await this.browser.close();
-            this.browser = null;
-        }
-    }
-
-    async scrape() {
+      console.log(`🔍 HTML content length: ${html.length} characters`);
+      
+      // Look for ride listings in div.rideListing elements
+      const rideListings = $('.rideListing');
+      console.log(`🔍 Found ${rideListings.length} .rideListing elements`);
+      
+      rideListings.each((i, element) => {
         try {
-            console.log('🚴‍♂️ Starting Grizzly Peak Cyclists scraper...');
-            
-            const events = await this.scrapeEvents();
-            
-            console.log(`✅ Found ${events.length} cycling events`);
-            
-            return {
-                success: true,
-                events: events,
-                count: events.length,
-                duration: 0
-            };
+          const $element = $(element);
+          console.log(`🔍 Processing ride listing ${i}:`, $element.text().substring(0, 100));
+          
+          // Extract date from the <b> tag (e.g., "THU AUG 21")
+          const $dateElement = $element.find('b').first();
+          if (!$dateElement.length) {
+            console.log(`⚠️ No date element found in ride ${i}`);
+            return;
+          }
+          
+          const dateText = $dateElement.text().trim();
+          console.log(`🔍 Date text: "${dateText}"`);
+          
+          if (!dateText || dateText === 'Today') {
+            console.log(`⚠️ Skipping date: "${dateText}"`);
+            return;
+          }
+          
+          const rideDate = this.parseGrizzDate(dateText);
+          if (!rideDate) {
+            console.log(`⚠️ Could not parse date: "${dateText}"`);
+            return;
+          }
+          
+          console.log(`✅ Parsed date: ${rideDate.toISOString()}`);
+          
+          // Extract ride name from the <i> tag
+          const $rideNameElement = $element.find('i');
+          if (!$rideNameElement.length) {
+            console.log(`⚠️ No ride name element found in ride ${i}`);
+            return;
+          }
+          
+          const rideName = $rideNameElement.text().trim();
+          if (!rideName) {
+            console.log(`⚠️ Empty ride name in ride ${i}`);
+            return;
+          }
+          
+          console.log(`✅ Ride name: "${rideName}"`);
+          
+          // Extract leader information
+          const leaderText = $element.text();
+          const leaderMatch = leaderText.match(/Leader:\s*([^&\n]+)/);
+          const leader = leaderMatch ? leaderMatch[1].trim() : 'Grizzly Peak Cyclists';
+          
+          // Extract meet time
+          const timeMatch = leaderText.match(/Meet at\s+(\d{1,2}:\d{2}\s*[ap]m)/i);
+          const meetTime = timeMatch ? timeMatch[1] : '';
+          
+          // Extract start location
+          const locationMatch = leaderText.match(/Start Location:\s*([^\n]+)/);
+          const startLocation = locationMatch ? locationMatch[1].trim() : 'Various Bay Area locations';
+          
+          // Extract route description
+          const routeMatch = leaderText.match(/GPC Route:\s*([^\n]+)/);
+          const routeDescription = routeMatch ? routeMatch[1].trim() : '';
+          
+          // Extract rating (e.g., "3/TM,M/62")
+          const ratingMatch = dateText.match(/\d+\/[A-Z,]+(\/\d+)?/);
+          const rating = ratingMatch ? ratingMatch[0] : '';
+          
+          // Create event object
+          const event = {
+            title: rideName,
+            description: `${rideName} - ${routeDescription || 'Cycling ride with Grizzly Peak Cyclists'}${rating ? ` (${rating})` : ''}`,
+            date_start: rideDate.toISOString(),
+            location: startLocation,
+            source: this.config.name,
+            source_url: this.config.url,
+            category: 'Cycling',
+            price: 'Free',
+            host: leader,
+            image_url: '',
+            time_text: meetTime || 'Check ride details'
+          };
+          
+          events.push(event);
+          console.log(`🚴‍♂️ Found Grizzly Peak ride: ${rideName} on ${rideDate.toISOString()}`);
         } catch (error) {
-            console.error('❌ Error scraping Grizzly Peak Cyclists:', error);
-            return {
-                success: false,
-                events: [],
-                count: 0,
-                duration: 0,
-                error: error.message
-            };
-        } finally {
-            await this.closeBrowser();
+          console.warn(`⚠️ Error processing Grizzly Peak ride ${i}:`, error.message);
         }
-    }
+      });
 
-    async getPageContent(url) {
-        try {
-            const browser = await this.initBrowser();
-            const page = await browser.newPage();
-            
-            // Set user agent to avoid being blocked
-            await page.setUserAgent('Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36');
-            
-            // Set viewport
-            await page.setViewport({ width: 1920, height: 1080 });
-            
-            console.log(`🌐 Loading page: ${url}`);
-            
-            // Navigate to page
-            await page.goto(url, { 
-                waitUntil: 'networkidle2',
-                timeout: 30000
-            });
-            
-            console.log(`⏳ Waiting for content to load...`);
-            
-            // Wait for content to load
-            await new Promise(resolve => setTimeout(resolve, 5000));
-            
-            // Get page content
-            const content = await page.content();
-            console.log(`📄 Page loaded, content length: ${content.length} characters`);
-            
-            await page.close();
-            return content;
-            
-        } catch (error) {
-            throw new Error(`Failed to fetch ${url}: ${error.message}`);
-        }
+      console.log(`✅ Grizzly Peak Cyclists scraper found ${events.length} rides`);
+      return events;
+    } catch (error) {
+      console.error('Error scraping Grizzly Peak events:', error);
+      throw error;
     }
+  }
 
-    async scrapeEvents() {
-        try {
-            const pageContent = await this.getPageContent(this.url);
-            if (!pageContent) return [];
-            
-            const events = [];
-            
-            // Look for ride listings - Grizzly Peak has structured ride divs
-            const rideListingMatches = pageContent.match(/<div class="rideListing"[^>]*>([\s\S]*?)<\/div>/gi);
-            
-            if (rideListingMatches) {
-                console.log(`Found ${rideListingMatches.length} ride listings`);
-                
-                rideListingMatches.forEach((listing, index) => {
-                    try {
-                        const listingText = listing.replace(/<[^>]*>/g, '');
-                        
-                        // Skip the "Today" header
-                        if (listingText.includes('Today') || listingText.includes('MON AUG 18')) {
-                            return;
-                        }
-                        
-                        // Extract ride information using regex patterns
-                        const rideMatch = listingText.match(/(\w{3})\s+(\w{3})\s+(\d{1,2})\s+([^<]+)\s+<i>([^<]+)<\/i>/);
-                        
-                        if (rideMatch) {
-                            const dayName = rideMatch[1];
-                            const monthName = rideMatch[2];
-                            const day = parseInt(rideMatch[3]);
-                            const rating = rideMatch[4].trim();
-                            const rideName = rideMatch[5].trim();
-                            
-                            // Extract time information
-                            const timeMatch = listingText.match(/Meet at (\d{1,2}):(\d{2})\s+(am|pm)/i);
-                            let startTime = "TBD";
-                            let eventDateTime = null;
-                            
-                            if (timeMatch) {
-                                let hours = parseInt(timeMatch[1]);
-                                const minutes = parseInt(timeMatch[2]);
-                                const ampm = timeMatch[3].toLowerCase();
-                                
-                                // Convert to 24-hour format
-                                if (ampm === 'pm' && hours !== 12) hours += 12;
-                                if (ampm === 'am' && hours === 12) hours = 0;
-                                
-                                startTime = `${timeMatch[1]}:${timeMatch[2]} ${timeMatch[3].toUpperCase()}`;
-                                
-                                // Create date object (assuming current year)
-                                const currentYear = new Date().getFullYear();
-                                const monthNames = ['jan', 'feb', 'mar', 'apr', 'may', 'jun', 
-                                                   'jul', 'aug', 'sep', 'oct', 'nov', 'dec'];
-                                const monthIndex = monthNames.findIndex(name => 
-                                    monthName.toLowerCase().startsWith(name)
-                                );
-                                
-                                if (monthIndex !== -1) {
-                                    eventDateTime = new Date(currentYear, monthIndex, day, hours, minutes, 0, 0);
-                                }
-                            }
-                            
-                            // Extract start location
-                            const locationMatch = listingText.match(/Start Location:\s*([^<]+)/);
-                            const location = locationMatch ? locationMatch[1].trim() : "East Bay Area";
-                            
-                            // Extract description
-                            const descriptionMatch = listingText.match(/<p>([^<]+)<\/p>/);
-                            const description = descriptionMatch ? descriptionMatch[1].trim() : `${rating} rated ride`;
-                            
-                            console.log(`🎯 Found Grizzly Peak event: ${rideName} on ${monthName} ${day} at ${startTime}`);
-                            
-                            const event = {
-                                title: rideName,
-                                description: description,
-                                date_start: eventDateTime || new Date(),
-                                location: `${this.name}, ${location}`,
-                                source: 'grizzlypeak',
-                                source_url: this.url,
-                                category: 'Cycling',
-                                price: 'Free',
-                                image_url: '',
-                                time_text: startTime,
-                                venue: this.name
-                            };
-                            
-                            events.push(event);
-                        }
-                    } catch (error) {
-                        console.warn(`⚠️ Error processing listing ${index}: ${error.message}`);
-                    }
-                });
-            }
-            
-            // Alternative approach: look for any structured ride information
-            if (events.length === 0) {
-                console.log('🔍 No events found with main selectors, trying alternative approach...');
-                
-                // Look for any text that might contain ride information
-                const rideMatches = pageContent.match(/(\w{3}\s+\w{3}\s+\d{1,2}[^<]+)/g);
-                
-                if (rideMatches) {
-                    rideMatches.forEach((match, index) => {
-                        if (match.includes('MON') || match.includes('TUE') || match.includes('WED') || 
-                            match.includes('THU') || match.includes('FRI') || match.includes('SAT') || match.includes('SUN')) {
-                            
-                            const event = {
-                                title: `Grizzly Peak Ride ${index + 1}`,
-                                description: `Cycling event: ${match.trim()}`,
-                                date_start: new Date(),
-                                location: `${this.name}, East Bay Area`,
-                                source: 'grizzlypeak',
-                                source_url: this.url,
-                                category: 'Cycling',
-                                price: 'Free',
-                                image_url: '',
-                                time_text: 'TBD',
-                                venue: this.name
-                            };
-                            
-                            events.push(event);
-                            console.log(`🎯 Found alternative Grizzly Peak event: ${match.trim()}`);
-                        }
-                    });
-                }
-            }
-            
-            return events;
-            
-        } catch (error) {
-            console.error('❌ Error scraping events:', error.message);
-            return [];
-        }
+  parseGrizzDate(dateText) {
+    try {
+      // Format: "SAT AUG 23 2/LT/35" or "MON SEP 1 3!/T/16"
+      // Extract just the date part before the difficulty/type/distance info
+      const match = dateText.match(/^([A-Z]{3})\s+([A-Z]{3})\s+(\d{1,2})\s+/);
+      if (!match) return null;
+      
+      const [, dayOfWeek, month, day] = match;
+      
+      const monthMap = {
+        'JAN': 0, 'FEB': 1, 'MAR': 2, 'APR': 3, 'MAY': 4, 'JUN': 5,
+        'JUL': 6, 'AUG': 7, 'SEP': 8, 'OCT': 9, 'NOV': 10, 'DEC': 11
+      };
+      
+      const monthIndex = monthMap[month];
+      if (monthIndex === undefined) return null;
+      
+      // Assume current year for now
+      const currentYear = new Date().getFullYear();
+      const rideDate = new Date(currentYear, monthIndex, parseInt(day));
+      
+      // If the date is in the past, it might be next year
+      if (rideDate < new Date()) {
+        rideDate.setFullYear(currentYear + 1);
+      }
+      
+      // Only include future rides
+      const now = new Date();
+      if (rideDate < now) return null;
+      
+      return rideDate;
+    } catch (error) {
+      console.warn(`⚠️ Error parsing Grizz date "${dateText}":`, error.message);
+      return null;
     }
-    
-    cleanText(text) {
-        if (!text) return '';
-        return text.replace(/\s+/g, ' ').trim();
-    }
+  }
 }
-
-module.exports = { GrizzlyPeakScraper };
