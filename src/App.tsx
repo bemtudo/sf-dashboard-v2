@@ -329,14 +329,20 @@ function App() {
         </div>
 
         {lastRefresh && (
-          <p className="text-sm text-gray-600 dark:text-gray-400">
-            Last updated: {lastRefresh.toLocaleString()}
-          </p>
+          <div className="status-bar">
+            <p className="text-sm text-gray-600 dark:text-gray-400">
+              Last updated: {lastRefresh.toLocaleString()}
+            </p>
+            <p className="text-sm text-gray-600 dark:text-gray-400">
+              Total events: {events.length} • Venues: {venues.length}
+            </p>
+          </div>
         )}
       </div>
 
       {!initialLoadComplete ? (
         <div className="status-message">
+          <div className="loading-spinner"></div>
           <h2 className="status-title">Loading Events...</h2>
           <p className="status-description">
             Fetching the latest events from our enhanced scraping service.
