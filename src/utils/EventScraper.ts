@@ -15,7 +15,7 @@ interface ScrapedEvent {
 
 class EventScraper {
   private static websites: { [key: string]: { url: string; category: string; venue: string }[] } = {};
-  private static scrapingServiceUrl = 'http://localhost:3002'; // Dedicated scraping service
+  private static scrapingServiceUrl = 'https://dnlajdcrxcrjnmunnpup.supabase.co'; // Supabase database
 
   static initialize() {
     // Initialize with real SF venue websites that match your existing scrapers
@@ -47,22 +47,27 @@ class EventScraper {
   }
 
   static async scrapeAllSources(): Promise<Event[]> {
-    console.log('EventScraper: Starting to scrape events...');
+    console.log('EventScraper: Starting to fetch events from Supabase...');
     
     try {
-      // First, try to fetch from the dedicated scraping service
-      console.log('🔄 Attempting to fetch from dedicated scraping service...');
+      // Fetch events from Supabase database
+      console.log('🔄 Attempting to fetch from Supabase database...');
       
-      const response = await fetch('http://localhost:3002/api/events');
+      const response = await fetch('https://dnlajdcrxcrjnmunnpup.supabase.co/rest/v1/events?select=*', {
+        headers: {
+          'apikey': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImRubGFqZGNyeGNyam5tdW5ucHVwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTU5MDI0NTUsImV4cCI6MjA3MTQ3ODQ1NX0.wkjNYn9dL-7SQyVYm0iEXgkoW-cZsz6pgj-hyCY_av4',
+          'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImRubGFqZGNyeGNyam5tdW5ucHVwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTU5MDI0NTUsImV4cCI6MjA3MTQ3ODQ1NX0.wkjNYn9dL-7SQyVYm0iEXgkoW-cZsz6pgj-hyCY_av4'
+        }
+      });
       
       if (response.ok) {
-        console.log('💚 Scraping service is healthy, fetching events...');
+        console.log('💚 Supabase is responding, fetching events...');
         const backendEvents = await response.json();
-        console.log(`📊 Scraping service returned ${backendEvents.length} events`);
+        console.log(`📊 Supabase returned ${backendEvents.length} events`);
         
         if (backendEvents.length > 0) {
-          console.log('✅ Using events from enhanced service (filtered for quality)');
-          // Convert backend format to frontend format
+          console.log('✅ Using events from Supabase database');
+          // Convert Supabase format to frontend format
           const convertedEvents: Event[] = backendEvents.map((backendEvent: any) => {
             // Extract venue name from location (e.g., "Roxie Theater, San Francisco" -> "Roxie Theater")
             let venueName = backendEvent.venue;
@@ -99,19 +104,33 @@ class EventScraper {
           });
           return convertedEvents;
         } else {
-          console.log('📭 Backend returned 0 events - this means successful filtering, not failure');
+          console.log('📭 Supabase returned 0 events - database may be empty');
           return [];
         }
       } else {
-        console.log('⚠️ Backend service unavailable, falling back to browser scraping...');
-        // Fall back to browser scraping only if backend is genuinely unavailable
-        return await EventScraper.scrapeWebsite('https://example.com', 'Example Venue', 'other');
+        console.log('⚠️ Supabase service unavailable, falling back to local storage...');
+        // Fall back to local storage if Supabase is unavailable
+        return await EventScraper.getLocalEvents();
       }
     } catch (error) {
-      console.error('❌ Error fetching from backend service:', error);
-      console.log('🔄 Falling back to browser scraping...');
-      // Only fall back to browser scraping if there's a network error
-      return await EventScraper.scrapeWebsite('https://example.com', 'Example Venue', 'other');
+      console.error('❌ Error fetching from Supabase:', error);
+      console.log('🔄 Falling back to local storage...');
+      // Fall back to local storage if there's a network error
+      return await EventScraper.getLocalEvents();
+    }
+  }
+
+  // Get events from local storage as fallback
+  private static async getLocalEvents(): Promise<Event[]> {
+    try {
+      console.log('📱 Attempting to get events from local storage...');
+      const { default: EventStorage } = await import('./EventStorage');
+      const localEvents = await EventStorage.getAllEvents();
+      console.log(`📱 Local storage returned ${localEvents.length} events`);
+      return localEvents;
+    } catch (error) {
+      console.error('❌ Failed to get local events:', error);
+      return [];
     }
   }
 

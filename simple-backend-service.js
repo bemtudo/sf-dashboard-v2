@@ -7,7 +7,15 @@ const PORT = 3002;
 // Enable CORS
 app.use((req, res, next) => {
   res.header('Access-Control-Allow-Origin', '*');
-  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+  res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
+  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, Authorization');
+  
+  // Handle preflight requests
+  if (req.method === 'OPTIONS') {
+    res.status(200).end();
+    return;
+  }
+  
   next();
 });
 
@@ -27,7 +35,7 @@ async function initializeScrapers() {
     // Import all scraper modules
     const scraperModules = [
       'ape-scraper.js',
-      'balboa-scraper.js', 
+      'balboa-scraper.js',
       'booksmith-scraper.js',
       'cafedunord-scraper.js',
       'chapel-scraper.js',
@@ -272,8 +280,8 @@ app.post('/api/analyze-venue', async (req, res) => {
           hasRSS: !!document.querySelector('link[type="application/rss+xml"]'),
           hasJSONLD: !!document.querySelector('script[type="application/ld+json"]'),
           hasEventSchema: !!document.querySelector('[itemtype*="Event"]'),
-          hasUpcomingEvents: !!document.querySelector('*:contains("Upcoming Events"), *:contains("Events")'),
-          hasTickets: !!document.querySelector('*:contains("Buy Tickets"), *:contains("Get Tickets")'),
+          hasUpcomingEvents: document.body.textContent.includes('Upcoming Events') || document.body.textContent.includes('Events'),
+          hasTickets: document.body.textContent.includes('Buy Tickets') || document.body.textContent.includes('Get Tickets'),
           pageTitle: document.title,
           metaDescription: document.querySelector('meta[name="description"]')?.content || ''
         };

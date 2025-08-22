@@ -30,8 +30,16 @@ function App() {
     
     // Load custom venues from localStorage
     const customVenues = JSON.parse(localStorage.getItem('customVenues') || '[]');
+    console.log(`🔍 Loading custom venues from localStorage:`, customVenues);
     if (customVenues.length > 0) {
-      setVenues(prevVenues => [...prevVenues, ...customVenues]);
+      console.log(`✅ Found ${customVenues.length} custom venues, adding to state`);
+      setVenues(prevVenues => {
+        const updated = [...prevVenues, ...customVenues];
+        console.log(`🔄 Updated venues state with custom venues:`, updated);
+        return updated;
+      });
+    } else {
+      console.log(`📭 No custom venues found in localStorage`);
     }
     
     // Load existing events
@@ -43,6 +51,11 @@ function App() {
     document.body.className = theme;
     document.documentElement.className = theme;
   }, [theme]);
+
+  // Debug modal state changes
+  useEffect(() => {
+    console.log('🔍 Modal state changed:', { isAddingVenue, newVenueName, newVenueUrl, newVenueCategory });
+  }, [isAddingVenue, newVenueName, newVenueUrl, newVenueCategory]);
 
   const toggleTheme = () => {
     const newTheme = theme === 'light' ? 'dark' : 'light';
@@ -104,6 +117,17 @@ function App() {
       source: e.source,
       category: e.category
     })));
+    
+    // Get existing custom venues from localStorage to preserve them
+    const customVenues = JSON.parse(localStorage.getItem('customVenues') || '[]');
+    console.log(`🔍 Custom venues to preserve:`, customVenues);
+    
+    if (allEvents.length === 0) {
+      console.log(`📭 No events to organize, but preserving ${customVenues.length} custom venues`);
+      // Even with no events, preserve custom venues
+      setVenues(customVenues);
+      return;
+    }
     
     const venueMap = new Map<string, Venue>();
     
@@ -196,8 +220,12 @@ function App() {
     console.log(`🔍 Final venues array:`, venuesArray);
     console.log(`🏗️ Final result: ${venuesArray.length} venues created:`, venuesArray.map(v => `${v.name} (${v.events.length} events, category: ${v.category})`));
     
-    setVenues(venuesArray);
-    console.log(`🔧 setVenues called with:`, venuesArray);
+    // Merge with custom venues to preserve them
+    const allVenues = [...venuesArray, ...customVenues];
+    console.log(`🔗 Merged venues: ${venuesArray.length} from events + ${customVenues.length} custom = ${allVenues.length} total`);
+    
+    setVenues(allVenues);
+    console.log(`🔧 setVenues called with:`, allVenues);
   };
 
   // Debug: Monitor venues state changes
@@ -208,6 +236,8 @@ function App() {
   }, [venues]);
 
   const groupVenuesByCategory = (venues: Venue[]) => {
+    console.log('🏷️ groupVenuesByCategory called with venues:', venues);
+    
     const categories = {
       'Music': venues.filter(v => v.category === 'Music'),
       'Film': venues.filter(v => v.category === 'Film'),
@@ -220,6 +250,13 @@ function App() {
       'Tech': venues.filter(v => v.category === 'Tech'),
       'Other': venues.filter(v => !['Music', 'Film', 'Cycling', 'Meetups', 'Comedy', 'Sports', 'Books', 'Food', 'Tech'].includes(v.category))
     };
+
+    console.log('🏷️ Categorized venues:', categories);
+    
+    // Log each venue and its category
+    venues.forEach(venue => {
+      console.log(`📍 Venue "${venue.name}" has category "${venue.category}"`);
+    });
 
     return categories;
   };
@@ -309,10 +346,15 @@ function App() {
   };
 
   const handleAddVenue = async () => {
+    console.log('🚀 handleAddVenue called with:', { newVenueName, newVenueUrl, newVenueCategory });
+    
     if (!newVenueName.trim() || !newVenueUrl.trim()) {
+      console.log('❌ Validation failed - missing name or URL');
       alert('Venue name and URL are required.');
       return;
     }
+
+    console.log('✅ Validation passed, creating venue object...');
 
     try {
       const newVenue: Venue = {
@@ -323,6 +365,8 @@ function App() {
         events: []
       };
 
+      console.log('🎭 Created venue object:', newVenue);
+
       // TODO: Backend Integration
       // 1. Send venue URL to backend for analysis
       // 2. Backend determines best scraping approach
@@ -331,6 +375,7 @@ function App() {
       // 5. Admin can test and refine scraper
       
       // Analyze venue with backend
+      console.log('🔍 Starting backend analysis...');
       try {
         const response = await fetch('http://localhost:3002/api/analyze-venue', {
           method: 'POST',
@@ -343,6 +388,8 @@ function App() {
           })
         });
         
+        console.log('📡 Backend response status:', response.status);
+        
         if (response.ok) {
           const analysis = await response.json();
           console.log('🔍 Venue analysis:', analysis);
@@ -350,17 +397,23 @@ function App() {
           // Add analysis results to venue
           newVenue.analysis = analysis;
           newVenue.status = 'analysis-complete';
+        } else {
+          console.log('⚠️ Backend response not ok:', response.status, response.statusText);
         }
       } catch (backendError) {
         console.log('⚠️ Backend analysis failed, continuing with local storage:', backendError);
         newVenue.status = 'pending-analysis';
       }
       
+      console.log('💾 Storing venue in localStorage...');
       // Store in localStorage for now (we'll integrate with backend later)
       const existingVenues = JSON.parse(localStorage.getItem('customVenues') || '[]');
       const updatedVenues = [...existingVenues, newVenue];
       localStorage.setItem('customVenues', JSON.stringify(updatedVenues));
       
+      console.log('📊 Updated venues in localStorage:', updatedVenues);
+      
+      console.log('🔄 Adding venue to current state...');
       // Add to current state
       setVenues(prevVenues => [...prevVenues, newVenue]);
       setIsAddingVenue(false);
@@ -369,14 +422,23 @@ function App() {
       setNewVenueCategory('Other');
       console.log(`✅ Venue "${newVenue.name}" added successfully.`);
     } catch (error) {
-      console.error('Error adding venue:', error);
+      console.error('❌ Error adding venue:', error);
       alert('Failed to add venue. Please try again.');
     }
   };
 
   const categorizedVenues = groupVenuesByCategory(venues);
   const hasEvents = venues.some(venue => venue.events.length > 0);
-
+  const hasVenues = venues.length > 0; // Check if we have any venues at all
+  
+  console.log('🎯 Dashboard state:', {
+    totalVenues: venues.length,
+    hasEvents,
+    hasVenues,
+    categorizedVenues: Object.fromEntries(
+      Object.entries(categorizedVenues).map(([cat, ven]) => [cat, ven.length])
+    )
+  });
 
 
   return (
@@ -400,6 +462,22 @@ function App() {
             Debug
           </button>
           
+          <button 
+            onClick={() => {
+              const customVenues = JSON.parse(localStorage.getItem('customVenues') || '[]');
+              const currentVenues = venues;
+              console.log('🔍 DEBUG INFO:', {
+                customVenuesInLocalStorage: customVenues,
+                currentVenuesInState: currentVenues,
+                localStorageKeys: Object.keys(localStorage)
+              });
+              alert(`Custom venues in localStorage: ${customVenues.length}\nCurrent venues in state: ${currentVenues.length}`);
+            }} 
+            className="control-button secondary"
+          >
+            Check Venues
+          </button>
+          
           <button onClick={toggleTheme} className="control-button secondary">
             {theme === 'light' ? <Moon size={16} /> : <Sun size={16} />}
             {theme === 'light' ? 'Dark' : 'Light'}
@@ -420,7 +498,11 @@ function App() {
 
       {/* Floating Add Venue Button */}
       <button
-        onClick={() => setIsAddingVenue(true)}
+        onClick={() => {
+          alert('+ button clicked!'); // Simple test
+          console.log('🔘 + button clicked, opening modal...');
+          setIsAddingVenue(true);
+        }}
         className={`fixed top-24 right-6 z-50 w-14 h-14 rounded-full shadow-lg transition-all duration-200 flex items-center justify-center floating-add-button ${
           theme === 'dark'
             ? 'bg-blue-600 hover:bg-blue-700 text-white shadow-blue-500/25'
@@ -555,11 +637,13 @@ function App() {
             Fetching the latest events from our enhanced scraping service.
           </p>
         </div>
-      ) : !hasEvents ? (
+      ) : !hasVenues ? (
         <div className="status-message">
-          <h2 className="status-title">No Event Data Available</h2>
+          <h2 className="status-title">No Venues Available</h2>
           <p className="status-description">
-            Click "Refresh Events" to fetch the latest events from our enhanced scraping service.
+            Debug info: {venues.length} venues in state, hasVenues: {hasVenues.toString()}
+            <br />
+            Check console for detailed venue information.
           </p>
         </div>
       ) : (
@@ -572,11 +656,18 @@ function App() {
             return eventDate.toDateString() === today.toDateString();
           })} isDarkMode={theme === 'dark'} />
 
+          
+
           <div className="mt-8">
             {Object.entries(categorizedVenues).map(([category, categoryVenues]) => {
+              console.log(`🎭 Rendering category "${category}" with ${categoryVenues.length} venues:`, categoryVenues);
+              
               if (categoryVenues.length === 0) {
+                console.log(`❌ Skipping empty category "${category}"`);
                 return null;
               }
+              
+              console.log(`✅ Rendering category "${category}" with venues:`, categoryVenues.map(v => v.name));
               
               return (
                 <div key={category} className="mb-12">
