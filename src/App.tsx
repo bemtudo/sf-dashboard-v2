@@ -168,6 +168,8 @@ function App() {
         venueName = 'Strava';
       } else if (event.source === 'booksmith') {
         venueName = 'Booksmith';
+      } else if (event.source === 'cityarts') {
+        venueName = 'City Arts & Lectures';
       } else if (event.source === 'sfcityfc') {
         venueName = 'SF City FC';
       } else if (event.source === 'oaklandroots') {
@@ -190,7 +192,7 @@ function App() {
         category = 'Comedy';
               } else if (['knockout', 'rickshawstop', 'chapel', 'cafedunord'].includes(event.source)) {
           category = 'Music';
-      } else if (['booksmith'].includes(event.source)) {
+      } else if (['booksmith', 'cityarts'].includes(event.source)) {
         category = 'Books';
       } else if (['creativemornings', 'commonwealth', 'sfpl'].includes(event.source)) {
         category = 'Meetups';
@@ -674,14 +676,25 @@ function App() {
                   <h2 className="text-2xl font-bold mb-6 text-center uppercase tracking-wider font-mono">
                     {getCategoryIcon(category)} {getCategoryName(category)}
                   </h2>
-                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    {categoryVenues.map(venue => (
-                      <VenueNode 
-                        key={venue.id}
-                        venue={venue} 
-                        isDarkMode={theme === 'dark'} 
-                      />
-                    ))}
+                  <div className="relative">
+                    <div className="flex gap-6 overflow-x-auto pb-4 venue-scroll-container">
+                      {categoryVenues.map(venue => (
+                        <div key={venue.id} className="flex-shrink-0 w-96">
+                          <VenueNode 
+                            venue={venue} 
+                            isDarkMode={theme === 'dark'} 
+                          />
+                        </div>
+                      ))}
+                    </div>
+                    {/* Scroll indicator */}
+                    {categoryVenues.length > 3 && (
+                      <div className="text-center mt-2">
+                        <span className={`text-xs ${theme === 'dark' ? 'text-slate-400' : 'text-gray-500'}`}>
+                          ← Scroll for more venues →
+                        </span>
+                      </div>
+                    )}
                   </div>
                 </div>
               );

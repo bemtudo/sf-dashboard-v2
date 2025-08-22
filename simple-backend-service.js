@@ -39,6 +39,7 @@ async function initializeScrapers() {
       'booksmith-scraper.js',
       'cafedunord-scraper.js',
       'chapel-scraper.js',
+      'cityarts-scraper.js',
       'cobbs-scraper.js',
       'commonwealth-scraper.js',
       'creativemornings-scraper.js',
@@ -84,6 +85,7 @@ async function initializeScrapers() {
           scraperName === 'valkyries' ? 'ValkyriesScraper' : null,
           scraperName === 'warriors' ? 'WarriorsScraper' : null,
           scraperName === 'greenapple' ? 'greenapple' : null,
+          scraperName === 'cityarts' ? 'scrapeCityArts' : null,
           'BaseScraper'
         ].filter(Boolean); // Remove null values
         
