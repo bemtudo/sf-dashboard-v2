@@ -107,81 +107,87 @@ const VenueNode: React.FC<VenueNodeProps> = ({ venue, isDarkMode }) => {
           : 'border-gray-200 bg-gray-50'
       }`}
     >
-      {event.image_url && (
-        <div className="mb-3">
-          <img 
-            src={event.image_url} 
-            alt={`Poster for ${event.title}`}
-            className="w-full h-32 object-cover rounded border"
-            onError={(e) => {
-              e.currentTarget.style.display = 'none';
-            }}
-          />
+      <div className="flex gap-3">
+        {/* Left column: Event details */}
+        <div className="flex-1 min-w-0">
+          <h4 className="font-semibold text-sm mb-2">{event.title}</h4>
+          
+          <div className={`flex items-center gap-2 mb-1 text-xs ${
+            isDarkMode ? 'text-slate-400' : 'text-gray-600'
+          }`}>
+            <Calendar size={12} />
+            <span>
+              {formatDate(event.date)}
+              {!isTimeAtMidnight(event.date) && ` at ${formatTime(event.date)}`}
+            </span>
+          </div>
+          
+          {event.location && (
+            <div className={`flex items-center gap-2 mb-1 text-xs ${
+              isDarkMode ? 'text-slate-400' : 'text-gray-600'
+            }`}>
+              <MapPin size={12} />
+              <span>{event.location}</span>
+            </div>
+          )}
+          
+          {event.screen && (
+            <div className={`flex items-center gap-2 mb-1 text-xs ${
+              isDarkMode ? 'text-slate-400' : 'text-gray-600'
+            }`}>
+              <span className="font-mono">🎬</span>
+              <span>{event.screen}</span>
+            </div>
+          )}
+          
+          {event.cost && (
+            <div className={`flex items-center gap-2 mb-2 text-xs ${
+              isDarkMode ? 'text-slate-400' : 'text-gray-600'
+            }`}>
+              <DollarSign size={12} />
+              <span>{event.cost}</span>
+            </div>
+          )}
+          
+          {event.description && (
+            <p className={`text-xs mb-2 ${
+              isDarkMode ? 'text-slate-300' : 'text-gray-700'
+            }`}>
+              {event.description}
+            </p>
+          )}
+          
+          {event.url && (
+            <a
+              href={event.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`inline-flex items-center gap-1 text-xs transition-colors ${
+                isDarkMode
+                  ? 'text-blue-400 hover:text-blue-300'
+                  : 'text-blue-600 hover:text-blue-500'
+              }`}
+            >
+              <ExternalLink size={12} />
+              View Details
+            </a>
+          )}
         </div>
-      )}
-      
-      <h4 className="font-semibold text-sm mb-2">{event.title}</h4>
-      
-      <div className={`flex items-center gap-2 mb-1 text-xs ${
-        isDarkMode ? 'text-slate-400' : 'text-gray-600'
-      }`}>
-        <Calendar size={12} />
-        <span>
-          {formatDate(event.date)}
-          {!isTimeAtMidnight(event.date) && ` at ${formatTime(event.date)}`}
-        </span>
+        
+        {/* Right column: Event image */}
+        {event.image_url && (
+          <div className="flex-shrink-0 w-24 h-24">
+            <img 
+              src={event.image_url} 
+              alt={`Poster for ${event.title}`}
+              className="w-full h-full object-cover rounded border"
+              onError={(e) => {
+                e.currentTarget.style.display = 'none';
+              }}
+            />
+          </div>
+        )}
       </div>
-      
-      {event.location && (
-        <div className={`flex items-center gap-2 mb-1 text-xs ${
-          isDarkMode ? 'text-slate-400' : 'text-gray-600'
-        }`}>
-          <MapPin size={12} />
-          <span>{event.location}</span>
-        </div>
-      )}
-      
-      {event.screen && (
-        <div className={`flex items-center gap-2 mb-1 text-xs ${
-          isDarkMode ? 'text-slate-400' : 'text-gray-600'
-        }`}>
-          <span className="font-mono">🎬</span>
-          <span>{event.screen}</span>
-        </div>
-      )}
-      
-      {event.cost && (
-        <div className={`flex items-center gap-2 mb-2 text-xs ${
-          isDarkMode ? 'text-slate-400' : 'text-gray-600'
-        }`}>
-          <DollarSign size={12} />
-          <span>{event.cost}</span>
-        </div>
-      )}
-      
-      {event.description && (
-        <p className={`text-xs mb-2 ${
-          isDarkMode ? 'text-slate-300' : 'text-gray-700'
-        }`}>
-          {event.description}
-        </p>
-      )}
-      
-      {event.url && (
-        <a
-          href={event.url}
-          target="_blank"
-          rel="noopener noreferrer"
-          className={`inline-flex items-center gap-1 text-xs transition-colors ${
-            isDarkMode
-              ? 'text-blue-400 hover:text-blue-300'
-              : 'text-blue-600 hover:text-blue-500'
-          }`}
-        >
-          <ExternalLink size={12} />
-          View Details
-        </a>
-      )}
     </div>
   );
 

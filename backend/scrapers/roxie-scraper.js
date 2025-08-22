@@ -69,6 +69,19 @@ export class RoxieScraper extends BaseScraper {
               return;
             }
             
+            // Try to extract time information from description
+            let timeText = 'Check website for showtimes';
+            const timeMatch = description.match(/(\d{1,2}:\d{2}\s*(?:AM|PM|am|pm))/i);
+            if (timeMatch) {
+              timeText = timeMatch[1];
+            } else {
+              // Look for other time patterns
+              const eveningMatch = description.match(/(evening|night|afternoon|morning)/i);
+              if (eveningMatch) {
+                timeText = `Various times (${eveningMatch[1]})`;
+              }
+            }
+            
             // Only include future events
             const now = new Date();
             if (new Date(eventDate) <= now) {
@@ -88,7 +101,7 @@ export class RoxieScraper extends BaseScraper {
               category: 'Film',
               price: 'Varies',
               image_url: '',
-              time_text: 'Check website for showtimes'
+              time_text: timeText
             };
             
             events.push(event);

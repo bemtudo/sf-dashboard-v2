@@ -28,6 +28,12 @@ export class CafeDuNordScraper extends BaseScraper {
           let title = this.cleanText($titleElement.text().trim());
           if (!title || title.length < 3) return;
           
+          // Skip private events
+          if (title.toLowerCase().includes('private event')) {
+            console.log(`⏭️ Skipping private event: ${title}`);
+            return;
+          }
+          
           // Extract date from .tw-event-date and .tw-day-of-week
           const $dateElement = $element.find('.tw-event-date');
           const $dayElement = $element.find('.tw-day-of-week');

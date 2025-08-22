@@ -60,6 +60,16 @@ export class GAMHScraper extends BaseScraper {
             // Extract event title from the event-title class
             const titleElement = container.querySelector('.event-title a');
             const title = titleElement?.textContent?.trim();
+            if (!title || title.length < 3) {
+              console.log(`⚠️ No valid title found for event ${index}`);
+              return;
+            }
+            
+            // Skip private events
+            if (title.toLowerCase().includes('private event')) {
+              console.log(`⏭️ Skipping private event: ${title}`);
+              return;
+            }
             
             if (!title || title.length < 5) return;
             
@@ -120,6 +130,7 @@ export class GAMHScraper extends BaseScraper {
               date_start: eventDate.toISOString(),
               door_time: doorTime || '',
               show_time: showTime || '',
+              time_text: doorTime && showTime ? `${doorTime} / ${showTime}` : (doorTime || showTime || ''),
               cost: price || '',
               supporting_act: supporting || '',
               genre: genre || '',

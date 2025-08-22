@@ -32,10 +32,16 @@ export class GiantsScraper {
                                 const homeTeam = gameData.teams.home.team.name;
                                 const awayTeam = gameData.teams.away.team.name;
                                 const isHomeGame = gameData.teams.home.team.id === 137; // Giants team ID is 137
-                                const opponent = isHomeGame ? awayTeam : homeTeam;
+                                
+                                // Only process HOME games (skip away games)
+                                if (!isHomeGame) {
+                                    continue; // Skip away games
+                                }
+                                
+                                const opponent = awayTeam; // Since this is a home game, opponent is always the away team
                                 const location = gameData.venue ? gameData.venue.name : "Oracle Park";
-                                const title = `Giants ${isHomeGame ? 'vs' : 'at'} ${opponent}`;
-                                const description = `${isHomeGame ? 'Home' : 'Away'} game against ${opponent} at ${location}`;
+                                const title = `Giants vs ${opponent}`;
+                                const description = `Home game against ${opponent} at ${location}`;
                                 const timeText = gameDateTime.toLocaleTimeString('en-US', { 
                                     hour: '2-digit', 
                                     minute: '2-digit', 
